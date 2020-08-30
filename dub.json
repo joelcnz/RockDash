@@ -1,0 +1,42 @@
+{
+	"configurations": [
+		{
+			"name": "executable",
+			"targetType": "executable"
+		},
+		{
+			"dependencies": {
+				"unit-threaded": ">=0.0.0"
+			},
+			"excludedSourceFiles": [
+				"src/main.d"
+			],
+			"mainSourceFile": "bin/ut.d",
+			"name": "unittest",
+			"preBuildCommands": [
+				"$DUB run --compiler=$$DC unit-threaded -c gen_ut_main -- -f bin/ut.d"
+			],
+			"targetType": "executable"
+		}
+	],
+	"dependencies": {
+		"foxid": "~>0.2.0",
+		"foxidgui": "~>0.0.1",
+		"unit-threaded": "~>1.0.2"
+	},
+	"description": "Testing",
+	"dflags": [
+		"-version=safe"
+	],
+	"importPaths": [
+		"../../JMiscLib/source"
+	],
+	"license": "proprietary",
+	"name": "foxidtest",
+	"sourcePaths": [
+		"source",
+		"../JMiscLib/source"
+	],
+	"targetPath": "bin",
+	"targetType": "executable"
+}
