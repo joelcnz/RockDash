@@ -5,13 +5,21 @@ import foxid;
 import source.app;
 
 final class Dasher : Instance {
+
+    Image dasherUp;
+    Image dasherDown;
+    Image dasherLeft;
+    Image dasherRight;
+
     this() @trusted {
         name = "Dasher";
 
-        Image[] cadrs = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24).array;
+        dasherUp = g_spriteList[SpriteGraph.up];
+        dasherDown = g_spriteList[SpriteGraph.down];
+        dasherLeft = g_spriteList[SpriteGraph.left];
+        dasherRight = g_spriteList[SpriteGraph.right];
 
-        ofsprite.image = cadrs[5];
-        visible = true;
+        ofsprite.image = dasherUp;
 
         position = Vec(5 * g_stepSize, 5 * g_stepSize);
 
@@ -26,15 +34,19 @@ final class Dasher : Instance {
         switch(event.getKeyDown) {
             default: break;
             case Key.right:
+                ofsprite.image = dasherRight;
                 position.x += 24;
             break;
             case Key.left:
+                ofsprite.image = dasherLeft;
                 position.x -= 24;
             break;
             case Key.up:
+                ofsprite.image = dasherUp;
                 position.y -= 24;
             break;
             case Key.down:
+                ofsprite.image = dasherDown;
                 position.y += 24;
             break;
         }
