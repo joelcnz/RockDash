@@ -8,22 +8,18 @@ final class Dasher : Instance {
     this() @trusted {
         name = "Dasher";
 
-        Animation dirsDasher = new Animation();
-        dirsDasher.strip("assets/rockdash5.png", Vec(2.5 * 24,0), 24,24);
+        Image[] cadrs = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24).array;
 
-        ofsprite.animation = dirsDasher;
-        ofsprite.isAnim = true;
-        
+        ofsprite.image = cadrs[5];
+        visible = true;
+
         position = Vec(5 * g_stepSize, 5 * g_stepSize);
 
-        //shape = ShapeMulti([ShapeRectangle(Vec(0,0), Vec(16,16))]);
-
+/+
         shape = ShapeMulti([
-			//ShapeRectangle(Vec(5*24,0),Vec(5*24,24)),
-			ShapeRectangle(Vec(7*24,0),Vec(7*24 + 24,24)),
-			//ShapeRectangle(Vec(7*24,0),Vec(7*24,24)),
-			//ShapeRectangle(Vec(8*24,0),Vec(8*24,24))
+			ShapeRectangle(Vec(7*24,0),Vec(7*24 + 24,24))
         ]);
++/
     }
 
     override void event(Event event) @safe {
@@ -43,9 +39,4 @@ final class Dasher : Instance {
             break;
         }
     }
-
-	override void eventDestroy() @safe
-	{
-		ofsprite.animation.free();
-	}
 }

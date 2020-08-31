@@ -32,7 +32,7 @@ final class RockDashScene : Scene
         auto p = Vec(0,0);
         foreach(lineNum, line; data) {
             foreach(s; line) {
-				add(new Piece(p, s));
+				//add(new Piece(p, s));
                 p.x += g_stepSize;
             }
             p.x = 0;
@@ -41,11 +41,15 @@ final class RockDashScene : Scene
 
 		fontgame = loader.loadFont("assets/arcade_classic.ttf",14);
 		add(new Dasher());
-		//add(new Screen("assets/screen.txt"));
-	}
 
-	override void draw(Display graph) @safe {
-		graph.drawText("Hello Rock Dash fan!", fontgame, Color(255,180,0), Vec(0,0));
+		add(new class Instance {
+			override void init() @safe {
+				depth = 10;
+			}
+			override void draw(Display graph) @safe {
+				graph.drawText("Hello Rock Dash fan!", fontgame, Color(255,180,0), Vec(0,0));
+			}
+		});
 	}
 }
 

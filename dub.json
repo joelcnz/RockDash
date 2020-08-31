@@ -32,7 +32,7 @@
 		"../../JMiscLib/source"
 	],
 	"license": "proprietary",
-	"name": "foxidtest",
+	"name": "rockdash",
 	"sourcePaths": [
 		"source",
 		"../JMiscLib/source"
