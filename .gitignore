@@ -1,7 +1,6 @@
-assets
 backup.bin
 dub.selections.json
-rockdash
+bin/rockdash
 jexold
 Sowerby
 BackUpSaves
