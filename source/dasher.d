@@ -22,7 +22,6 @@ final class Dasher : Instance {
         ofsprite.image = dasherUp;
 
         position = Vec(5 * g_stepSize, 5 * g_stepSize);
-
 /+
         shape = ShapeMulti([
 			ShapeRectangle(Vec(7*24,0),Vec(7*24 + 24,24))

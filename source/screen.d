@@ -39,5 +39,6 @@ enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down,
         }
         position = pos;
         ofsprite.image = g_sprites[c];
+        shape = ShapeRectangle(pos, pos + Vec(g_stepSize, g_stepSize));
     }
 }
