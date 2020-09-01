@@ -29,7 +29,7 @@
 		"-version=safe"
 	],
 	"importPaths": [
-		"../../JMiscLib/source"
+		"../JMiscLib/source"
 	],
 	"license": "proprietary",
 	"name": "rockdash",

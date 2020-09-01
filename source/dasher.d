@@ -31,24 +31,36 @@ final class Dasher : Instance {
     }
 
     override void event(Event event) @safe {
+        struct Dirs {
+            Vec dir;
+        }
+        auto dirs = [Dirs(Vec(0,-g_stepSize)), Dirs(Vec(g_stepSize,0)), Dirs(Vec(0,g_stepSize)), Dirs(Vec(-g_stepSize,0))];
+        int index = -1; // 0 - up, 1 - right, 2 - down, 3 - left
+
         switch(event.getKeyDown) {
             default: break;
-            case Key.right:
-                ofsprite.image = dasherRight;
-                position.x += 24;
-            break;
-            case Key.left:
-                ofsprite.image = dasherLeft;
-                position.x -= 24;
-            break;
             case Key.up:
                 ofsprite.image = dasherUp;
-                position.y -= 24;
+                index = 0;
+            break;
+            case Key.right:
+                ofsprite.image = dasherRight;
+                index = 1;
             break;
             case Key.down:
                 ofsprite.image = dasherDown;
-                position.y += 24;
+                index = 2;
             break;
+            case Key.left:
+                ofsprite.image = dasherLeft;
+                index = 3;
+            break;
+        }
+
+        if (index != -1) {
+            if (sceneManager.current.getInstanceByMask(position + dirs[index].dir, ShapeRectangle(Vec(0,0), Vec(g_stepSize,g_stepSize))).name == "mud") {
+                position += dirs[index].dir;
+            }
         }
     }
 }

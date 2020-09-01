@@ -17,8 +17,10 @@ immutable g_stepSize = 24;
 enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down, right, aswitch, diamond_maker,
 	diamond, rock, bady_maker_right, blow0, blow1, blow2, blow3, bady_vert, bady_hor, door_open, blow4, blow5, blow6, gap}
 
-Image[] g_spriteList;
+immutable SpriteNames = ["brick", "mud", "start", "shut_door", "bady_maker_left", "up", "left", "down", "right", "aswitch", "diamond_maker",
+	"diamond", "rock", "bady_maker_right", "blow0", "blow1", "blow2", "blow3", "bady_vert", "bady_hor", "door_open", "blow4", "blow5", "blow6", "gap"];
 
+Image[] g_spriteList;
 Image[char] g_sprites;
 
 /+
@@ -53,6 +55,7 @@ final class RockDashScene : Scene
 			g_sprites['M'] = g_spriteList[diamond_maker];
 			g_sprites['d'] = g_spriteList[diamond];
 			g_sprites['r'] = g_spriteList[rock];
+			g_sprites['R'] = g_spriteList[bady_maker_right];
 			g_sprites['g'] = g_spriteList[gap];
 		}
 
