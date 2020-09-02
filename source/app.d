@@ -95,11 +95,11 @@ final class RockDashScene : Scene
 	}
 
 	override void step() @safe {
-		if (sw.peek.total!"msecs" > 500) {
+		if (sw.peek.total!"msecs" > 250) {
 			sw.reset;
-			sw.start;
-			foreach(y; 0 .. g_screenCharH)
-				foreach(x; 0 .. g_screenCharW) {
+			import std.range : iota;
+			foreach(y; iota(g_screenCharH,0,-1))
+				foreach(x; iota(g_screenCharW,0,-1)) {
 					Vec pos = Vec(x * g_stepSize, y * g_stepSize);
 					auto obj = sceneManager.current.
 						getInstanceByMask(pos, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
