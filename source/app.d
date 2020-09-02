@@ -4,7 +4,6 @@ module source.app;
 import foxid;
 import source.dasher;
 import source.screen;
-import source.rock;
 
 import jmisc;
 
@@ -98,6 +97,7 @@ final class RockDashScene : Scene
 	override void step() @safe {
 		if (sw.peek.total!"msecs" > 500) {
 			sw.reset;
+			sw.start;
 			foreach(y; 0 .. g_screenCharH)
 				foreach(x; 0 .. g_screenCharW) {
 					Vec pos = Vec(x * g_stepSize, y * g_stepSize);
