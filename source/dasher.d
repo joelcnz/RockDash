@@ -1,8 +1,10 @@
 module source.dasher;
 
+import jmisc;
+
 import foxid;
 
-import source.app;
+import source.app, source.screen;
 
 final class Dasher : Instance {
 
@@ -11,8 +13,11 @@ final class Dasher : Instance {
     Image dasherLeft;
     Image dasherRight;
 
+    int score,
+        diamonds;
+
     this() @trusted {
-        name = "Dasher";
+        name = "dasher";
 
         dasherUp = g_spriteList[SpriteGraph.up];
         dasherDown = g_spriteList[SpriteGraph.down];
@@ -21,12 +26,7 @@ final class Dasher : Instance {
 
         ofsprite.image = dasherUp;
 
-        position = Vec(5 * g_stepSize, 5 * g_stepSize);
-/+
-        shape = ShapeMulti([
-			ShapeRectangle(Vec(7*24,0),Vec(7*24 + 24,24))
-        ]);
-+/
+        position = Vec(6 * g_stepSize, 5 * g_stepSize);
     }
 
     override void event(Event event) @safe {
@@ -57,9 +57,41 @@ final class Dasher : Instance {
         }
 
         if (index != -1) {
-            if (sceneManager.current.getInstanceByMask(position + dirs[index].dir, ShapeRectangle(Vec(0,0), Vec(g_stepSize,g_stepSize))).name == "mud") {
-                position += dirs[index].dir;
-            }
+            auto obj = sceneManager.current.getInstanceByMask(position + dirs[index].dir, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+
+            if (obj !is null) {
+                import std.algorithm : canFind;
+                import std.string : split;
+
+                switch(obj.name) {
+                    default: break;
+                    case "gap", "mud", "diamond", "aswitch":
+                        position += dirs[index].dir;
+                        switch(obj.name) {
+                            default: break;
+                            case "gap":
+                                // into a gap sound
+                            break;
+                            case "mud":
+                                // clear mud sound
+                            break;
+                            case "diamond":
+                                // sound for picking up
+                                score += 10;
+                                diamonds += 1;
+                                mixin(trace("score diamonds".split));
+                            break;
+                            case "aswitch":
+                                import std.stdio; writeln("Switch triggered");
+                            break;
+                        }
+                    break;
+                }
+                if ("mud diamond aswitch".split.canFind(obj.name)) {
+                    obj.destroy();
+                    sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
+                }
+            } // obj not is null
         }
     }
 }
