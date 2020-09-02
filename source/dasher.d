@@ -16,6 +16,15 @@ final class Dasher : Instance {
     int score,
         diamonds;
 
+    int moveDir;
+    bool doMove;
+
+    struct Dirs {
+            Vec dir;
+        }
+
+    auto dirs = [Dirs(Vec(0,-g_stepSize)), Dirs(Vec(g_stepSize,0)), Dirs(Vec(0,g_stepSize)), Dirs(Vec(-g_stepSize,0))];
+
     this() @trusted {
         name = "dasher";
 
@@ -29,35 +38,9 @@ final class Dasher : Instance {
         position = Vec(6 * g_stepSize, 5 * g_stepSize);
     }
 
-    override void event(Event event) @safe {
-        struct Dirs {
-            Vec dir;
-        }
-        auto dirs = [Dirs(Vec(0,-g_stepSize)), Dirs(Vec(g_stepSize,0)), Dirs(Vec(0,g_stepSize)), Dirs(Vec(-g_stepSize,0))];
-        int index = -1; // 0 - up, 1 - right, 2 - down, 3 - left
-
-        switch(event.getKeyDown) {
-            default: break;
-            case Key.up:
-                ofsprite.image = dasherUp;
-                index = 0;
-            break;
-            case Key.right:
-                ofsprite.image = dasherRight;
-                index = 1;
-            break;
-            case Key.down:
-                ofsprite.image = dasherDown;
-                index = 2;
-            break;
-            case Key.left:
-                ofsprite.image = dasherLeft;
-                index = 3;
-            break;
-        }
-
-        if (index != -1) {
-            auto obj = sceneManager.current.getInstanceByMask(position + dirs[index].dir, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+    override void step() @safe {
+        if (doMove) {
+            auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir].dir, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
 
             if (obj !is null) {
                 import std.algorithm : canFind;
@@ -66,7 +49,7 @@ final class Dasher : Instance {
                 switch(obj.name) {
                     default: break;
                     case "gap", "mud", "diamond", "aswitch":
-                        position += dirs[index].dir;
+                        position += dirs[moveDir].dir;
                         switch(obj.name) {
                             default: break;
                             case "gap":
@@ -92,6 +75,33 @@ final class Dasher : Instance {
                     sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
                 }
             } // obj not is null
+            doMove = false;
+        }
+    }
+
+    override void event(Event event) @safe {
+        switch(event.getKeyDown) {
+            default: break;
+            case Key.up:
+                ofsprite.image = dasherUp;
+                moveDir = 0;
+                doMove = true;
+            break;
+            case Key.right:
+                ofsprite.image = dasherRight;
+                moveDir = 1;
+                doMove = true;
+            break;
+            case Key.down:
+                ofsprite.image = dasherDown;
+                moveDir = 2;
+                doMove = true;
+            break;
+            case Key.left:
+                ofsprite.image = dasherLeft;
+                moveDir = 3;
+                doMove = true;
+            break;
         }
     }
 }
