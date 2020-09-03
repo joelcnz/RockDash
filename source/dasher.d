@@ -63,7 +63,7 @@ final class Dasher : Instance {
 
                 switch(obj.name) {
                     default: break;
-                    case "gap", "mud", "diamond", "aswitch":
+                    case "gap", "mud", "diamond", "aswitch", "rock":
                         position += dirs[moveDir];
                         switch(obj.name) {
                             default: break;
@@ -81,15 +81,29 @@ final class Dasher : Instance {
                             case "aswitch":
                                 import std.stdio; writeln("Switch triggered");
                             break;
+                            case "rock":
+                                auto beyond = sceneManager.current.getInstanceByMask(obj.position + dirs[moveDir],
+                                                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+                                if (beyond is null) {
+                                    obj.position += dirs[moveDir];
+                                } else  {
+                                    position = position - dirs[moveDir];
+                                    //doMove = false;
+                                }
+                            break;
                         }
                     break;
                 }
                 if ("mud diamond aswitch".split.canFind(obj.name)) {
-                    if ("mud aswitch".split.canFind(obj.name))
-                        sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
                     obj.destroy();
                 }
-            } // obj not is null
+            } else {
+                moveGap.play(false);
+                auto p = position + dirs[moveDir];
+                if (p.x >= 0 && p.x < g_stepSize * 14 && p.y >= 0 && p.y < g_stepSize * 12)
+                    position = p;
+            }
+            // obj not is null
             doMove = false;
         }
     }

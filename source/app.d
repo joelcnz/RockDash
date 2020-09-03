@@ -6,7 +6,7 @@ import source.dasher;
 import source.screen;
 import source.faller;
 
-import jmisc;
+public import jmisc;
 
 import std.datetime.stopwatch;
 
@@ -78,7 +78,7 @@ final class RockDashScene : Scene
 				if ("BmDlsMRo".canFind(s))
 					add(new Piece(p, s));
 				else {
-					add(new Piece(p, g_chars[SpriteGraph.gap]));
+					//add(new Piece(p, g_chars[SpriteGraph.gap]));
 					switch(s) {
 						default: break;
 						case 'r': add(new Faller(p, "rock")); break;
@@ -106,6 +106,7 @@ final class RockDashScene : Scene
 	}
 
 	override void step() @safe {
+		/+
 		if (sw.peek.total!"msecs" > 250) {
 			sw.reset;
 			import std.range : iota;
@@ -131,6 +132,7 @@ final class RockDashScene : Scene
 					}
 				}
 		}
+		+/
 	}
 } // final class RockDashScene : Scene
 

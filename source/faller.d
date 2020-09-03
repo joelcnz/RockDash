@@ -15,9 +15,12 @@ final class Faller : Instance {
     }
 
     override void step() @safe {
-        auto objs = getInstanceArrayByMask(position + Vec(0,g_stepSize),shape);
-
-        if (objs.length == 1 && objs[0].name == "gap") // drop if only a gap object there
+        if (position.y + g_stepSize < g_stepSize * 12 &&
+                sceneManager.current.getInstanceByMask(position + Vec(0,g_stepSize),
+                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1))) is null)
             position.y += g_stepSize;
+
+//        if (objs.length == 1 && objs[0].name == "gap") // drop if only a gap object there
+//            position.y += g_stepSize;
     }
 }
