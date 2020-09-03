@@ -1,3 +1,4 @@
+//#not sure about releasing memory
 module source.dasher;
 
 import jmisc;
@@ -19,11 +20,10 @@ final class Dasher : Instance {
     int moveDir;
     bool doMove;
 
-    struct Dirs {
-            Vec dir;
-        }
+    Sound moveMud,
+        moveGap;
 
-    auto dirs = [Dirs(Vec(0,-g_stepSize)), Dirs(Vec(g_stepSize,0)), Dirs(Vec(0,g_stepSize)), Dirs(Vec(-g_stepSize,0))];
+    auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
 
     this() @trusted {
         name = "dasher";
@@ -36,11 +36,26 @@ final class Dasher : Instance {
         ofsprite.image = dasherUp;
 
         position = Vec(6 * g_stepSize, 5 * g_stepSize);
+
+        moveMud = new Sound();
+        moveMud.load("assets/collect.wav", "moveMud");
+
+        moveGap = new Sound();
+        moveGap.load("assets/pop.wav", "moveGap");
+
+        shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+    }
+
+    override void gameExit() @safe {
+        //#not sure about releasing memory
+        //moveMud.free;
+        //moveGap.free;
     }
 
     override void step() @safe {
         if (doMove) {
-            auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir].dir, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+            auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],
+                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
 
             if (obj !is null) {
                 import std.algorithm : canFind;
@@ -49,17 +64,16 @@ final class Dasher : Instance {
                 switch(obj.name) {
                     default: break;
                     case "gap", "mud", "diamond", "aswitch":
-                        position += dirs[moveDir].dir;
+                        position += dirs[moveDir];
                         switch(obj.name) {
                             default: break;
                             case "gap":
-                                // into a gap sound
+                                moveGap.play(false);
                             break;
                             case "mud":
-                                // clear mud sound
+                                moveMud.play(false);
                             break;
                             case "diamond":
-                                // sound for picking up
                                 score += 10;
                                 diamonds += 1;
                                 mixin(trace("score diamonds".split));
@@ -71,8 +85,9 @@ final class Dasher : Instance {
                     break;
                 }
                 if ("mud diamond aswitch".split.canFind(obj.name)) {
+                    if ("mud aswitch".split.canFind(obj.name))
+                        sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
                     obj.destroy();
-                    sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
                 }
             } // obj not is null
             doMove = false;

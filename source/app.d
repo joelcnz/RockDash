@@ -4,6 +4,7 @@ module source.app;
 import foxid;
 import source.dasher;
 import source.screen;
+import source.faller;
 
 import jmisc;
 
@@ -73,7 +74,17 @@ final class RockDashScene : Scene
         auto p = Vec(0,0);
         foreach(lineNum, line; data) {
             foreach(s; line) {
-				add(new Piece(p, s));
+				import std.algorithm : canFind;
+				if ("BmDlsMRo".canFind(s))
+					add(new Piece(p, s));
+				else {
+					add(new Piece(p, g_chars[SpriteGraph.gap]));
+					switch(s) {
+						default: break;
+						case 'r': add(new Faller(p, "rock")); break;
+						case 'd': add(new Faller(p, "diamond")); break;
+					}
+				}
                 p.x += g_stepSize;
             }
             p.x = 0;
@@ -85,11 +96,11 @@ final class RockDashScene : Scene
 
 		add(new class Instance {
 			override void init() @safe {
-				name = "banner";
+				name = "Hello, welcome to - Rock Dash!";
 				depth = 10;
 			}
 			override void draw(Display graph) @safe {
-				graph.drawText("Hello Rock Dash fan!", fontgame, Color(255,180,0), Vec(0,12 * g_stepSize));
+				graph.drawText(name, fontgame, Color(255,180,0), Vec(0,12 * g_stepSize));
 			}
 		});
 	}
@@ -131,6 +142,8 @@ version(unittest) {
 		Game game = new Game(640, 480, "* Rock Dash *");
 		window.background = Color(0,0,0);
 
+		import std.string;
+ 		mixin(trace("FOXID_VERSION FOXID_VERSION_STABLE".split));
 		/+
 			Add to the scene in the manager.
 		+/
@@ -145,4 +158,22 @@ version(unittest) {
 
 		return 0;
 	}
+}
+
+import foxid.core.collision;
+
+Instance[] getInstanceArrayByMask(Vec pos,Shape shape) @safe {
+	Instance temp = new Instance;
+	temp.shape = shape;
+	temp.position = pos;
+
+	Instance[] finder = [];
+
+	sceneManager.current.getList().each((ref e) {
+		if (ShapeOnShape(temp,e)) {
+			finder ~= e;
+		}
+	});
+
+	return finder;
 }
