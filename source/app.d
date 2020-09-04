@@ -1,10 +1,11 @@
 module source.app;
 
 //@safe:
-import foxid;
+public import foxid;
 import source.dasher;
 import source.screen;
 import source.faller;
+import source.editor;
 
 public import jmisc;
 
@@ -65,15 +66,18 @@ final class RockDashScene : Scene
 			g_sprites['r'] = g_spriteList[rock];
 			g_sprites['R'] = g_spriteList[bady_maker_right];
 			g_sprites['o'] = g_spriteList[door_open];
-			g_sprites['g'] = g_spriteList[gap];
+			//g_sprites['g'] = g_spriteList[gap];
 		}
+	}
 
+	override void gameStart() @safe {
         auto fileName = "assets/screen.txt";
         import std.file, std.string;
         auto data = readText(fileName).split('\n');
         auto p = Vec(0,0);
         foreach(lineNum, line; data) {
             foreach(s; line) {
+				/+
 				import std.algorithm : canFind;
 				if ("BmDlsMRo".canFind(s))
 					add(new Piece(p, s));
@@ -85,6 +89,8 @@ final class RockDashScene : Scene
 						case 'd': add(new Faller(p, "diamond")); break;
 					}
 				}
+				+/
+				putObj(s, p);
                 p.x += g_stepSize;
             }
             p.x = 0;
@@ -94,6 +100,7 @@ final class RockDashScene : Scene
 		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
 		add(new Dasher());
 
+/+
 		add(new class Instance {
 			override void init() @safe {
 				name = "Hello, welcome to - Rock Dash!";
@@ -103,7 +110,10 @@ final class RockDashScene : Scene
 				graph.drawText(name, fontgame, Color(255,180,0), Vec(0,12 * g_stepSize));
 			}
 		});
++/
+		add(new Editor());
 	}
+
 
 	override void step() @safe {
 		/+
@@ -178,4 +188,33 @@ Instance[] getInstanceArrayByMask(Vec pos,Shape shape) @safe {
 	});
 
 	return finder;
+}
+
+bool inBounds(T)(T obj) {
+	static if (is(T == Instance)) {
+		Vec tmp = obj.position;
+	} else
+		T tmp = obj;
+
+	return tmp.x>=0 && tmp.x<g_stepSize*14 &&
+		tmp.y>=0 && tmp.y<g_stepSize*12;
+}
+
+Vec snapToGrid(Vec pos) @safe {
+    return Vec(cast(int)(pos.x / g_stepSize) * g_stepSize, 
+                        cast(int)(pos.y / g_stepSize) * g_stepSize);
+}
+
+void putObj(char s, Vec p) @trusted {
+	import std.algorithm : canFind;
+
+	if ("BmDlsMRo".canFind(s))
+		sceneManager.current.add(new Piece(p, s));
+	else {
+		switch(s) {
+			default: break;
+			case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
+			case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
+		}
+	}
 }

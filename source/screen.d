@@ -22,6 +22,7 @@ final class Piece : Instance {
             case 'd': name = SpriteNames[diamond]; break;
             case 'r': name = SpriteNames[rock]; break;
             case 'R': name = SpriteNames[bady_maker_right]; break;
+            case 'o': name = SpriteNames[door_open]; break;
             case 'g': name = SpriteNames[gap]; break;
         }
         position = pos;

@@ -1,3 +1,4 @@
+//#diamond is made and pops up even if there's something in the way
 module source.faller;
 
 import foxid;
@@ -15,12 +16,21 @@ final class Faller : Instance {
     }
 
     override void step() @safe {
-        if (position.y + g_stepSize < g_stepSize * 12 &&
-                sceneManager.current.getInstanceByMask(position + Vec(0,g_stepSize),
-                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1))) is null)
-            position.y += g_stepSize;
-
-//        if (objs.length == 1 && objs[0].name == "gap") // drop if only a gap object there
-//            position.y += g_stepSize;
+        auto newPos = position + Vec(0,g_stepSize);
+        auto obj = sceneManager.current.getInstanceByMask(newPos,
+                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+        if (obj is null && inBounds(newPos) || (obj !is null && obj.name == "diamond_maker")) {
+            foreach(i; 0 .. (obj !is null && obj.name == "diamond_maker") ? 2 : 1)
+                position.y += g_stepSize;
+            if (obj !is null && obj.name == "diamond_maker") {
+                auto obj2 = sceneManager.current.getInstanceByMask(newPos + Vec(0,g_stepSize), // what's under the diamond maker
+                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+                //#diamond is made and pops up even if there's something in the way
+                if (obj2 !is null)
+                    obj2.destroy;
+                putObj(g_chars[SpriteGraph.diamond],position);
+                this.destroy;
+            }
+        }
     }
 }
