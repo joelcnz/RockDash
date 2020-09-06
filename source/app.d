@@ -1,11 +1,12 @@
 module source.app;
 
-//@safe:
 public import foxid;
 import source.dasher;
 import source.screen;
 import source.faller;
 import source.editor;
+
+public import foxid.sdl;
 
 public import jmisc;
 
@@ -13,8 +14,6 @@ import std.datetime.stopwatch;
 
 version(unittest)
     import unit_threaded;
-
-import jmisc;
 
 immutable g_stepSize = 24;
 immutable g_screenCharW = 14;
@@ -30,21 +29,19 @@ Image[] g_spriteList;
 Image[char] g_sprites;
 string g_chars;
 
+StopWatch g_sw;
+
 /+
 	Create our first scene
 +/
 final class RockDashScene : Scene
 {
-	import foxid.sdl;
-
 	private Font fontgame;
-
-	StopWatch sw;
 	
 	this() @trusted {
 		name = "RockDashScene";
 		
-		sw.start;
+		g_sw.start;
 
         g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24).array;
 
@@ -77,19 +74,6 @@ final class RockDashScene : Scene
         auto p = Vec(0,0);
         foreach(lineNum, line; data) {
             foreach(s; line) {
-				/+
-				import std.algorithm : canFind;
-				if ("BmDlsMRo".canFind(s))
-					add(new Piece(p, s));
-				else {
-					//add(new Piece(p, g_chars[SpriteGraph.gap]));
-					switch(s) {
-						default: break;
-						case 'r': add(new Faller(p, "rock")); break;
-						case 'd': add(new Faller(p, "diamond")); break;
-					}
-				}
-				+/
 				putObj(s, p);
                 p.x += g_stepSize;
             }
@@ -114,33 +98,12 @@ final class RockDashScene : Scene
 		add(new Editor());
 	}
 
-
-	override void step() @safe {
+	override void step() @trusted {
+		SDL_Delay(100);
 		/+
-		if (sw.peek.total!"msecs" > 250) {
-			sw.reset;
-			import std.range : iota;
-			foreach(y; iota(g_screenCharH,0,-1))
-				foreach(x; iota(g_screenCharW,0,-1)) {
-					Vec pos = Vec(x * g_stepSize, y * g_stepSize);
-					auto obj = sceneManager.current.
-						getInstanceByMask(pos, ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-					if (obj !is null) {
-						if (obj.name == "rock" || obj.name == "diamond") {
-							auto objBelow = sceneManager.current.
-								getInstanceByMask(pos + Vec(0,g_stepSize), ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-							if (objBelow !is null) {
-								if (objBelow.name == "gap") {
-									sceneManager.current.add(new Piece(obj.position, g_chars[SpriteGraph.gap]));
-									sceneManager.current.add(new Piece(objBelow.position,
-										obj.name == "rock" ? g_chars[SpriteGraph.rock] : g_chars[SpriteGraph.diamond]));
-									objBelow.destroy();
-									obj.destroy();
-								}
-							}
-						}
-					}
-				}
+		if (g_sw.peek().total!"msecs" > 100) {
+			g_sw.reset;
+			g_sw.start;
 		}
 		+/
 	}
@@ -153,6 +116,8 @@ version(unittest) {
 		// game setup
 		Game game = new Game(640, 480, "* Rock Dash *");
 		window.background = Color(0,0,0);
+
+		assert(initKeys, "keys setup failer..");
 
 		import std.string;
  		mixin(trace("FOXID_VERSION FOXID_VERSION_STABLE".split));
@@ -217,4 +182,112 @@ void putObj(char s, Vec p) @trusted {
 			case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
 		}
 	}
+}
+
+Uint8* g_keystate;
+
+/**
+ * Handle keys, one hit buttons
+ */
+class TKey {
+	/// Key state
+	enum KeyState {up, down, startGap, smallGap}
+
+	/// Key state variable
+	KeyState _keyState;
+
+	/// Start pause
+	static _startPause = 200;
+	
+	/// Moving momments
+	static _pauseTime = 40; // msecs
+	
+	/// Timer for start pause
+	StopWatch _stopWatchStart;
+
+	/// Timer for moving moments
+	StopWatch _stopWatchPause;
+	
+	/// Key to use
+	SDL_Scancode tKey;
+
+	/// Is key set to down
+	bool _keyDown;
+	
+	/**
+	 * Constructor
+	 */
+	this(SDL_Scancode tkey0) {
+		tKey = tkey0;
+		_keyDown = false;
+		_keyState = KeyState.up;
+	}
+
+	/// Is key pressed
+	bool keyPressed() { // eg. g_keys[Keyboard.Key.A].keyPressed
+		//return Keyboard.isKeyPressed(tKey) != 0;
+		return g_keystate[tKey] != 0;
+	}
+
+	/// Goes once per key hit
+	bool keyTrigger() { // eg. g_keys[Keyboard.Key.A].keyTrigger
+		if (g_keystate[tKey] && _keyDown == false) {
+			_keyDown = true;
+			return true;
+		} else if (! g_keystate[tKey]) {
+			_keyDown = false;
+		}
+		
+		return false;
+	}
+	
+	// returns true doing trigger other wise false saying the key is already down
+	/** One hit key */
+	/+
+		Press key down, print the character. Keep holding down the key and the cursor move at a staggered pace.
+		+/
+	bool keyInput() { // eg. g_keys[Keyboard.Key.A].keyInput
+		if (! g_keystate[tKey])
+			_keyState = KeyState.up;
+
+		if (g_keystate[tKey] && _keyState == KeyState.up) {
+			_keyState = KeyState.down;
+			_stopWatchStart.reset;
+			_stopWatchStart.start;
+
+			return true;
+		}
+		
+		if (_keyState == KeyState.down && _stopWatchStart.peek.total!"msecs" > _startPause)  {
+			_keyState = KeyState.smallGap;
+			_stopWatchPause.reset;
+			_stopWatchPause.start;
+		}
+		
+		if (_keyState == KeyState.smallGap && _stopWatchPause.peek.total!"msecs" > _pauseTime) {
+			_keyState = KeyState.down;
+			
+			return true;
+		}
+		
+		return false;
+	}
+
+	/** hold key */
+//	bool keyPress() {
+//		return Keyboard.isKeyPressed(tKey) > 0;
+//	}
+}
+
+/// Keys array
+TKey[] g_keys; // g_keys[SDL_SCANCODE_T].keyTrigger
+
+bool initKeys() {
+	version(Trace) { 5.gh; }
+	g_keystate = SDL_GetKeyboardState(null);
+	foreach(tkey; cast(SDL_Scancode)0 .. SDL_NUM_SCANCODES)
+		g_keys ~= new TKey(cast(SDL_Scancode)tkey);
+	version(Trace) { 4.gh; }
+
+	return g_keys.length == SDL_NUM_SCANCODES;
 }

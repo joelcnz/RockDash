@@ -24,9 +24,6 @@
 		"unit-threaded": "~>1.0.2"
 	},
 	"description": "Testing",
-	"dflags": [
-		"-version=safe"
-	],
 	"importPaths": [
 		"../JMiscLib/source"
 	],
