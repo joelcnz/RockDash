@@ -20,12 +20,12 @@ final class Dasher : Instance {
     int moveDir;
 
     Sound moveMud,
-        moveGap;
+        collectDiamond;
 
     auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
     enum {up,right,down,left}
 
-    this() @trusted {
+    this(Vec pos) @trusted {
         name = "dasher";
 
         dasherUp = g_spriteList[SpriteGraph.up];
@@ -35,13 +35,13 @@ final class Dasher : Instance {
 
         ofsprite.image = dasherUp;
 
-        position = Vec(6 * g_stepSize, 5 * g_stepSize);
+        position = pos;
 
         moveMud = new Sound();
         moveMud.load("assets/collect.wav", "moveMud");
 
-        moveGap = new Sound();
-        moveGap.load("assets/pop.wav", "moveGap");
+        collectDiamond = new Sound();
+        collectDiamond.load("assets/pop.wav", "collectDiamond");
 
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
     }
@@ -63,13 +63,13 @@ final class Dasher : Instance {
             ofsprite.image = dasherDown;
             doMove(down);
         }
-        if (g_keys[SDL_SCANCODE_RIGHT].keyPressed) {
-            ofsprite.image = dasherRight;
-            doMove(right);
-        }
         if (g_keys[SDL_SCANCODE_LEFT].keyPressed) {
             ofsprite.image = dasherLeft;
             doMove(left);
+        }
+        if (g_keys[SDL_SCANCODE_RIGHT].keyPressed) {
+            ofsprite.image = dasherRight;
+            doMove(right);
         }
     }
 
@@ -96,6 +96,7 @@ final class Dasher : Instance {
                         case "diamond":
                             score += 10;
                             diamonds += 1;
+                            collectDiamond.play(false);
                             mixin(trace("score diamonds".split));
                         break;
                         case "aswitch":
@@ -118,7 +119,6 @@ final class Dasher : Instance {
                 obj.destroy();
             }
         } else {
-            moveGap.play(false);
             auto p = position + dirs[moveDir];
             position = p;
         }

@@ -25,6 +25,8 @@ enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down,
 immutable SpriteNames = ["brick", "mud", "start", "shut_door", "bady_maker_left", "up", "left", "down", "right", "aswitch", "diamond_maker",
 	"diamond", "rock", "bady_maker_right", "blow0", "blow1", "blow2", "blow3", "bady_vert", "bady_hor", "door_open", "blow4", "blow5", "blow6", "gap"];
 
+immutable OtherSpriteNames = ["editor", "dasher"];
+
 Image[] g_spriteList;
 Image[char] g_sprites;
 string g_chars;
@@ -37,7 +39,7 @@ StopWatch g_sw;
 final class RockDashScene : Scene
 {
 	private Font fontgame;
-	
+
 	this() @trusted {
 		name = "RockDashScene";
 		
@@ -67,7 +69,8 @@ final class RockDashScene : Scene
 		}
 	}
 
-	override void gameStart() @safe {
+	override void gameStart() @trusted {
+		/+
         auto fileName = "assets/screen.txt";
         import std.file, std.string;
         auto data = readText(fileName).split('\n');
@@ -80,9 +83,10 @@ final class RockDashScene : Scene
             p.x = 0;
             p.y += g_stepSize;
         }
+		+/
 
 		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
-		add(new Dasher());
+		load("test.bin");
 
 /+
 		add(new class Instance {
@@ -95,17 +99,104 @@ final class RockDashScene : Scene
 			}
 		});
 +/
+	} // gameStart
+
+	void save(string fileName) {
+		import core.stdc.stdio;
+		import std.path: buildPath;
+		import std.string;
+
+		fileName = buildPath("Saves", fileName);
+		FILE* f;
+		if ((f = fopen(fileName.toStringz, "wb")) == null) {
+			import std.stdio; writeln("save: '", fileName, "' can't be opened");
+
+			return;
+		}
+		scope(exit)
+			fclose(f);
+		ubyte ver = 0;
+		fwrite(&ver, 1, ubyte.sizeof, f); // 1 version
+		import std.string : split;
+		mixin(trace("ver"));
+		import std.algorithm : canFind;
+		int count;
+		foreach(const e; sceneManager.current.getList().array)
+			if (SpriteNames.canFind(e.name)) {
+				count += 1;
+			}
+		fwrite(&count, 1, int.sizeof, f);
+		mixin(trace("count"));
+		foreach(const e; sceneManager.current.getList().array) {
+			if (SpriteNames.canFind(e.name)) {
+				char c;
+				foreach(i, n; SpriteNames)
+					if (e.name == n) {
+						c = g_chars[i];
+						fwrite(&c, 1, char.sizeof, f);
+						fwrite(&e.position.x, 1, float.sizeof, f);
+						fwrite(&e.position.y, 1, float.sizeof, f);
+						break;
+					}
+			}
+		}
+	} // save
+
+	void load(string fileName)  {
+		foreach(ref e; getList().array) {
+			e.destroy();
+		}
+
+		import core.stdc.stdio;
+		import std.path: buildPath;
+		import std.string;
+
+		fileName = buildPath("Saves", fileName);
+		FILE* f;
+		if ((f = fopen(fileName.toStringz, "rb")) == null) {
+			import std.stdio; writeln("load: '", fileName, "' can't be opened");
+
+			return;
+		}
+		scope(exit)
+			fclose(f);
+		ubyte ver = 0;
+		fread(&ver, 1, ubyte.sizeof, f); // 1 version
+		import std.string : split;
+		mixin(trace("ver"));
+		int count;
+		fread(&count, 1, int.sizeof, f);
+		mixin(trace("count"));
+		import std.algorithm : canFind;
+		foreach(const e; 0 .. count) {
+			char c;
+			float x,y;
+			fread(&c, 1, char.sizeof, f);
+			fread(&x, 1, float.sizeof, f);
+			fread(&y, 1, float.sizeof, f);
+			putObj(c, Vec(x,y));
+		}
+		add(new Dasher(Vec(6 * g_stepSize, 4 * g_stepSize)));
 		add(new Editor());
-	}
+	} // load
 
 	override void step() @trusted {
-		SDL_Delay(100);
+		SDL_Delay(150);
 		/+
 		if (g_sw.peek().total!"msecs" > 100) {
 			g_sw.reset;
 			g_sw.start;
 		}
 		+/
+        SDL_PumpEvents();
+
+        if (g_keys[SDL_SCANCODE_S].keyTrigger) {
+			save("test.bin");
+        }
+
+        if (g_keys[SDL_SCANCODE_L].keyTrigger) {
+			load("test.bin");
+        } // if L key pressed
 	}
 } // final class RockDashScene : Scene
 
