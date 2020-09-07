@@ -15,6 +15,8 @@ final class Faller : Instance {
     }
 
     override void step() @safe {
+        if (! g_doMoves)
+            return;
         auto newPos = position + Vec(0,g_stepSize);
         if (newPos.inBounds) {
             auto obj = sceneManager.current.getInstanceByMask(newPos,

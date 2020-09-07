@@ -1,3 +1,4 @@
+//#temp
 module source.app;
 
 public import foxid;
@@ -10,7 +11,8 @@ public import foxid.sdl;
 
 public import jmisc;
 
-import std.datetime.stopwatch;
+public import std.datetime.stopwatch;
+public import std.stdio;
 
 version(unittest)
     import unit_threaded;
@@ -86,7 +88,7 @@ final class RockDashScene : Scene
 		+/
 
 		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
-		load("test.bin");
+		load(g_args.length > 1 ? g_args[1] ~ ".bin" : "test.bin");
 
 /+
 		add(new class Instance {
@@ -115,6 +117,7 @@ final class RockDashScene : Scene
 		}
 		scope(exit)
 			fclose(f);
+		writeln("Save: ", fileName);
 		ubyte ver = 0;
 		fwrite(&ver, 1, ubyte.sizeof, f); // 1 version
 		import std.string : split;
@@ -160,6 +163,7 @@ final class RockDashScene : Scene
 		}
 		scope(exit)
 			fclose(f);
+		writeln("Load: ", fileName);
 		ubyte ver = 0;
 		fread(&ver, 1, ubyte.sizeof, f); // 1 version
 		import std.string : split;
@@ -176,18 +180,21 @@ final class RockDashScene : Scene
 			fread(&y, 1, float.sizeof, f);
 			putObj(c, Vec(x,y));
 		}
-		add(new Dasher(Vec(6 * g_stepSize, 4 * g_stepSize)));
+		//add(new Dasher(Vec(6 * g_stepSize, 4 * g_stepSize)));
 		add(new Editor());
+
+		//#temp
+		//putObj('S', Vec(10 * g_stepSize,12 * g_stepSize));
 	} // load
 
 	override void step() @trusted {
-		SDL_Delay(150);
-		/+
-		if (g_sw.peek().total!"msecs" > 100) {
+		g_doMoves = false;
+		if (g_sw.peek().total!"msecs" > 150) {
 			g_sw.reset;
 			g_sw.start;
+			g_doMoves = true;
 		}
-		+/
+
         SDL_PumpEvents();
 
         if (g_keys[SDL_SCANCODE_S].keyTrigger) {
@@ -200,10 +207,15 @@ final class RockDashScene : Scene
 	}
 } // final class RockDashScene : Scene
 
+bool g_doMoves,
+	g_flashTime;
+string[] g_args;
+
 version(unittest) {
 } else {
-	int main(string[] args)
-	{
+	int main(string[] args) {
+		g_args = args;
+
 		// game setup
 		Game game = new Game(640, 480, "* Rock Dash *");
 		window.background = Color(0,0,0);
@@ -264,9 +276,12 @@ Vec snapToGrid(Vec pos) @safe {
 void putObj(char s, Vec p) @trusted {
 	import std.algorithm : canFind;
 
-	if ("BmDlsMRo".canFind(s))
-		sceneManager.current.add(new Piece(p, s));
-	else {
+	if ("SBmDlsMRo".canFind(s)) {
+		if (s == 'S' && p.inBounds) {
+			sceneManager.current.add(new Dasher(p));
+		} else
+			sceneManager.current.add(new Piece(p, s));
+	} else {
 		switch(s) {
 			default: break;
 			case 'r': sceneManager.current.add(new Faller(p, "rock")); break;

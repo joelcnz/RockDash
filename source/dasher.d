@@ -21,7 +21,11 @@ final class Dasher : Instance {
 
     Sound moveMud,
         collectDiamond;
+    
+    bool timerGap;
 
+    StopWatch flashTimeTimer;
+    
     auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
     enum {up,right,down,left}
 
@@ -53,6 +57,9 @@ final class Dasher : Instance {
     }
 
     override void step() @trusted {
+        if (! g_doMoves)
+            return;
+
         SDL_PumpEvents();
 
         if (g_keys[SDL_SCANCODE_UP].keyPressed) {
@@ -79,6 +86,13 @@ final class Dasher : Instance {
 
         if (! inBounds(position + dirs[moveDir]))
             return;
+
+        /+
+		if (flashTimeTimer.peek().total!"msecs" > 5) {
+            visible = true;
+		} else
+            visible = false;
+        +/
 
         if (obj !is null) {
             import std.algorithm : canFind;
