@@ -23,12 +23,23 @@ final class Faller : Instance {
                         ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
             if (obj is null && inBounds(newPos)) {
                 position = newPos;
-            } else if (obj !is null && obj.name == "diamond_maker") {
-                auto obj2 = sceneManager.current.getInstanceByMask(newPos + Vec(0,g_stepSize), // what's under the diamond maker
-                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
-                if (obj2 is null && (newPos + Vec(0,g_stepSize)).inBounds)
-                    putObj(g_chars[name == "rock" ? SpriteGraph.diamond : SpriteGraph.rock],newPos + Vec(0,g_stepSize));
-                this.destroy;
+            } else {
+                if (obj !is null) {
+                    switch(obj.name) {
+                        default: break;
+                        case "diamond_maker":
+                            auto obj2 = sceneManager.current.getInstanceByMask(newPos + Vec(0,g_stepSize), // what's under the diamond maker
+                                ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+                            if (obj2 is null && (newPos + Vec(0,g_stepSize)).inBounds)
+                                putObj(g_chars[name == "rock" ? SpriteGraph.diamond : SpriteGraph.rock],newPos + Vec(0,g_stepSize));
+                            this.destroy;
+                        break;
+                        case "bady":
+                            g_explodePoint = obj.position;
+                            obj.position = g_badyMakerPos;
+                        break;
+                    }
+                }
             }
         }
     }

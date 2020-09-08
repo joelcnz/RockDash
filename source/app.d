@@ -6,6 +6,8 @@ import source.dasher;
 import source.screen;
 import source.faller;
 import source.editor;
+import source.bady;
+import source.explosion;
 
 public import foxid.sdl;
 
@@ -34,6 +36,12 @@ Image[char] g_sprites;
 string g_chars;
 
 StopWatch g_sw;
+
+Vec g_startPos, g_badyMakerPos, g_explodePoint = Vec(-1,-1);
+
+Sound g_blowUp;
+
+bool g_editMode;
 
 /+
 	Create our first scene
@@ -69,38 +77,14 @@ final class RockDashScene : Scene
 			g_sprites['o'] = g_spriteList[door_open];
 			//g_sprites['g'] = g_spriteList[gap];
 		}
+
+		g_blowUp = new Sound();
+        g_blowUp.load("assets/blowup.wav", "blowup");
 	}
 
 	override void gameStart() @trusted {
-		/+
-        auto fileName = "assets/screen.txt";
-        import std.file, std.string;
-        auto data = readText(fileName).split('\n');
-        auto p = Vec(0,0);
-        foreach(lineNum, line; data) {
-            foreach(s; line) {
-				putObj(s, p);
-                p.x += g_stepSize;
-            }
-            p.x = 0;
-            p.y += g_stepSize;
-        }
-		+/
-
 		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
 		load(g_args.length > 1 ? g_args[1] ~ ".bin" : "test.bin");
-
-/+
-		add(new class Instance {
-			override void init() @safe {
-				name = "Hello, welcome to - Rock Dash!";
-				depth = 10;
-			}
-			override void draw(Display graph) @safe {
-				graph.drawText(name, fontgame, Color(255,180,0), Vec(0,12 * g_stepSize));
-			}
-		});
-+/
 	} // gameStart
 
 	void save(string fileName) {
@@ -172,6 +156,8 @@ final class RockDashScene : Scene
 		fread(&count, 1, int.sizeof, f);
 		mixin(trace("count"));
 		import std.algorithm : canFind;
+
+		g_editMode = false;
 		foreach(const e; 0 .. count) {
 			char c;
 			float x,y;
@@ -189,6 +175,24 @@ final class RockDashScene : Scene
 
 	override void step() @trusted {
 		g_doMoves = false;
+		if (g_explodePoint != Vec(-1,-1)) {
+			import std.range : iota;
+			foreach(y; iota(g_explodePoint.y - g_stepSize, g_explodePoint.y + g_stepSize + 1, g_stepSize))
+				foreach(x; iota(g_explodePoint.x - g_stepSize, g_explodePoint.x + g_stepSize + 1, g_stepSize)) {
+					auto obj = sceneManager.current.getInstanceByMask(Vec(x,y),
+                        ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+					import std.algorithm : canFind;
+					if (obj !is null && obj.position.inBounds && ["brick", "mud", "shut_door", "bady_maker_left",
+						"aswitch", "diamond_maker","diamond", "rock",
+						"bady_maker_right",
+						"door_open"].canFind(obj.name))
+						obj.destroy;
+					if (Vec(x,y).inBounds) {
+						sceneManager.current.add(new Explosion(Vec(x,y)));
+					}
+				}
+			g_explodePoint = Vec(-1,-1);
+		}
 		if (g_sw.peek().total!"msecs" > 150) {
 			g_sw.reset;
 			g_sw.start;
@@ -273,19 +277,28 @@ Vec snapToGrid(Vec pos) @safe {
                         cast(int)(pos.y / g_stepSize) * g_stepSize);
 }
 
-void putObj(char s, Vec p) @trusted {
+void putObj(char c, Vec p) @trusted {
 	import std.algorithm : canFind;
 
-	if ("SBmDlsMRo".canFind(s)) {
-		if (s == 'S' && p.inBounds) {
+	if ("SBmDsMo".canFind(c)) {
+		if (c == 'S' && p.inBounds && ! g_editMode) {
 			sceneManager.current.add(new Dasher(p));
+			g_startPos = p;
 		} else
-			sceneManager.current.add(new Piece(p, s));
+			sceneManager.current.add(new Piece(p, c));
 	} else {
-		switch(s) {
+		switch(c) {
 			default: break;
 			case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
 			case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
+			case 'l', 'R':
+				sceneManager.current.add(new Piece(p, c));
+				auto newPos = p + Vec(c == 'l' ? -g_stepSize : g_stepSize,0);
+				if (! g_editMode && newPos.inBounds) {
+					sceneManager.current.add(new Bady(newPos));
+					g_badyMakerPos = p;
+				}	
+			break;
 		}
 	}
 }

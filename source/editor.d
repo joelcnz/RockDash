@@ -45,6 +45,7 @@ final class Editor : Instance {
         if (g_keys[SDL_SCANCODE_V].keyPressed && inBounds(position)) {
             auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,
                     ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+            g_editMode = true;
             putObj(g_chars[sprGraph], position.snapToGrid);
             if (obj !is null)
                 marked = obj;
