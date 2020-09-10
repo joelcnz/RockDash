@@ -31,6 +31,10 @@ final class Editor : Instance {
                 sprGraph = SpriteGraph.gap;
             }
         }
+        if (event.getKeyDown == 'q') {
+            g_aswitchEditing = ! g_aswitchEditing;
+            mixin(trace("g_aswitchEditing"));
+        }
     }
 
     override void step() @trusted {
@@ -42,14 +46,15 @@ final class Editor : Instance {
         }
         //SDL_Event ev = event._sdl_handle();
         //if (ev.type == SDL_MOUSEBUTTONDOWN
-        if (g_keys[SDL_SCANCODE_V].keyPressed && inBounds(position)) {
-            auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,
-                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
-            g_editMode = true;
-            putObj(g_chars[sprGraph], position.snapToGrid);
-            if (obj !is null)
-                marked = obj;
-        }
+        if ((g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyTrigger) || (! g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyPressed))
+            if (inBounds(position)) {
+                auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,
+                            ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+                //g_editMode = true;
+                putObj(g_chars[sprGraph], position.snapToGrid);
+                if (! g_aswitchEditing && obj !is null)
+                    marked = obj;
+            }
     }
 
     override void draw(Display graph) @safe {

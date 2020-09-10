@@ -26,14 +26,18 @@ final class Bady : Instance {
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
     }
 
-    override void step() @trusted {
-        if (! g_doMoves)
-            return;
-
+    void setGraph() {
         if (moveDir == up || moveDir == down)
             ofsprite.image = vert;
         else
             ofsprite.image = horr;
+    }
+
+    override void step() @trusted {
+        if (! g_doMoves)
+            return;
+
+        setGraph;
 
         auto newPos = position + dirs[moveDir];
         auto obj = sceneManager.current.getInstanceByMask(newPos,
@@ -97,7 +101,8 @@ final class Bady : Instance {
                         else
                             moveDir = down;
                 break;
-            }
+            } // switch
+            setGraph;
         } else {
             if (obj is null)
                 position = newPos;

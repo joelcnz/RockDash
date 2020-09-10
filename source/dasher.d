@@ -1,3 +1,4 @@
+//#slow
 //#not sure about releasing memory
 module source.dasher;
 
@@ -5,10 +6,9 @@ import jmisc;
 
 import foxid;
 
-import source.app, source.screen;
+import source.app, source.screen, source.exitdoor;
 
 final class Dasher : Instance {
-
     Image dasherUp;
     Image dasherDown;
     Image dasherLeft;
@@ -20,7 +20,8 @@ final class Dasher : Instance {
     int moveDir;
 
     Sound moveMud,
-        collectDiamond;
+        moveGap,
+        collectDiamond;        
     
     bool timerGap;
 
@@ -47,6 +48,9 @@ final class Dasher : Instance {
         collectDiamond = new Sound();
         collectDiamond.load("assets/pop.wav", "collectDiamond");
 
+        moveGap = new Sound();
+        moveGap.load("assets/gap.wav", "moveGap");
+
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
     }
 
@@ -57,7 +61,12 @@ final class Dasher : Instance {
     }
 
     override void step() @trusted {
-        if (! g_doMoves)
+        if (g_editMode)
+            return;
+
+        if (g_levelComplete)
+            visible = false;
+        if (! g_doMoves || g_levelComplete)
             return;
 
         SDL_PumpEvents();
@@ -81,18 +90,18 @@ final class Dasher : Instance {
     }
 
     void doMove(in int moveDir) {
+        if (g_editMode) {
+            visible = false;
+            return;
+        }
+        visible = true;
+
         auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],
             ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
 
-        if (! inBounds(position + dirs[moveDir]))
+        if (! inBounds(position + dirs[moveDir])) {
             return;
-
-        /+
-		if (flashTimeTimer.peek().total!"msecs" > 5) {
-            visible = true;
-		} else
-            visible = false;
-        +/
+        }
 
         if (obj !is null) {
             import std.algorithm : canFind;
@@ -108,13 +117,16 @@ final class Dasher : Instance {
                             moveMud.play(false);
                         break;
                         case "diamond":
-                            score += 10;
                             diamonds += 1;
+                            g_diamonds = diamonds;
+                            score += diamonds > 10 ? 10 * 4 : 10;
                             collectDiamond.play(false);
                             mixin(trace("score diamonds".split));
                         break;
                         case "aswitch":
                             import std.stdio; writeln("Switch triggered");
+                            //#activate switch stuff
+                            g_aswitch.activate;
                         break;
                         case "rock":
                             auto beyond = sceneManager.current.getInstanceByMask(obj.position + dirs[moveDir],
@@ -135,6 +147,14 @@ final class Dasher : Instance {
         } else {
             auto p = position + dirs[moveDir];
             position = p;
+            moveGap.play(false);
         }
+        import std.array : array;
+        foreach(ref e; sceneManager.current.getList().array) //#slow
+            if (e.name == "Door") {
+                auto door = cast(ExitDoor)e;
+                door.updateDasherPos(this);
+                //"door".gh;
+            }
     } // doMove
 }

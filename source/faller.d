@@ -7,11 +7,17 @@ import source.app;
 final class Faller : Instance {
     Image fallImg;
 
+    Sound fall;
+    bool falling;
+
     this(Vec pos, string name) @safe {
         this.name = name;
         position = pos;
         ofsprite.image = (name == "rock" ? g_spriteList[SpriteGraph.rock] : g_spriteList[SpriteGraph.diamond]);
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+        
+        fall = new Sound();
+        fall.load("assets/boulder.wav", "fall");
     }
 
     override void step() @safe {
@@ -23,7 +29,15 @@ final class Faller : Instance {
                         ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
             if (obj is null && inBounds(newPos)) {
                 position = newPos;
+                if (name == "rock" && ! falling) {
+                    fall.play(false);
+                    falling = true;
+                }
             } else {
+                if (falling && name == "rock") {
+                    falling = false;
+                    fall.play(false);
+                }
                 if (obj !is null) {
                     switch(obj.name) {
                         default: break;

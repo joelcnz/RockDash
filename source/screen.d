@@ -1,3 +1,4 @@
+//#here
 module source.screen;
 
 import foxid;
@@ -13,7 +14,7 @@ final class Piece : Instance {
         switch(c) with(SpriteGraph) {
             default: import std.conv : text; assert(0, text("unhandled char: ", c));
             case 'B': name = SpriteNames[brick]; break;
-            case 'm': name = SpriteNames[mud]; break;
+            case 'm': name = SpriteNames[mud]; break; //#here
             case 'S': name = SpriteNames[start]; break;
             case 'D': name = SpriteNames[shut_door]; break;
             case 'l': name = SpriteNames[bady_maker_left]; break;
@@ -25,8 +26,10 @@ final class Piece : Instance {
             case 'o': name = SpriteNames[door_open]; break;
             case 'g': name = SpriteNames[gap]; break;
         }
-        position = pos;
-        ofsprite.image = g_sprites[c];
-        shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+        if (name != "gap") {
+            position = pos;
+            ofsprite.image = g_sprites[c];
+            shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+        }
     }
 }

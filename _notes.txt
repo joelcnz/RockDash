@@ -1,0 +1,15 @@
+RockDash/_notes.txt
+
+10 9 2020 Highest score for level 1: 260 (14 diamonds)
+
+Keys:
+E - toggle edit mode on and off
+
+Play mode only:
+Cursor keys - move dasher
+
+Edit mode only:
+L - load level
+S - save level
+Q - toggle switch mode on and off
+W - remove pop up
