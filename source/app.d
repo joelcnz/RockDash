@@ -8,15 +8,18 @@ import source.dasher,
 	source.editor,
 	source.bady,
 	source.explosion,
-	source.exitdoor,
+	//source.exitdoor,
 	source.aswitch;
 
 public import foxid.sdl;
 
 public import jmisc;
 
-public import std.datetime.stopwatch;
-public import std.stdio;
+public import std.datetime.stopwatch,
+	std.stdio,
+	std.string,
+	std.algorithm,
+	std.string;
 
 version(unittest)
     import unit_threaded;
@@ -30,8 +33,10 @@ enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down,
 
 immutable SpriteNames = ["brick", "mud", "start", "shut_door", "bady_maker_left", "up", "left", "down", "right", "aswitch", "diamond_maker",
 	"diamond", "rock", "bady_maker_right", "blow0", "blow1", "blow2", "blow3", "bady_vert", "bady_hor", "door_open", "blow4", "blow5", "blow6", "gap"];
-
 immutable OtherSpriteNames = ["editor", "dasher"];
+
+enum Door {to_open,opening,open,shutting,shut,done}
+Door g_doorState = Door.to_open;
 
 Image[] g_spriteList;
 Image[char] g_sprites;
@@ -41,13 +46,18 @@ bool g_levelComplete;
 StopWatch g_sw;
 Vec g_startPos, g_badyMakerPos, g_explodePoint = Vec(-1,-1);
 Sound g_blowUp;
-bool g_editMode;
+bool g_editMode = true;
 int g_diamonds;
 bool g_aswitchEditing;
 bool g_doMoves,
 	g_flashTime;
 string[] g_args;
+string g_fileName;
 ASwitch g_aswitch;
+Vec g_exitDoorPos;
+enum {up,right,down,left}
+int dasherMoveDir;
+Shape g_shapeRect;
 
 /+
 	Create our first scene
@@ -59,7 +69,7 @@ final class RockDashScene : Scene
 	this() @trusted {
 		name = "RockDashScene";
 		
-        g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24).array;
+        g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24); //.array;
 
         foreach(ref e; g_spriteList) {
             e.make();
@@ -94,6 +104,8 @@ final class RockDashScene : Scene
 			g_names['o'] = SpriteNames[door_open];
 		}
 
+		g_shapeRect = ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1));
+
 		g_blowUp = new Sound();
         g_blowUp.load("assets/blowup.wav", "blowup");
 
@@ -114,12 +126,24 @@ final class RockDashScene : Scene
 	override void event(Event event) {
 		if (event.getKeyDown == 'e') {
 			g_editMode = ! g_editMode;
+			if (g_editMode) {
+				foreach(ref e; getList()) {
+					if (e.name == "dasher")
+						e.visible = false;
+				}
+			} else {
+				foreach(ref e; getList()) {
+					if (e.name == "dasher")
+						e.visible = true;
+				}
+			}
 		}
 	}
 
 	override void gameStart() @trusted {
+		"gameStart()".gh;
 		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
-		load(g_args.length > 1 ? g_args[1] ~ ".bin" : "test.bin");
+		load(g_fileName);
 	} // gameStart
 
 	void save(string fileName) {
@@ -127,29 +151,28 @@ final class RockDashScene : Scene
 		import std.path: buildPath;
 		import std.string;
 
-		fileName = buildPath("Saves", fileName);
+		fileName = buildPath("Saves", fileName) ~ ".bin";
 		FILE* f;
 		if ((f = fopen(fileName.toStringz, "wb")) == null) {
 			import std.stdio; writeln("save: '", fileName, "' can't be opened");
-
 			return;
 		}
 		scope(exit)
 			fclose(f);
 		writeln("Save: ", fileName);
-		ubyte ver = 0;
+		ubyte ver = 1;
 		fwrite(&ver, 1, ubyte.sizeof, f); // 1 version
 		import std.string : split;
 		mixin(trace("ver"));
 		import std.algorithm : canFind;
 		int count;
-		foreach(const e; sceneManager.current.getList().array)
+		foreach(const e; sceneManager.current.getList())
 			if (SpriteNames.canFind(e.name)) {
 				count += 1;
 			}
 		fwrite(&count, 1, int.sizeof, f);
 		mixin(trace("count"));
-		foreach(const e; sceneManager.current.getList().array) {
+		foreach(const e; sceneManager.current.getList()) {
 			if ((SpriteNames ~ "Door").canFind(e.name)) {
 				char c;
 				foreach(i, n; SpriteNames)
@@ -162,20 +185,31 @@ final class RockDashScene : Scene
 					}
 			}
 		}
+		// version 1
+		auto pus = g_aswitch.popUps.length;
+		fwrite(&pus, 1, ubyte.sizeof, f);
+		foreach(pu; g_aswitch.popUps) {
+			char c = pu.chr;
+			fwrite(&c, 1, char.sizeof, f);
+			fwrite(&pu.pos.x, 1, float.sizeof, f);
+			fwrite(&pu.pos.y, 1, float.sizeof, f);
+		}
 	} // save
 
 	void load(string fileName)  {
-		foreach(ref e; getList().array) {
+		foreach(ref e; getList()) {
 			e.destroy();
 		}
 		g_levelComplete = false;
 		g_diamonds = 0;
+		g_editMode = false;
 
 		import core.stdc.stdio;
 		import std.path: buildPath;
 		import std.string;
+		import std.file : exists;
 
-		fileName = buildPath("Saves", fileName);
+		fileName = buildPath("Saves", fileName) ~ ".bin";
 		FILE* f;
 		if ((f = fopen(fileName.toStringz, "rb")) == null) {
 			import std.stdio; writeln("load: '", fileName, "' can't be opened");
@@ -185,16 +219,13 @@ final class RockDashScene : Scene
 		scope(exit)
 			fclose(f);
 		writeln("Load: ", fileName);
-		ubyte ver = 0;
+		ubyte ver;
 		fread(&ver, 1, ubyte.sizeof, f); // 1 version
 		import std.string : split;
 		mixin(trace("ver"));
 		int count;
 		fread(&count, 1, int.sizeof, f);
 		mixin(trace("count"));
-		import std.algorithm : canFind;
-
-		g_editMode = false;
 		foreach(const e; 0 .. count) {
 			char c;
 			float x,y;
@@ -204,6 +235,22 @@ final class RockDashScene : Scene
 			putObj(c, Vec(x,y));
 		}
 		add(new Editor());
+		// version 1
+		if (ver == 1) {
+			ubyte pus;
+			fread(&pus, 1, ubyte.sizeof, f);
+			foreach(pu; 0 .. pus) {
+				char chr;
+				Vec pos;
+				fread(&chr, 1, char.sizeof, f);
+				fread(&pos.x, 1, float.sizeof, f);
+				fread(&pos.y, 1, float.sizeof, f);
+				if (g_aswitch.active)
+					g_aswitch.addPopUp(pos, chr);
+			}
+		}
+		g_editMode = true;
+		//putObj('D', Vec(2 * g_stepSize,12 * g_stepSize));
 	} // load
 
 	override void step() @trusted {
@@ -213,13 +260,10 @@ final class RockDashScene : Scene
 				import std.range : iota;
 				foreach(y; iota(g_explodePoint.y - g_stepSize, g_explodePoint.y + g_stepSize + 1, g_stepSize))
 					foreach(x; iota(g_explodePoint.x - g_stepSize, g_explodePoint.x + g_stepSize + 1, g_stepSize)) {
-						auto obj = sceneManager.current.getInstanceByMask(Vec(x,y),
-							ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+						auto obj = sceneManager.current.getInstanceByMask(Vec(x,y),g_shapeRect);
 						import std.algorithm : canFind;
 						if (obj !is null && obj.position.inBounds && ["brick", "mud", "shut_door", "bady_maker_left",
-							"aswitch", "diamond_maker","diamond", "rock",
-							"bady_maker_right",
-							"door_open"].canFind(obj.name))
+							"aswitch", "diamond_maker","diamond", "rock", "bady_maker_right", "door_open"].canFind(obj.name))
 							obj.destroy;
 						if (Vec(x,y).inBounds) {
 							sceneManager.current.add(new Explosion(Vec(x,y)));
@@ -231,6 +275,29 @@ final class RockDashScene : Scene
 				g_sw.reset;
 				g_sw.start;
 				g_doMoves = true;
+
+				if (g_doorState == Door.shut) {
+					g_levelComplete = true;
+					import std.stdio; writeln("Level complete!");
+					sceneManager.current.getList().each!((ref e) => {
+						if (e.name == "Dasher") {
+							e.visible = false;
+						} else {
+							if (e.inBounds && e.name == "door_open") {
+								e.destroy;
+								putObj('D', e.position);
+							}
+						}
+					});
+				}
+				if (g_doorState == Door.shut) {
+					auto obj = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
+					obj.destroy;
+					putObj('D', g_exitDoorPos);
+					g_doorState = Door.done;
+				}
+				if (g_doorState == Door.shutting)
+					g_doorState = Door.shut;
 			}
 		} // ! g_editMode
 
@@ -238,17 +305,18 @@ final class RockDashScene : Scene
 			SDL_PumpEvents();
 
 			if (g_keys[SDL_SCANCODE_S].keyTrigger) {
-				save("test.bin");
+				backUp(g_fileName);
+				save(g_fileName);
 			}
 
 			if (g_keys[SDL_SCANCODE_L].keyTrigger) {
-				load("test.bin");
+				load(g_fileName);
 			} // if L key pressed
 		}
 	}
 
 	override void draw(Display graph) @trusted {
-		super.draw(graph);
+		//super.draw(graph);
 		if (g_aswitchEditing) {
 			g_aswitch.draw(graph);
         }
@@ -259,8 +327,17 @@ version(unittest) {
 } else {
 	int main(string[] args) {
 		g_sw.start;
-
+//thenewsurvivalist.com
 		g_args = args;
+		import std.file : exists;
+		g_fileName = "test";
+		if (args.length > 1) {
+			auto fileNameTest = "Saves/" ~ args[1] ~ ".bin";
+			if (! fileNameTest.exists)
+				writeln(fileNameTest, " not found, using test");
+			else
+				g_fileName = args[1];
+		}
 
 		// game setup
 		Game game = new Game(640, 480, "* Rock Dash *");
@@ -296,13 +373,22 @@ Instance[] getInstanceArrayByMask(Vec pos,Shape shape) @safe {
 
 	Instance[] finder = [];
 
-	sceneManager.current.getList().each((ref e) {
+	sceneManager.current.getList().each!((ref e) => {
 		if (ShapeOnShape(temp,e)) {
 			finder ~= e;
 		}
 	});
 
 	return finder;
+}
+
+Instance instName(in string name) @trusted {
+	Instance result;
+	sceneManager.current.getList().each!((ref e) => {
+		if (e.name == name)
+			result = e;
+	});
+	return result;
 }
 
 bool inBounds(T)(T obj) {
@@ -331,7 +417,7 @@ void putObj(char c, Vec p) @trusted {
 		}
 		return;
 	}
-	if ("SBmMobg".canFind(c)) {
+	if ("SBmMobgrd".canFind(c)) {
 		if (c == 'S' && p.inBounds && ! g_editMode) {
 			sceneManager.current.add(new Dasher(p));
 			g_startPos = p;
@@ -342,8 +428,8 @@ void putObj(char c, Vec p) @trusted {
 		bool inBounds = p.inBounds;
 		switch(c) {
 			default: break;
-			case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
-			case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
+			//case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
+			//case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
 			case 'l', 'R':
 				sceneManager.current.add(new Piece(p, c));
 				auto newPos = p + Vec(c == 'l' ? -g_stepSize : g_stepSize,0);
@@ -353,7 +439,9 @@ void putObj(char c, Vec p) @trusted {
 				}	
 			break;
 			case 'D':
-				sceneManager.current.add(new ExitDoor(p));
+				sceneManager.current.add(new Piece(p, c));
+				if (inBounds)
+					g_exitDoorPos = p;
 			break;
 			case 's':
 				if (inBounds) {

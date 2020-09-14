@@ -34,7 +34,7 @@ final class Bady : Instance {
     }
 
     override void step() @trusted {
-        if (! g_doMoves)
+        if (! g_doMoves || g_editMode)
             return;
 
         setGraph;

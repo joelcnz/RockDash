@@ -1,9 +1,11 @@
 //#need a new sprite
+/+
 module source.exitdoor;
 
 import source.app;
 
-import source.dasher;
+import source.dasher,
+    source.screen;
 
 final class ExitDoor : Instance {
     int frame;
@@ -45,3 +47,4 @@ final class ExitDoor : Instance {
         }
     }
 }
++/

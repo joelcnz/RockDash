@@ -2,6 +2,9 @@ RockDash/_notes.txt
 
 10 9 2020 Highest score for level 1: 260 (14 diamonds)
 
+Prompt:
+eg. dub -- testdoor (converts to 'Save/testdoor.bin')
+
 Keys:
 E - toggle edit mode on and off
 

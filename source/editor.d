@@ -17,8 +17,7 @@ final class Editor : Instance {
     override void event(Event event) @safe {
         position = event.getMousePosition();
 
-        auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,
-                    ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+        auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,g_shapeRect);
         if (event.getKeyDown == 'b') {
             if (obj !is null) {
                 foreach(i, n; SpriteNames)
@@ -48,13 +47,15 @@ final class Editor : Instance {
         //if (ev.type == SDL_MOUSEBUTTONDOWN
         if ((g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyTrigger) || (! g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyPressed))
             if (inBounds(position)) {
-                auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,
-                            ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+                auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,g_shapeRect);
                 //g_editMode = true;
                 putObj(g_chars[sprGraph], position.snapToGrid);
                 if (! g_aswitchEditing && obj !is null)
                     marked = obj;
             }
+        if (g_aswitchEditing && g_keys[SDL_SCANCODE_W].keyPressed) {
+            g_aswitch.removePopUp(position.snapToGrid);
+        }
     }
 
     override void draw(Display graph) @safe {

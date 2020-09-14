@@ -1,4 +1,4 @@
-//#slow
+//#boppo! gets rid of the rocks that shouldn't be there
 //#not sure about releasing memory
 module source.dasher;
 
@@ -6,7 +6,7 @@ import jmisc;
 
 import foxid;
 
-import source.app, source.screen, source.exitdoor;
+import source.app, source.screen, source.faller; //, source.exitdoor;
 
 final class Dasher : Instance {
     Image dasherUp;
@@ -14,10 +14,10 @@ final class Dasher : Instance {
     Image dasherLeft;
     Image dasherRight;
 
+    Font fontgame;
+
     int score,
         diamonds;
-
-    int moveDir;
 
     Sound moveMud,
         moveGap,
@@ -28,7 +28,6 @@ final class Dasher : Instance {
     StopWatch flashTimeTimer;
     
     auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
-    enum {up,right,down,left}
 
     this(Vec pos) @trusted {
         name = "dasher";
@@ -41,6 +40,7 @@ final class Dasher : Instance {
         ofsprite.image = dasherUp;
 
         position = pos;
+        depth = 10;
 
         moveMud = new Sound();
         moveMud.load("assets/collect.wav", "moveMud");
@@ -52,6 +52,8 @@ final class Dasher : Instance {
         moveGap.load("assets/gap.wav", "moveGap");
 
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+
+        fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
     }
 
     override void gameExit() @safe {
@@ -61,8 +63,18 @@ final class Dasher : Instance {
     }
 
     override void step() @trusted {
-        if (g_editMode)
+        //#boppo! gets rid of the rocks that shouldn't be there
+        auto testList = sceneManager.current.getInstanceArrayByMask(position,
+                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        foreach(t; testList)
+            if (id != t.id && position == t.position && t.name == "rock")
+                t.destroy;
+
+        if (g_editMode) {
+            visible = false;
             return;
+        }
+        visible = true;
 
         if (g_levelComplete)
             visible = false;
@@ -90,11 +102,14 @@ final class Dasher : Instance {
     }
 
     void doMove(in int moveDir) {
+        dasherMoveDir = moveDir;
+        /+
         if (g_editMode) {
             visible = false;
             return;
         }
         visible = true;
+        +/
 
         auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],
             ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
@@ -103,45 +118,73 @@ final class Dasher : Instance {
             return;
         }
 
-        if (obj !is null) {
-            import std.algorithm : canFind;
-            import std.string : split;
+        if (moveDir == left || moveDir == right && position.y >= 0) {
+            auto above = sceneManager.current.getInstanceByMask(position + dirs[up],
+                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+            if (above !is null) {
+                if (["rock","diamond"].canFind(above.name)) {
+                    sceneManager.current.add(new Faller(above.position, above.name));
+                    above.destroy;
+                }
+            }
+        }
+        if  (dasherMoveDir == down) {
+            auto above = sceneManager.current.getInstanceByMask(position + dirs[up],
+                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+            if (above !is null) {
+                if (["rock","diamond"].canFind(above.name)) {
+                    sceneManager.current.add(new Faller(above.position, above.name));
+                    above.destroy;
+                }
+            }
+        }
 
+        if (obj !is null) {
             switch(obj.name) {
                 default: break;
-                case "mud", "diamond", "aswitch", "rock":
+                case "mud", "diamond", "aswitch", "rock", "door_open":
                     position += dirs[moveDir];
                     switch(obj.name) {
                         default: break;
+                        case "door_open":
+                            g_doorState = Door.shutting;
+                        break;
                         case "mud":
                             moveMud.play(false);
                         break;
                         case "diamond":
                             diamonds += 1;
                             g_diamonds = diamonds;
+                            if (diamonds == 10) {
+                                auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,
+                                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+                                objOld.destroy;
+                                putObj('o',g_exitDoorPos);
+                            }
                             score += diamonds > 10 ? 10 * 4 : 10;
                             collectDiamond.play(false);
-                            mixin(trace("score diamonds".split));
                         break;
                         case "aswitch":
-                            import std.stdio; writeln("Switch triggered");
-                            //#activate switch stuff
                             g_aswitch.activate;
                         break;
                         case "rock":
-                            auto beyond = sceneManager.current.getInstanceByMask(obj.position + dirs[moveDir],
+                            auto objPos = obj.position;
+                            auto beyond = sceneManager.current.getInstanceByMask(objPos + dirs[moveDir],
                                             ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-                            auto newPos = obj.position + dirs[moveDir];
-                            if (beyond is null && inBounds(newPos)) {
-                                obj.position = newPos;
+                            auto newPos = objPos + dirs[moveDir];
+                            if (beyond is null && newPos.inBounds) {
+                                //obj.destroy;
+                                sceneManager.current.add(new Faller(newPos, "rock"));
                             } else  {
-                                position = position - dirs[moveDir];
+                                //obj.destroy;
+                                sceneManager.current.add(new Faller(position, "rock"));
+                                position -= dirs[moveDir];
                             }
                         break;
                     }
                 break;
             }
-            if ("mud diamond aswitch".split.canFind(obj.name)) {
+            if ("mud diamond aswitch rock".split.canFind(obj.name)) {
                 obj.destroy();
             }
         } else {
@@ -149,12 +192,11 @@ final class Dasher : Instance {
             position = p;
             moveGap.play(false);
         }
-        import std.array : array;
-        foreach(ref e; sceneManager.current.getList().array) //#slow
-            if (e.name == "Door") {
-                auto door = cast(ExitDoor)e;
-                door.updateDasherPos(this);
-                //"door".gh;
-            }
     } // doMove
+
+    override void draw(Display graph) {
+        super.draw(graph);
+        import std.conv : text;
+        graph.drawText(text("Score: ", score, ", Diamonds: ", diamonds),fontgame,Color(255,180,0),Vec(0,g_stepSize * (12 + 3)));
+    }
 }

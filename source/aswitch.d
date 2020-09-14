@@ -1,6 +1,7 @@
 module source.aswitch;
 
-import source.app;
+import source.app,
+    source.faller;
 
 struct PopUp {
     Vec pos;
@@ -9,11 +10,12 @@ struct PopUp {
 
 struct ASwitch {
     Vec pos;
-
     PopUp[] popUps;
+    bool active;
 
     this(Vec pos)  {
         this.pos = pos;
+        active = true;
     }
 
     void addPopUp(Vec pos, char chr) {
@@ -36,11 +38,13 @@ struct ASwitch {
     void activate() {
         g_editMode = true;
         foreach(const pu; popUps) {
-            auto obj = sceneManager.current.getInstanceByMask(pu.pos,
-                            ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1)));
+            auto obj = sceneManager.current.getInstanceByMask(pu.pos,g_shapeRect);
             if (obj !is null)
                 obj.destroy;
-            putObj(pu.chr, pu.pos);
+            if (pu.chr == 'r' || pu.chr == 'd')
+                sceneManager.current.add(new Faller(pu.pos, pu.chr == 'r' ? "rock" : "diamond"));
+            else
+                putObj(pu.chr, pu.pos);
             import std.string; mixin(trace("pu.chr pu.pos".split));
         }
         popUps.length = 0;
@@ -53,23 +57,3 @@ struct ASwitch {
         graph.drawRect(pos + Vec(1,1), pos + Vec(g_stepSize - 1, g_stepSize - 1), Color(255,128,128), false);
     }
 }
-
-/+
-final class PopUp : Instance {
-    Image popImage;
-
-    this(Vec pos, char c) {
-        name = g_names[c];
-        position = pos;
-        popImage = g_sprites[c];
-        depth = 5;
-    }
-
-    override void draw(Display graph) {
-        super.draw(graph);
-        if (g_aswitchEditing) {
-            graph.drawRect(position, position + Vec(g_stepSize, g_stepSize), Color(255,64,64), false);
-        }
-    }
-}
-+/
