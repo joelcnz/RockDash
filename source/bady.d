@@ -14,16 +14,37 @@ final class Bady : Instance {
         name = "bady";
 
         position = pos;
-        moveDir = up;
 
-//enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down, right, aswitch, diamond_maker,
-//	diamond, rock, bady_maker_right, blow0, blow1, blow2, blow3, bady_vert, bady_hor, door_open, blow4, blow5, blow6, gap}
         vert = g_spriteList[SpriteGraph.bady_vert];
         horr = g_spriteList[SpriteGraph.bady_hor];
 
-        ofsprite.image = vert;
+        ofsprite.image = horr;
 
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
+
+        //auto sceneManager.current.getInstanceByMask(newPosLeft,
+        //    ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        reset;
+    }
+
+    void reset() @safe {
+        auto newPosLeft = position - Vec(g_stepSize,0);
+        auto newPosRight = position + Vec(g_stepSize,0);
+        auto lft = sceneManager.current.getInstanceByMask(newPosLeft,
+            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        auto rgt = sceneManager.current.getInstanceByMask(newPosRight,
+            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        if ((lft !is null && lft.name == "bady_maker_left") ||
+            (rgt !is null && rgt.name == "bady_maker_right")) {
+            if (newPosLeft.inBounds && lft.name == "bady_maker_left")
+                moveDir = right;
+            else if (newPosRight.inBounds && rgt.name == "bady_maker_right")
+                moveDir = left;
+        }// else
+           // this.destroy;
+
+//enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down, right, aswitch, diamond_maker,
+//	diamond, rock, bady_maker_right, blow0, blow1, blow2, blow3, bady_vert, bady_hor, door_open, blow4, blow5, blow6, gap}
     }
 
     void setGraph() {
@@ -40,21 +61,21 @@ final class Bady : Instance {
         setGraph;
 
         auto newPos = position + dirs[moveDir];
-        auto obj = sceneManager.current.getInstanceByMask(newPos,
-            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        auto obj = sceneManager.current.getInstanceByMask(newPos,g_shapeRect);
 
         if (newPos.inBounds) {
             if (obj !is null) {
                 if (obj.name == "dasher") {
-                    //g_explodePoint = obj.position;
                     sceneManager.current.add(new Explosion(obj.position));
                     obj.position = g_startPos; // put player back at start point
-                    obj = sceneManager.current.getInstanceByMask(g_badyMakerPos,
-                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+                    obj = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                     if (obj !is null) {
-                        auto newPos2 = obj.position + Vec(obj.name == "bady_maker_left" ? -g_stepSize : g_stepSize,0);
-                        if (newPos2.inBounds)
-                            position = newPos2;
+                        if (obj.name == "bady_maker_left" || obj.name == "bady_maker_right") {
+                            auto badyMaker = obj.name == "bady_maker_left" ? "bmleft" : "bmright";
+                            position = obj.position + Vec(badyMaker == "bmleft" ? -g_stepSize : g_stepSize,0);
+                            reset;
+                        } else
+                            this.destroy;
                     }
                 }
             }

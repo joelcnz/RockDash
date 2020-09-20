@@ -64,8 +64,7 @@ final class Dasher : Instance {
 
     override void step() @trusted {
         //#boppo! gets rid of the rocks that shouldn't be there
-        auto testList = sceneManager.current.getInstanceArrayByMask(position,
-                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
         foreach(t; testList)
             if (id != t.id && position == t.position && t.name == "rock")
                 t.destroy;
@@ -103,44 +102,15 @@ final class Dasher : Instance {
 
     void doMove(in int moveDir) {
         dasherMoveDir = moveDir;
-        /+
-        if (g_editMode) {
-            visible = false;
-            return;
-        }
-        visible = true;
-        +/
 
-        auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],
-            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+        auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],g_shapeRect);
 
         if (! inBounds(position + dirs[moveDir])) {
             return;
         }
 
-        if (moveDir == left || moveDir == right && position.y >= 0) {
-            auto above = sceneManager.current.getInstanceByMask(position + dirs[up],
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-            if (above !is null) {
-                if (["rock","diamond"].canFind(above.name)) {
-                    sceneManager.current.add(new Faller(above.position, above.name));
-                    above.destroy;
-                }
-            }
-        }
-        if  (dasherMoveDir == down) {
-            auto above = sceneManager.current.getInstanceByMask(position + dirs[up],
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-            if (above !is null) {
-                if (["rock","diamond"].canFind(above.name)) {
-                    sceneManager.current.add(new Faller(above.position, above.name));
-                    above.destroy;
-                }
-            }
-        }
-
         if (obj !is null) {
-            switch(obj.name) {
+            switch1: switch(obj.name) {
                 default: break;
                 case "mud", "diamond", "aswitch", "rock", "door_open":
                     position += dirs[moveDir];
@@ -156,8 +126,7 @@ final class Dasher : Instance {
                             diamonds += 1;
                             g_diamonds = diamonds;
                             if (diamonds == 10) {
-                                auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,
-                                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+                                auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
                                 objOld.destroy;
                                 putObj('o',g_exitDoorPos);
                             }
@@ -169,14 +138,11 @@ final class Dasher : Instance {
                         break;
                         case "rock":
                             auto objPos = obj.position;
-                            auto beyond = sceneManager.current.getInstanceByMask(objPos + dirs[moveDir],
-                                            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+                            auto beyond = sceneManager.current.getInstanceByMask(objPos + dirs[moveDir],g_shapeRect);
                             auto newPos = objPos + dirs[moveDir];
                             if (beyond is null && newPos.inBounds) {
-                                //obj.destroy;
                                 sceneManager.current.add(new Faller(newPos, "rock"));
                             } else  {
-                                //obj.destroy;
                                 sceneManager.current.add(new Faller(position, "rock"));
                                 position -= dirs[moveDir];
                             }

@@ -30,6 +30,7 @@ final class Piece : Instance {
             position = pos;
             ofsprite.image = g_sprites[c];
             shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
-        }
+        } else
+            this.destroy;
     }
 }

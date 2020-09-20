@@ -38,26 +38,29 @@ immutable OtherSpriteNames = ["editor", "dasher"];
 enum Door {to_open,opening,open,shutting,shut,done}
 Door g_doorState = Door.to_open;
 
+string[] g_args;
+
 Image[] g_spriteList;
 Image[char] g_sprites;
 string[char] g_names;
 string g_chars;
+
+string g_fileName;
 bool g_levelComplete;
+int g_diamonds;
 StopWatch g_sw;
+bool g_editMode = true;
 Vec g_startPos, g_badyMakerPos, g_explodePoint = Vec(-1,-1);
 Sound g_blowUp;
-bool g_editMode = true;
-int g_diamonds;
 bool g_aswitchEditing;
 bool g_doMoves,
 	g_flashTime;
-string[] g_args;
-string g_fileName;
 ASwitch g_aswitch;
 Vec g_exitDoorPos;
 enum {up,right,down,left}
 int dasherMoveDir;
 Shape g_shapeRect;
+Sound g_rockFall;
 
 /+
 	Create our first scene
@@ -108,6 +111,9 @@ final class RockDashScene : Scene
 
 		g_blowUp = new Sound();
         g_blowUp.load("assets/blowup.wav", "blowup");
+
+		g_rockFall = new Sound();
+        g_rockFall.load("assets/boulder.wav", "fall");
 
 		import std.stdio : write, writeln;
 		write("Operating system: ");
@@ -255,6 +261,38 @@ final class RockDashScene : Scene
 
 	override void step() @trusted {
 		if (! g_editMode) {
+			import std.algorithm;
+			import std.array;
+
+			void ssort(T)(ref T[] data,bool delegate(T a,T b) @safe func) @trusted
+			{
+				for(size_t i = 0; i < data.length; i++)
+				{
+					for(size_t j = (data.length-1); j >= (i + 1); j--)
+					{
+						if(func(data[j],data[j-1])) {
+							import std.algorithm : swap;
+							swap(data[j], data[j-1]);
+						}
+					}
+				}
+			}
+
+			Instance dasherIns = getInstanceByName("dasher");
+			iDestroy_noGC(dasherIns);
+			Instance badyIns = getInstanceByName("bady");
+			iDestroy_noGC(badyIns);
+			auto list = getList().dup;
+			ssort!(Instance)(list, (a, b) => a.position.y < b.position.y);
+
+			list.each!((ref e) {
+				iDestroy_noGC(e);
+			});
+
+			add(list);
+			add(dasherIns);
+			add(badyIns);
+
 			g_doMoves = false;
 			if (g_explodePoint != Vec(-1,-1)) {
 				import std.range : iota;
@@ -284,8 +322,8 @@ final class RockDashScene : Scene
 							e.visible = false;
 						} else {
 							if (e.inBounds && e.name == "door_open") {
-								e.destroy;
 								putObj('D', e.position);
+								e.destroy;
 							}
 						}
 					});
@@ -417,7 +455,7 @@ void putObj(char c, Vec p) @trusted {
 		}
 		return;
 	}
-	if ("SBmMobgrd".canFind(c)) {
+	if ("SBmMobg".canFind(c)) {
 		if (c == 'S' && p.inBounds && ! g_editMode) {
 			sceneManager.current.add(new Dasher(p));
 			g_startPos = p;
@@ -428,8 +466,8 @@ void putObj(char c, Vec p) @trusted {
 		bool inBounds = p.inBounds;
 		switch(c) {
 			default: break;
-			//case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
-			//case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
+			case 'r': sceneManager.current.add(new Faller(p, "rock")); break;
+			case 'd': sceneManager.current.add(new Faller(p, "diamond")); break;
 			case 'l', 'R':
 				sceneManager.current.add(new Piece(p, c));
 				auto newPos = p + Vec(c == 'l' ? -g_stepSize : g_stepSize,0);

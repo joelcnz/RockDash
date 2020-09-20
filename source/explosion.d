@@ -29,11 +29,6 @@ final class Explosion : Instance {
             return;
         frame += 1;
         if (frame == 6 + 1) {
-            auto above = sceneManager.current.getInstanceByMask(position - Vec(0,g_stepSize), g_shapeRect);
-            if (above !is null && "rock diamond".split.canFind(above.name)) {
-                above.destroy;
-                sceneManager.current.add(new Faller(above.position, above.name));
-            }
             this.destroy;
         } else
             ofsprite.image = images[frame];

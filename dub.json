@@ -20,7 +20,7 @@
 		}
 	],
 	"dependencies": {
-		"foxid": "~>0.2.2",
+		"foxid": "~>0.2.0",
 		"unit-threaded": "~>1.0.2"
 	},
 	"description": "Testing",
