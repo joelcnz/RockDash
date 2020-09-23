@@ -16,8 +16,7 @@ final class Dasher : Instance {
 
     Font fontgame;
 
-    int score,
-        diamonds;
+    int diamonds;
 
     Sound moveMud,
         moveGap,
@@ -46,7 +45,8 @@ final class Dasher : Instance {
         moveMud.load("assets/collect.wav", "moveMud");
 
         collectDiamond = new Sound();
-        collectDiamond.load("assets/pop.wav", "collectDiamond");
+        //collectDiamond.load("assets/pop.wav", "collectDiamond");
+        collectDiamond.load("assets/diamondcollect.wav", "collectDiamond");
 
         moveGap = new Sound();
         moveGap.load("assets/gap.wav", "moveGap");
@@ -66,8 +66,10 @@ final class Dasher : Instance {
         //#boppo! gets rid of the rocks that shouldn't be there
         auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
         foreach(t; testList)
-            if (id != t.id && position == t.position && t.name == "rock")
+            if (id != t.id && position == t.position && t.name == "rock") {
                 t.destroy;
+                "destroyed rock".gh;
+            }
 
         if (g_editMode) {
             visible = false;
@@ -121,22 +123,34 @@ final class Dasher : Instance {
                         break;
                         case "mud":
                             moveMud.play(false);
+                            g_score += 1;
+                            g_messageUpdate(text("Mud cleared - ", 1, " point"));
                         break;
                         case "diamond":
                             diamonds += 1;
-                            g_diamonds = diamonds;
                             if (diamonds == 10) {
                                 auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
                                 objOld.destroy;
                                 putObj('o',g_exitDoorPos);
+                                g_messageUpdate(text("Exit door opened - ", 700, " points"));
                             }
-                            score += diamonds > 10 ? 10 * 4 : 10;
+                            g_score += diamonds > 10 ? 10 * 4 : 10;
+                            g_messageUpdate(diamonds > 10 ?
+                                text("Bonus diamond collection ", 40, " points") :
+                                text("Diamond collection ", 10, " points"));
                             collectDiamond.play(false);
                         break;
                         case "aswitch":
+                            g_score += 200;
+                            g_messageUpdate(text("Switch flicked - ", 200, " points"));
                             g_aswitch.activate;
                         break;
                         case "rock":
+                            auto checkForDiamondMaker = sceneManager.current.getInstanceByMask(position + Vec(0,g_stepSize),g_shapeRect);
+                            if (g_hackForDiamondMakerBool && checkForDiamondMaker !is null && checkForDiamondMaker.name == "diamond_maker") {
+                                g_hackForDiamondMakerBool = false;
+                                break;
+                            }
                             auto objPos = obj.position;
                             auto beyond = sceneManager.current.getInstanceByMask(objPos + dirs[moveDir],g_shapeRect);
                             auto newPos = objPos + dirs[moveDir];
@@ -158,11 +172,10 @@ final class Dasher : Instance {
             position = p;
             moveGap.play(false);
         }
+        g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ", diamonds, ", Lives: ", g_lives);
     } // doMove
 
     override void draw(Display graph) {
         super.draw(graph);
-        import std.conv : text;
-        graph.drawText(text("Score: ", score, ", Diamonds: ", diamonds),fontgame,Color(255,180,0),Vec(0,g_stepSize * (12 + 3)));
     }
 }

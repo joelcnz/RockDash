@@ -1,10 +1,10 @@
 module source.bady;
 
-import source.app;
-import source.explosion;
+import source.app,
+    source.explosion,
+    source.dasher;
 
 final class Bady : Instance {
-    enum {up,right,down,left}
     auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
     int moveDir;
 
@@ -22,29 +22,10 @@ final class Bady : Instance {
 
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
 
-        //auto sceneManager.current.getInstanceByMask(newPosLeft,
-        //    ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-        reset;
-    }
-
-    void reset() @safe {
-        auto newPosLeft = position - Vec(g_stepSize,0);
-        auto newPosRight = position + Vec(g_stepSize,0);
-        auto lft = sceneManager.current.getInstanceByMask(newPosLeft,
-            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-        auto rgt = sceneManager.current.getInstanceByMask(newPosRight,
-            ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-        if ((lft !is null && lft.name == "bady_maker_left") ||
-            (rgt !is null && rgt.name == "bady_maker_right")) {
-            if (newPosLeft.inBounds && lft.name == "bady_maker_left")
-                moveDir = right;
-            else if (newPosRight.inBounds && rgt.name == "bady_maker_right")
-                moveDir = left;
-        }// else
-           // this.destroy;
-
-//enum SpriteGraph {brick, mud, start, shut_door, bady_maker_left, up, left, down, right, aswitch, diamond_maker,
-//	diamond, rock, bady_maker_right, blow0, blow1, blow2, blow3, bady_vert, bady_hor, door_open, blow4, blow5, blow6, gap}
+        if (g_badyMakerPos.x < position.x)
+            moveDir = right;
+        else
+            moveDir = left;
     }
 
     void setGraph() {
@@ -55,25 +36,34 @@ final class Bady : Instance {
     }
 
     override void step() @trusted {
+        foreach(space; sceneManager.current.getInstanceArrayByMask(position,g_shapeRect))
+            if (space.name != "bady")
+                return;
         if (! g_doMoves || g_editMode)
             return;
-
         setGraph;
 
         auto newPos = position + dirs[moveDir];
         auto obj = sceneManager.current.getInstanceByMask(newPos,g_shapeRect);
 
         if (newPos.inBounds) {
-            if (obj !is null) {
-                if (obj.name == "dasher") {
+            if (obj !is null && g_explodePoint == Vec(-1,-1)) {
+                if (obj.name == "dasher" && g_exitDoorPos != obj.position) {
                     sceneManager.current.add(new Explosion(obj.position));
+                    g_lives -= 1;
+                    g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ",
+                        sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds, ", Lives: ", g_lives);
+                    if (g_lives == 0) {
+                        g_messageUpdate("Game Over");
+                        obj.destroy;
+                    } else
+                        g_messageUpdate("Life lost");
                     obj.position = g_startPos; // put player back at start point
                     obj = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                     if (obj !is null) {
                         if (obj.name == "bady_maker_left" || obj.name == "bady_maker_right") {
                             auto badyMaker = obj.name == "bady_maker_left" ? "bmleft" : "bmright";
                             position = obj.position + Vec(badyMaker == "bmleft" ? -g_stepSize : g_stepSize,0);
-                            reset;
                         } else
                             this.destroy;
                     }

@@ -1,3 +1,4 @@
+//#the following does nothing
 module source.faller;
 
 import foxid;
@@ -26,14 +27,20 @@ final class Faller : Instance {
             auto obj = sceneManager.current.getInstanceByMask(newPos,g_shapeRect);
             if (obj is null && inBounds(newPos)) {
                 position = newPos;
-                if (! falling && name == "rock" ) {
-                    g_rockFall.play(false);
+                if (! falling ) {
+                    if (name == "rock")
+                        g_rockFall.play(false);
+                    else
+                        g_diamondStartFall.play(false);
                     falling = true;
                 }
             } else {
-                if (falling && name == "rock") {
+                if (falling) {                    
                     falling = false;
-                    g_rockFall.play(false);
+                    if (name == "rock")
+                        g_rockFall.play(false);
+                    else
+                        g_diamondStop.play(false);
                 }
                 if (obj !is null) {
                     switch(obj.name) {
@@ -41,20 +48,29 @@ final class Faller : Instance {
                         break;
                         case "diamond_maker":
                             auto obj2 = sceneManager.current.getInstanceByMask(newPos + Vec(0,g_stepSize),g_shapeRect); // what's under the diamond maker
-                            if (obj2 is null && (newPos + Vec(0,g_stepSize)).inBounds)
+                            if (obj2 is null && (newPos + Vec(0,g_stepSize)).inBounds) {
                                 sceneManager.current.add(new Faller(newPos + Vec(0,g_stepSize), name == "rock" ? "diamond" : "rock"));
+                                g_diamondMaker.play(false);
+                            }
                             this.destroy;
+                            g_hackForDiamondMakerBool = true;
+                            g_score += 30;
+                            g_messageUpdate(text("Diamond maker used - ", 30, " points"));
                         break;
                         case "bady":
+                            g_score += 100;
+                            g_messageUpdate(text("Bady blown - ", 100, " points"));
+                            this.destroy;
                             g_explodePoint = obj.position;
                             import std.range : iota;
                             bool isBadyMakerSafe = true;
                             foreach(y; iota(g_explodePoint.y - g_stepSize, g_explodePoint.y + g_stepSize + 1, g_stepSize))
                                 foreach(x; iota(g_explodePoint.x - g_stepSize, g_explodePoint.x + g_stepSize + 1, g_stepSize)) {
                                     auto tst = sceneManager.current.getInstanceByMask(Vec(x,y),g_shapeRect);
-                                    //if (tst !is null) writeln(tst.name);
                                     if (tst !is null && tst.inBounds && (tst.name == "bady_maker_left" || tst.name == "bady_maker_right")) {
-                                        trace!isBadyMakerSafe;
+                                        isBadyMakerSafe = false;
+                                        g_score += 400;
+                                        g_messageUpdate(text("Bady maker blown - ", 400, " points"));
                                         break;
                                     }
                                 }
@@ -62,8 +78,9 @@ final class Faller : Instance {
                             if (isBadyMakerSafe) {
                                 auto bdyMkr = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                                 
-                                if (bdyMkr !is null && (bdyMkr.name == "bady_maker_left" || bdyMkr.name == "bady_maker_right"))
+                                if (bdyMkr !is null && (bdyMkr.name == "bady_maker_left" || bdyMkr.name == "bady_maker_right")) {
                                     sceneManager.current.add(new Bady(g_badyMakerPos + Vec(bdyMkr.name == "bady_maker_left" ? -g_stepSize : g_stepSize,0)));
+                                }
                             }
                         break;
                     }

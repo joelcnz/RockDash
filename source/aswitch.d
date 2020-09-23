@@ -1,7 +1,8 @@
 module source.aswitch;
 
 import source.app,
-    source.faller;
+    source.faller,
+    source.explosion;
 
 struct PopUp {
     Vec pos;
@@ -39,8 +40,20 @@ struct ASwitch {
         g_editMode = true;
         foreach(const pu; popUps) {
             auto obj = sceneManager.current.getInstanceByMask(pu.pos,g_shapeRect);
-            if (obj !is null)
-                obj.destroy;
+            if (obj !is null) {
+                if (obj.name == "bady" && pu.chr != 'g') {
+                    sceneManager.current.add(new Explosion(obj.position));
+                    g_messageUpdate("Switch destroyed bady - 700 points");
+                    g_score += 700;
+                    auto objMkr = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
+                    if (objMkr.name == "bady_maker_left" || objMkr.name == "bady_maker_right") {
+                        auto badyMaker = (objMkr.name == "bady_maker_left" ? "bmleft" : "bmright");
+                        obj.position = objMkr.position + Vec(badyMaker == "bmleft" ? -g_stepSize : g_stepSize,0);
+                    } else
+                        obj.destroy;
+                } else
+                    obj.destroy;
+            }
             if (pu.chr == 'r' || pu.chr == 'd')
                 sceneManager.current.add(new Faller(pu.pos, pu.chr == 'r' ? "rock" : "diamond"));
             else

@@ -1,4 +1,5 @@
-//#here
+//#not sure about this
+//#recusion
 module source.app;
 
 public import foxid;
@@ -8,7 +9,6 @@ import source.dasher,
 	source.editor,
 	source.bady,
 	source.explosion,
-	//source.exitdoor,
 	source.aswitch;
 
 public import foxid.sdl;
@@ -19,7 +19,8 @@ public import std.datetime.stopwatch,
 	std.stdio,
 	std.string,
 	std.algorithm,
-	std.string;
+	std.string,
+	std.conv;
 
 version(unittest)
     import unit_threaded;
@@ -38,37 +39,63 @@ immutable OtherSpriteNames = ["editor", "dasher"];
 enum Door {to_open,opening,open,shutting,shut,done}
 Door g_doorState = Door.to_open;
 
+enum {up,right,down,left}
+
+bool program_init = true;
+
 string[] g_args;
+//string g_level = "test";
 
 Image[] g_spriteList;
 Image[char] g_sprites;
 string[char] g_names;
 string g_chars;
 
-string g_fileName;
+string //g_fileName,
+	g_fileNameBase;
 bool g_levelComplete;
+int g_startLevel;
 int g_diamonds;
+int g_score,
+	g_levelStartScore,
+	g_levelDiamondsStart; // score when you start the level, gets reset to it when you put reload (A)
+int g_lives;
 StopWatch g_sw;
-bool g_editMode = true;
+bool g_editMode;
 Vec g_startPos, g_badyMakerPos, g_explodePoint = Vec(-1,-1);
-Sound g_blowUp;
 bool g_aswitchEditing;
 bool g_doMoves,
 	g_flashTime;
 ASwitch g_aswitch;
 Vec g_exitDoorPos;
-enum {up,right,down,left}
 int dasherMoveDir;
 Shape g_shapeRect;
-Sound g_rockFall;
+Sound g_rockFall, g_diamondStartFall, g_diamondStop, g_blowUp, g_diamondMaker;
+bool g_hackForDiamondMakerBool;
+Font g_fontgame;
+string[] g_messages;
+
+enum MessageType {stats,info,info2,info3}
+int g_messageIndex = 1;
+int g_level;
+
+/// update and scroll messages
+void g_messageUpdate(in string txt) {
+	// avoiding repeated messages
+	//#not sure about this
+	if (txt == g_messages[MessageType.info3])
+		return;
+	for(int i = MessageType.info; i + 1 <= MessageType.info3; i += 1) {
+		g_messages[i] = g_messages[i + 1];
+	}
+	g_messages[MessageType.info3] = txt;
+}
 
 /+
 	Create our first scene
 +/
 final class RockDashScene : Scene
 {
-	private Font fontgame;
-
 	this() @trusted {
 		name = "RockDashScene";
 		
@@ -115,6 +142,15 @@ final class RockDashScene : Scene
 		g_rockFall = new Sound();
         g_rockFall.load("assets/boulder.wav", "fall");
 
+		g_diamondStartFall = new Sound();
+		g_diamondStartFall.load("assets/Diamondstartdrop.wav", "diamond_fall");
+
+		g_diamondStop = new Sound();
+		g_diamondStop.load("assets/Diamonddland.wav", "diamond_stop");
+
+		g_diamondMaker = new Sound();
+		g_diamondMaker.load("assets/diamond_maker.wav", "diamond_maker");
+
 		import std.stdio : write, writeln;
 		write("Operating system: ");
 		version(Windows) {
@@ -126,6 +162,10 @@ final class RockDashScene : Scene
 		version(linux) {
 			writeln("Linux OS");
 		}
+
+		g_fontgame = loader.loadFont("assets/DejaVuSans.ttf", g_stepSize / 2);
+		g_messages.length = 5;
+
 		mixin(trace("g_sw.peek().total!`msecs`"));
 	}
 
@@ -148,16 +188,23 @@ final class RockDashScene : Scene
 
 	override void gameStart() @trusted {
 		"gameStart()".gh;
-		fontgame = loader.loadFont("assets/DejaVuSans.ttf",14);
-		load(g_fileName);
+		g_score = 0;
+		g_lives = 7;
+		g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ", 0, ", Lives: ", g_lives);
+		g_messageUpdate("New Game");
+		load(g_fileNameBase);
+		if (program_init)
+			g_editMode = program_init = false;
 	} // gameStart
 
-	void save(string fileName) {
+	void save(string fileNameBase) {
+		g_fileNameBase = fileNameBase;
 		import core.stdc.stdio;
 		import std.path: buildPath;
 		import std.string;
 
-		fileName = buildPath("Saves", fileName) ~ ".bin";
+		auto fileName = buildPath("Saves", fileNameBase) ~ ".bin";
+		jm_backUp(fileName);
 		FILE* f;
 		if ((f = fopen(fileName.toStringz, "wb")) == null) {
 			import std.stdio; writeln("save: '", fileName, "' can't be opened");
@@ -200,14 +247,17 @@ final class RockDashScene : Scene
 			fwrite(&pu.pos.x, 1, float.sizeof, f);
 			fwrite(&pu.pos.y, 1, float.sizeof, f);
 		}
+		g_messageUpdate(text(fileNameBase, " saved"));
 	} // save
 
-	void load(string fileName)  {
+	void load(string fileNameBase)  {
+		g_fileNameBase = fileNameBase;
 		foreach(ref e; getList()) {
 			e.destroy();
 		}
 		g_levelComplete = false;
-		g_diamonds = 0;
+		g_levelStartScore = g_score;
+		g_levelDiamondsStart = g_diamonds;
 		g_editMode = false;
 
 		import core.stdc.stdio;
@@ -215,11 +265,11 @@ final class RockDashScene : Scene
 		import std.string;
 		import std.file : exists;
 
-		fileName = buildPath("Saves", fileName) ~ ".bin";
+		auto fileName = buildPath("Saves", fileNameBase) ~ ".bin";
+		jm_backUp(fileName);
 		FILE* f;
 		if ((f = fopen(fileName.toStringz, "rb")) == null) {
 			import std.stdio; writeln("load: '", fileName, "' can't be opened");
-
 			return;
 		}
 		scope(exit)
@@ -256,7 +306,7 @@ final class RockDashScene : Scene
 			}
 		}
 		g_editMode = true;
-		//putObj('D', Vec(2 * g_stepSize,12 * g_stepSize));
+		g_messageUpdate(text(fileNameBase, " loaded"));
 	} // load
 
 	override void step() @trusted {
@@ -315,8 +365,17 @@ final class RockDashScene : Scene
 				g_doMoves = true;
 
 				if (g_doorState == Door.shut) {
+					if (! g_levelComplete)
+						g_diamonds += sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds;
 					g_levelComplete = true;
-					import std.stdio; writeln("Level complete!");
+					g_score += 500;
+					auto message = text(g_fileNameBase, " Complete! - Diamonds: ", g_diamonds, ", Score: ",
+						g_score);
+					import std.stdio; writeln(message);
+					g_messageUpdate(message);
+					g_messages[MessageType.stats] = text("Score: ", g_score,
+						", Diamonds: ", sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds,
+						", Lives: ", g_lives);
 					sceneManager.current.getList().each!((ref e) => {
 						if (e.name == "Dasher") {
 							e.visible = false;
@@ -343,21 +402,59 @@ final class RockDashScene : Scene
 			SDL_PumpEvents();
 
 			if (g_keys[SDL_SCANCODE_S].keyTrigger) {
-				backUp(g_fileName);
-				save(g_fileName);
+				save(g_fileNameBase);
 			}
 
 			if (g_keys[SDL_SCANCODE_L].keyTrigger) {
-				load(g_fileName);
+				gameStart;
 			} // if L key pressed
 		}
+
+		if (g_levelComplete) {
+			if (g_keys[SDL_SCANCODE_RETURN].keyTrigger) {
+				g_levelComplete = false;
+				setNextLevel;
+			}
+		}
+
+		if (! g_editMode) {
+			if (g_keys[SDL_SCANCODE_A].keyTrigger) {
+				g_score = g_levelStartScore;
+				g_diamonds = g_levelDiamondsStart;
+				g_level -= 1;
+				setNextLevel("Reset level");
+				g_messages[MessageType.stats] = text("Score: ", g_score,
+						", Diamonds: ", 0,
+						", Lives: ", g_lives);			
+			}
+		}
 	}
+
+	void setNextLevel(in string messageUpdate = "Next level") {
+		g_level += 1;
+		auto baseName = text("level", g_level);
+		auto fileNameTest = getFillName(baseName);
+		import std.file;
+		if (! fileNameTest.exists) {
+			if (g_level > 1) {
+				g_level = 1 - 1;
+				setNextLevel(messageUpdate); //#recusion
+			}
+		}
+		g_fileNameBase = baseName;
+		load(g_fileNameBase);
+		g_editMode = false;
+		g_messageUpdate(messageUpdate);
+	}
+
 
 	override void draw(Display graph) @trusted {
 		//super.draw(graph);
 		if (g_aswitchEditing) {
 			g_aswitch.draw(graph);
         }
+		foreach(y, e; g_messages)
+			graph.drawText(e,g_fontgame,Color(255,180,0),Vec(0, (g_screenCharH + 2) * g_stepSize + y * (g_stepSize / 2)));
 	}
 } // final class RockDashScene : Scene
 
@@ -365,16 +462,34 @@ version(unittest) {
 } else {
 	int main(string[] args) {
 		g_sw.start;
-//thenewsurvivalist.com
+		
+		/+
+		string 
+
+		import std.getopt;
+		auto helpInformation = getopt(
+			args,
+			"level",  &
+		);
+		+/
+
 		g_args = args;
 		import std.file : exists;
-		g_fileName = "test";
+		g_fileNameBase = "test";
 		if (args.length > 1) {
-			auto fileNameTest = "Saves/" ~ args[1] ~ ".bin";
+			g_fileNameBase = args[1];
+			import std.ascii : isDigit;
+			if (g_fileNameBase[0].isDigit) {
+				try
+					g_level = g_fileNameBase.to!int;
+				catch(Exception e)
+					writeln("Invalid number");
+				g_fileNameBase = text("level", g_level);
+				g_startLevel = g_level;
+			}
+			auto fileNameTest = getFillName(g_fileNameBase);
 			if (! fileNameTest.exists)
-				writeln(fileNameTest, " not found, using test");
-			else
-				g_fileName = args[1];
+				writeln(fileNameTest, " not found, using ", g_fileNameBase);
 		}
 
 		// game setup
@@ -400,6 +515,10 @@ version(unittest) {
 
 		return 0;
 	}
+}
+
+string getFillName(in string baseName) {
+	return "Saves/" ~ baseName ~ ".bin";
 }
 
 import foxid.core.collision;

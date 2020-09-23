@@ -1,19 +1,27 @@
 module source.editor;
 
-import source.app;
+import source.app,
+    source.dasher;
 
+/++
+Construction editor for making levels
++/
 final class Editor : Instance {
-    Image payload;
+    Image payload; /// 
     SpriteGraph sprGraph;
     Instance marked;
+    Vec currentItemPos;
 
     this() @safe {
         name = "editor";
 
-        payload = g_spriteList[sprGraph = SpriteGraph.rock];
-        depth = 10;
+        payload = g_spriteList[sprGraph = SpriteGraph.brick];
+        depth = 99;
+
+        currentItemPos = Vec(0, g_stepSize * 13);
     }
 
+    
     override void event(Event event) @safe {
         position = event.getMousePosition();
 
@@ -36,7 +44,9 @@ final class Editor : Instance {
         }
     }
 
+    /// Handle placing items on map and items for switch
     override void step() @trusted {
+        // clear space
         if (marked !is null && marked.name != "dasher") {
             import std.algorithm : canFind;
             if (SpriteNames.canFind(marked.name))
@@ -58,12 +68,17 @@ final class Editor : Instance {
         }
     }
 
+    /++
+    Draw current mouse space, and current item; also switch popup locations
+    +/
     override void draw(Display graph) @safe {
-        auto pos = snapToGrid(position);
-
-        graph.drawRect(pos, pos + Vec(g_stepSize, g_stepSize), Color(0,180,255), false);
         if (payload !is null)
-            graph.draw(payload, Vec(0, g_stepSize * 13));
+            graph.draw(payload, currentItemPos);
         graph.drawRect(Vec(0, g_stepSize * 13), Vec(g_stepSize, g_stepSize * 14), Color(180,255,0), false);
+        if (! g_editMode)
+            return;
+        auto pos = snapToGrid(position);
+        graph.drawRect(pos, pos + Vec(g_stepSize, g_stepSize), Color(0,180,255), false);
+        graph.draw(g_spriteList[SpriteGraph.start],g_startPos);
     }
 }
