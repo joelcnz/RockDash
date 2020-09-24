@@ -1,8 +1,10 @@
 Rock Dash
 
 Bugs:
+1. Reloading the level can miss a rock popping up
+
+Fixed bugs (hopefully):
 1. Can wipe out a rock on the bottom (maybe to do with diamond maker under there)
-2. Reloading the level can miss a rock popping up
 
 Remake of Rock Dash 5 (from Amstrad days)
 
@@ -27,3 +29,4 @@ Return/Enter - In level completion, move onto next level (loops if you were on l
 
 Trouble shooting:
 When placing the start position (S), only have one, and save and load when you put it down.
+When restarting a level, if there's something wrong, restart it again.

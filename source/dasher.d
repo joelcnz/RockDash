@@ -66,7 +66,8 @@ final class Dasher : Instance {
         //#boppo! gets rid of the rocks that shouldn't be there
         auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
         foreach(t; testList)
-            if (id != t.id && position == t.position && t.name == "rock") {
+            //if (id != t.id && position == t.position && t.name == "rock") {
+            if (t.name == "rock") {
                 t.destroy;
                 "destroyed rock".gh;
             }
@@ -147,7 +148,8 @@ final class Dasher : Instance {
                         break;
                         case "rock":
                             auto checkForDiamondMaker = sceneManager.current.getInstanceByMask(position + Vec(0,g_stepSize),g_shapeRect);
-                            if (g_hackForDiamondMakerBool && checkForDiamondMaker !is null && checkForDiamondMaker.name == "diamond_maker") {
+                            if (g_hackForDiamondMakerBool && checkForDiamondMaker !is null &&
+                                    checkForDiamondMaker.position.inBounds && checkForDiamondMaker.name == "diamond_maker") {
                                 g_hackForDiamondMakerBool = false;
                                 break;
                             }
