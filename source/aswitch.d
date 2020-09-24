@@ -24,13 +24,6 @@ struct ASwitch {
     }
 
     void removePopUp(Vec pos) {
-        /+
-        foreach(i, e; popUps)
-            if (e.pos == pos) {
-                popUps = popUps[0 .. i] ~ popUps[i + 1 .. $];
-                break;
-            }
-        +/
         import std.algorithm : del = remove;
         import std.array : array;
         popUps = popUps.del!(e => e.pos == pos).array;
@@ -45,6 +38,7 @@ struct ASwitch {
                     sceneManager.current.add(new Explosion(obj.position));
                     g_messageUpdate("Switch destroyed bady - 700 points");
                     g_score += 700;
+                    extraLifeScoreUpdate(700);
                     auto objMkr = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                     if (objMkr.name == "bady_maker_left" || objMkr.name == "bady_maker_right") {
                         auto badyMaker = (objMkr.name == "bady_maker_left" ? "bmleft" : "bmright");

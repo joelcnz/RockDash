@@ -37,8 +37,11 @@ final class Bady : Instance {
 
     override void step() @trusted {
         foreach(space; sceneManager.current.getInstanceArrayByMask(position,g_shapeRect))
-            if (space.name != "bady")
+            if (space.name != "bady") {
+                visible = false;
                 return;
+            }
+        visible = true;
         if (! g_doMoves || g_editMode)
             return;
         setGraph;
@@ -46,19 +49,19 @@ final class Bady : Instance {
         auto newPos = position + dirs[moveDir];
         auto obj = sceneManager.current.getInstanceByMask(newPos,g_shapeRect);
 
-        if (newPos.inBounds) {
+        if (! g_gameOver && newPos.inBounds) {
             if (obj !is null && g_explodePoint == Vec(-1,-1)) {
                 if (obj.name == "dasher" && g_exitDoorPos != obj.position) {
                     sceneManager.current.add(new Explosion(obj.position));
                     g_lives -= 1;
-                    g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ",
-                        sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds, ", Lives: ", g_lives);
                     if (g_lives == 0) {
                         g_messageUpdate("Game Over");
-                        obj.destroy;
+                        g_gameOver = true;
+                        obj.position = Vec(-g_stepSize,-g_stepSize);
                     } else
                         g_messageUpdate("Life lost");
-                    obj.position = g_startPos; // put player back at start point
+                    if (! g_gameOver)
+                        obj.position = g_startPos; // put player back at start point
                     obj = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                     if (obj !is null) {
                         if (obj.name == "bady_maker_left" || obj.name == "bady_maker_right") {

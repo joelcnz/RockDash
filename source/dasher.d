@@ -72,7 +72,7 @@ final class Dasher : Instance {
                 "destroyed rock".gh;
             }
 
-        if (g_editMode) {
+        if (g_editMode || g_gameOver) {
             visible = false;
             return;
         }
@@ -80,7 +80,7 @@ final class Dasher : Instance {
 
         if (g_levelComplete)
             visible = false;
-        if (! g_doMoves || g_levelComplete)
+        if (! g_doMoves || g_levelComplete || g_gameOver)
             return;
 
         SDL_PumpEvents();
@@ -104,14 +104,13 @@ final class Dasher : Instance {
     }
 
     void doMove(in int moveDir) {
-        dasherMoveDir = moveDir;
+        auto dasherMoveDir = dirs[moveDir];
 
-        auto obj = sceneManager.current.getInstanceByMask(position + dirs[moveDir],g_shapeRect);
+        auto obj = sceneManager.current.getInstanceByMask(position + dasherMoveDir,g_shapeRect);
 
         if (! inBounds(position + dirs[moveDir])) {
             return;
         }
-
         if (obj !is null) {
             switch1: switch(obj.name) {
                 default: break;
@@ -121,10 +120,12 @@ final class Dasher : Instance {
                         default: break;
                         case "door_open":
                             g_doorState = Door.shutting;
+                            g_gameInit = false;
                         break;
                         case "mud":
                             moveMud.play(false);
                             g_score += 1;
+                            extraLifeScoreUpdate(1);
                             g_messageUpdate(text("Mud cleared - ", 1, " point"));
                         break;
                         case "diamond":
@@ -133,17 +134,25 @@ final class Dasher : Instance {
                                 auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
                                 objOld.destroy;
                                 putObj('o',g_exitDoorPos);
-                                g_messageUpdate(text("Exit door opened - ", 700, " points"));
+                                auto exitPoints = 700;
+                                g_score += exitPoints;
+                                extraLifeScoreUpdate(exitPoints);
+                                g_messageUpdate(text("Exit door opened - ", exitPoints, " points"));
                             }
-                            g_score += diamonds > 10 ? 10 * 4 : 10;
+                            auto diamondPoints = 10;
+                            auto bonusDiamondPoints = diamondPoints * 4;
+                            g_score += diamonds > 10 ? bonusDiamondPoints : diamondPoints;
                             g_messageUpdate(diamonds > 10 ?
-                                text("Bonus diamond collection ", 40, " points") :
-                                text("Diamond collection ", 10, " points"));
+                                text("Bonus diamond collection ", bonusDiamondPoints, " points") :
+                                text("Diamond collection ", diamondPoints, " points"));
+                            extraLifeScoreUpdate(diamonds > 10 ? bonusDiamondPoints : diamondPoints);
                             collectDiamond.play(false);
                         break;
                         case "aswitch":
-                            g_score += 200;
-                            g_messageUpdate(text("Switch flicked - ", 200, " points"));
+                            auto aswitchPoints = 200;
+                            g_score += aswitchPoints;
+                            extraLifeScoreUpdate(200);
+                            g_messageUpdate(text("Switch flicked - ", aswitchPoints, " points"));
                             g_aswitch.activate;
                         break;
                         case "rock":
@@ -174,7 +183,6 @@ final class Dasher : Instance {
             position = p;
             moveGap.play(false);
         }
-        g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ", diamonds, ", Lives: ", g_lives);
     } // doMove
 
     override void draw(Display graph) {

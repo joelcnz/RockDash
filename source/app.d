@@ -54,11 +54,15 @@ string g_chars;
 string //g_fileName,
 	g_fileNameBase;
 bool g_levelComplete;
+bool g_gameComplete;
+bool g_gameOver;
+bool g_gameInit = true;
 int g_startLevel;
 int g_diamonds;
 int g_score,
 	g_levelStartScore,
-	g_levelDiamondsStart; // score when you start the level, gets reset to it when you put reload (A)
+	g_levelDiamondsStart, // score when you start the level, gets reset to it when you put reload (A)
+	g_extraLifeScore;
 int g_lives;
 StopWatch g_sw;
 bool g_editMode;
@@ -68,7 +72,6 @@ bool g_doMoves,
 	g_flashTime;
 ASwitch g_aswitch;
 Vec g_exitDoorPos;
-int dasherMoveDir;
 Shape g_shapeRect;
 Sound g_rockFall, g_diamondStartFall, g_diamondStop, g_blowUp, g_diamondMaker;
 bool g_hackForDiamondMakerBool;
@@ -76,7 +79,6 @@ Font g_fontgame;
 string[] g_messages;
 
 enum MessageType {stats,info,info2,info3}
-int g_messageIndex = 1;
 int g_level;
 
 /// update and scroll messages
@@ -89,6 +91,14 @@ void g_messageUpdate(in string txt) {
 		g_messages[i] = g_messages[i + 1];
 	}
 	g_messages[MessageType.info3] = txt;
+}
+
+void extraLifeScoreUpdate(in int points) {
+	g_extraLifeScore += points;
+	if (g_extraLifeScore >= 10_000) {
+		g_extraLifeScore = 0;
+		g_lives += 1;
+	}
 }
 
 /+
@@ -170,7 +180,7 @@ final class RockDashScene : Scene
 	}
 
 	override void event(Event event) {
-		if (event.getKeyDown == 'e') {
+		if (event.getKeyDown == 'e' && ! g_gameComplete) {
 			g_editMode = ! g_editMode;
 			if (g_editMode) {
 				foreach(ref e; getList()) {
@@ -188,9 +198,9 @@ final class RockDashScene : Scene
 
 	override void gameStart() @trusted {
 		"gameStart()".gh;
-		g_score = 0;
+		g_score = g_extraLifeScore = 0;
 		g_lives = 7;
-		g_messages[MessageType.stats] = text("Score: ", g_score, ", Diamonds: ", 0, ", Lives: ", g_lives);
+		g_gameOver = g_levelComplete = g_gameComplete = false;
 		g_messageUpdate("New Game");
 		load(g_fileNameBase);
 		if (program_init)
@@ -365,18 +375,17 @@ final class RockDashScene : Scene
 				g_doMoves = true;
 
 				if (g_doorState == Door.shut) {
+					auto levelDiamonds = sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds;
 					if (! g_levelComplete)
-						g_diamonds += sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds;
+						g_diamonds += levelDiamonds;
 					g_levelComplete = true;
 					g_score += 500;
-					auto message = text(g_fileNameBase, " Complete! - Diamonds: ", g_diamonds, ", Score: ",
-						g_score);
+					extraLifeScoreUpdate(500);
+					auto message = text(g_fileNameBase, " Complete! - Diamonds: ", levelDiamonds, ", Score: ",
+						g_score - g_levelStartScore);
 					import std.stdio; writeln(message);
 					g_messageUpdate(message);
-					g_messages[MessageType.stats] = text("Score: ", g_score,
-						", Diamonds: ", sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds,
-						", Lives: ", g_lives);
-					sceneManager.current.getList().each!((ref e) => {
+					getList().each!((ref e) => {
 						if (e.name == "Dasher") {
 							e.visible = false;
 						} else {
@@ -388,7 +397,7 @@ final class RockDashScene : Scene
 					});
 				}
 				if (g_doorState == Door.shut) {
-					auto obj = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
+					auto obj = getInstanceByMask(g_exitDoorPos,g_shapeRect);
 					obj.destroy;
 					putObj('D', g_exitDoorPos);
 					g_doorState = Door.done;
@@ -412,41 +421,55 @@ final class RockDashScene : Scene
 
 		if (g_levelComplete) {
 			if (g_keys[SDL_SCANCODE_RETURN].keyTrigger) {
-				g_levelComplete = false;
+				if (! g_gameComplete)
+					g_levelComplete = false;
 				setNextLevel;
 			}
 		}
 
-		if (! g_editMode) {
+		if (! g_editMode && ! g_gameComplete && ! g_gameOver) {
 			if (g_keys[SDL_SCANCODE_A].keyTrigger) {
 				g_score = g_levelStartScore;
 				g_diamonds = g_levelDiamondsStart;
 				g_level -= 1;
 				setNextLevel("Reset level");
-				g_messages[MessageType.stats] = text("Score: ", g_score,
-						", Diamonds: ", 0,
-						", Lives: ", g_lives);			
 			}
 		}
+		auto stats = text("Score: ", g_score, ", Diamonds: ",
+						(getInstanceByName("dasher") !is null ?
+							getInstanceByName("dasher").getObject!Dasher.diamonds : 0), ", Lives: ", g_lives);
+		g_messages[MessageType.stats] = stats;
 	}
 
 	void setNextLevel(in string messageUpdate = "Next level") {
+		if (g_gameComplete)
+			return;
 		g_level += 1;
 		auto baseName = text("level", g_level);
 		auto fileNameTest = getFillName(baseName);
 		import std.file;
 		if (! fileNameTest.exists) {
 			if (g_level > 1) {
-				g_level = 1 - 1;
-				setNextLevel(messageUpdate); //#recusion
+				g_level = 1;
+				baseName = text("level", g_level);
 			}
+		}
+		if (! g_gameInit && g_level == g_startLevel) {
+			g_gameComplete = true;
+			g_score += (g_lives - 1) * 800;
+			if (g_lives > 1) {
+				g_messageUpdate(text("Extra lives Bonus - ", (g_lives - 1) * 800," points"));
+				writeln(text("Extra lives Bonus - ", (g_lives - 1) * 800," points"));
+			}
+			g_messageUpdate("Well done, you have completed the game!");
+			writeln("Well done, you have completed the game!");
+			return;
 		}
 		g_fileNameBase = baseName;
 		load(g_fileNameBase);
 		g_editMode = false;
 		g_messageUpdate(messageUpdate);
 	}
-
 
 	override void draw(Display graph) @trusted {
 		//super.draw(graph);

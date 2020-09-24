@@ -55,10 +55,12 @@ final class Faller : Instance {
                             this.destroy;
                             g_hackForDiamondMakerBool = true;
                             g_score += 30;
+                            extraLifeScoreUpdate(30);
                             g_messageUpdate(text("Diamond maker used - ", 30, " points"));
                         break;
                         case "bady":
                             g_score += 100;
+                            extraLifeScoreUpdate(100);
                             g_messageUpdate(text("Bady blown - ", 100, " points"));
                             this.destroy;
                             g_explodePoint = obj.position;
@@ -70,6 +72,7 @@ final class Faller : Instance {
                                     if (tst !is null && tst.inBounds && (tst.name == "bady_maker_left" || tst.name == "bady_maker_right")) {
                                         isBadyMakerSafe = false;
                                         g_score += 400;
+                                        extraLifeScoreUpdate(400);
                                         g_messageUpdate(text("Bady maker blown - ", 400, " points"));
                                         break;
                                     }
