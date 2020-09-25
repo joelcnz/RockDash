@@ -83,6 +83,8 @@ int g_level;
 
 /// update and scroll messages
 void g_messageUpdate(in string txt) {
+	if (txt == "")
+		return;
 	// avoiding repeated messages
 	//#not sure about this
 	if (txt == g_messages[MessageType.info3])
@@ -95,7 +97,7 @@ void g_messageUpdate(in string txt) {
 
 void extraLifeScoreUpdate(in int points) {
 	g_extraLifeScore += points;
-	if (g_extraLifeScore >= 10_000) {
+	if (g_extraLifeScore >= 2_000) {
 		g_extraLifeScore = 0;
 		g_lives += 1;
 	}
@@ -109,7 +111,8 @@ final class RockDashScene : Scene
 	this() @trusted {
 		name = "RockDashScene";
 		
-        g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24); //.array;
+        //g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24);
+		g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").image.strip(Vec(0,0), 24, 24);
 
         foreach(ref e; g_spriteList) {
             e.make();
@@ -435,13 +438,15 @@ final class RockDashScene : Scene
 				setNextLevel("Reset level");
 			}
 		}
-		auto stats = text("Score: ", g_score, ", Diamonds: ",
-						(getInstanceByName("dasher") !is null ?
-							getInstanceByName("dasher").getObject!Dasher.diamonds : 0), ", Lives: ", g_lives);
-		g_messages[MessageType.stats] = stats;
+		if (! g_gameComplete && ! g_gameOver) {
+			auto stats = text("Score: ", g_score, ", Diamonds: ",
+							(getInstanceByName("dasher") !is null ?
+								getInstanceByName("dasher").getObject!Dasher.diamonds : 0), ", Lives: ", g_lives);
+			g_messages[MessageType.stats] = stats;
+		}
 	}
 
-	void setNextLevel(in string messageUpdate = "Next level") {
+	void setNextLevel(in string messageUpdate = "") {
 		if (g_gameComplete)
 			return;
 		g_level += 1;
@@ -461,6 +466,8 @@ final class RockDashScene : Scene
 				g_messageUpdate(text("Extra lives Bonus - ", (g_lives - 1) * 800," points"));
 				writeln(text("Extra lives Bonus - ", (g_lives - 1) * 800," points"));
 			}
+			auto stats = text("Score: ", g_score, ", Total Diamonds Collected: ", g_diamonds, ", Lives: ", g_lives);
+			g_messages[MessageType.stats] = stats;
 			g_messageUpdate("Well done, you have completed the game!");
 			writeln("Well done, you have completed the game!");
 			return;

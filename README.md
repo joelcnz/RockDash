@@ -1,10 +1,16 @@
 Rock Dash
 
+ToDo:
+1. When level is complete, don't show diamonds in stats message
+2. Maybe have the bady do a big blow up is a switch pop up pops up on it
+3. Maybe/hopefully have inbetween movements
+
 Bugs:
-1. Reloading the level can miss a rock popping up
+
 
 Fixed bugs (hopefully):
 1. Can wipe out a rock on the bottom (maybe to do with diamond maker under there)
+2. Rock missing after reload - was to do with position of player when reloading.
 
 Remake of Rock Dash 5 (from Amstrad days)
 

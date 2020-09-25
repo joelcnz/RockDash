@@ -58,6 +58,10 @@ final class Bady : Instance {
                         g_messageUpdate("Game Over");
                         g_gameOver = true;
                         obj.position = Vec(-g_stepSize,-g_stepSize);
+                        auto stats = text("Score: ", g_score,
+                            ", Total Diamonds Collected: ", g_diamonds + sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds,
+                            ", Lives: ", g_lives);
+            			g_messages[MessageType.stats] = stats;
                     } else
                         g_messageUpdate("Life lost");
                     if (! g_gameOver)
@@ -80,14 +84,10 @@ final class Bady : Instance {
             auto vu = position + Vec(0,-g_stepSize);
             auto vdwn = position + Vec(0,g_stepSize);
 
-            auto lft = sceneManager.current.getInstanceByMask(vlft,
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-            auto rgt = sceneManager.current.getInstanceByMask(vrgt,
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-            auto u = sceneManager.current.getInstanceByMask(vu,
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
-            auto dwn = sceneManager.current.getInstanceByMask(vdwn,
-                ShapeRectangle(Vec(1,1), Vec(g_stepSize - 1,g_stepSize - 1)));
+            auto lft = sceneManager.current.getInstanceByMask(vlft,g_shapeRect);
+            auto rgt = sceneManager.current.getInstanceByMask(vrgt,g_shapeRect);
+            auto u = sceneManager.current.getInstanceByMask(vu,g_shapeRect);
+            auto dwn = sceneManager.current.getInstanceByMask(vdwn,g_shapeRect);
 
             auto tlft = ! vlft.inBounds || lft;
             auto trgt = ! vrgt.inBounds || rgt;

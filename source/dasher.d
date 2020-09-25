@@ -1,4 +1,4 @@
-//#boppo! gets rid of the rocks that shouldn't be there
+//#boppo! gets rid of the rocks that shouldn't be there - not sure if it does anything
 //#not sure about releasing memory
 module source.dasher;
 
@@ -63,24 +63,22 @@ final class Dasher : Instance {
     }
 
     override void step() @trusted {
-        //#boppo! gets rid of the rocks that shouldn't be there
-        auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
-        foreach(t; testList)
-            //if (id != t.id && position == t.position && t.name == "rock") {
-            if (t.name == "rock") {
-                t.destroy;
-                "destroyed rock".gh;
-            }
-
         if (g_editMode || g_gameOver) {
             visible = false;
             return;
         }
         visible = true;
+        //#boppo! gets rid of the rocks that shouldn't be there - not sure if it does anything
+        auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
+        foreach(t; testList)
+            if (t.name == "rock") {
+                //t.destroy;                
+                "Would've destroyed rock".gh;
+            }
 
         if (g_levelComplete)
             visible = false;
-        if (! g_doMoves || g_levelComplete || g_gameOver)
+        if (! g_doMoves || g_levelComplete)
             return;
 
         SDL_PumpEvents();
