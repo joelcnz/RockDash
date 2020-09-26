@@ -2,7 +2,8 @@ module source.bady;
 
 import source.app,
     source.explosion,
-    source.dasher;
+    source.dasher,
+    source.scores;
 
 final class Bady : Instance {
     auto dirs = [Vec(0,-g_stepSize), Vec(g_stepSize,0), Vec(0,g_stepSize), Vec(-g_stepSize,0)];
@@ -58,10 +59,19 @@ final class Bady : Instance {
                         g_messageUpdate("Game Over");
                         g_gameOver = true;
                         obj.position = Vec(-g_stepSize,-g_stepSize);
+                        auto totalDiamonds = g_diamonds + sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds;
                         auto stats = text("Score: ", g_score,
-                            ", Total Diamonds Collected: ", g_diamonds + sceneManager.current.getInstanceByName("dasher").getObject!Dasher.diamonds,
+                            ", Total Diamonds Collected: ", totalDiamonds,
                             ", Lives: ", g_lives);
             			g_messages[MessageType.stats] = stats;
+                        //name,",",score,",",diamonds,",",date,",",time,",",comment
+                        import std.datetime : DateTime, Clock;
+                        auto dt = cast(DateTime)Clock.currTime();
+                        import std.ascii;
+                        g_scoresDetails = ScoresDetails(g_scoresDetails.name,g_score,totalDiamonds,g_lives,
+                            text(dt.day, ".", dt.month.to!string.capitalize, ".", dt.year),timeString,g_scoresDetails.comment);
+                        g_scoreCards.add(g_scoresDetails);
+                        g_scoreCards.save;
                     } else
                         g_messageUpdate("Life lost");
                     if (! g_gameOver)

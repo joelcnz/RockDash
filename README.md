@@ -6,7 +6,7 @@ ToDo:
 3. Maybe/hopefully have inbetween movements
 
 Bugs:
-
+1. A rock popped up after loading level and went through a diamond maker.
 
 Fixed bugs (hopefully):
 1. Can wipe out a rock on the bottom (maybe to do with diamond maker under there)
@@ -34,5 +34,7 @@ Cursor keys - move Dasher
 Return/Enter - In level completion, move onto next level (loops if you were on last level)
 
 Trouble shooting:
+To start game: Enter in eg. 'dub -- Joel 1' - name and start level. It loops around, so you can still complete all the levels - even if you don't start on level 1.
 When placing the start position (S), only have one, and save and load when you put it down.
 When restarting a level, if there's something wrong, restart it again.
+To add a comment to your score, edit halloffame.txt

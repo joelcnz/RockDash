@@ -9,7 +9,8 @@ import source.dasher,
 	source.editor,
 	source.bady,
 	source.explosion,
-	source.aswitch;
+	source.aswitch,
+	source.scores;
 
 public import foxid.sdl;
 
@@ -20,7 +21,8 @@ public import std.datetime.stopwatch,
 	std.string,
 	std.algorithm,
 	std.string,
-	std.conv;
+	std.conv,
+	std.json;
 
 version(unittest)
     import unit_threaded;
@@ -44,7 +46,6 @@ enum {up,right,down,left}
 bool program_init = true;
 
 string[] g_args;
-//string g_level = "test";
 
 Image[] g_spriteList;
 Image[char] g_sprites;
@@ -77,6 +78,8 @@ Sound g_rockFall, g_diamondStartFall, g_diamondStop, g_blowUp, g_diamondMaker;
 bool g_hackForDiamondMakerBool;
 Font g_fontgame;
 string[] g_messages;
+ScoresMan g_scoreCards;
+ScoresDetails g_scoresDetails;
 
 enum MessageType {stats,info,info2,info3}
 int g_level;
@@ -97,7 +100,7 @@ void g_messageUpdate(in string txt) {
 
 void extraLifeScoreUpdate(in int points) {
 	g_extraLifeScore += points;
-	if (g_extraLifeScore >= 2_000) {
+	if (g_extraLifeScore >= 3_000) {
 		g_extraLifeScore = 0;
 		g_lives += 1;
 	}
@@ -145,6 +148,7 @@ final class RockDashScene : Scene
 			g_names['r'] = SpriteNames[rock];
 			g_names['R'] = SpriteNames[bady_maker_right];
 			g_names['o'] = SpriteNames[door_open];
+			g_names['g'] = SpriteNames[gap];
 		}
 
 		g_shapeRect = ShapeRectangle(Vec(1,1),Vec(g_stepSize-1,g_stepSize-1));
@@ -179,7 +183,9 @@ final class RockDashScene : Scene
 		g_fontgame = loader.loadFont("assets/DejaVuSans.ttf", g_stepSize / 2);
 		g_messages.length = 5;
 
-		mixin(trace("g_sw.peek().total!`msecs`"));
+		g_scoreCards.load;
+
+		mixin(trace("g_sw.peek().total!`msecs`"));		
 	}
 
 	override void event(Event event) {
@@ -372,6 +378,7 @@ final class RockDashScene : Scene
 					}
 				g_explodePoint = Vec(-1,-1);
 			}
+
 			if (g_sw.peek().total!"msecs" > 150) {
 				g_sw.reset;
 				g_sw.start;
@@ -470,6 +477,12 @@ final class RockDashScene : Scene
 			g_messages[MessageType.stats] = stats;
 			g_messageUpdate("Well done, you have completed the game!");
 			writeln("Well done, you have completed the game!");
+			import std.datetime : DateTime, Clock;
+			auto dt = cast(DateTime)Clock.currTime();
+			g_scoresDetails = ScoresDetails(g_scoresDetails.name,g_score,g_diamonds,g_lives,
+				dt.day.to!string~"."~dt.month.to!string.capitalize~"."~dt.year.to!string,timeString,g_scoresDetails.comment);
+			g_scoreCards.add(g_scoresDetails);
+			g_scoreCards.save;
 			return;
 		}
 		g_fileNameBase = baseName;
@@ -485,6 +498,16 @@ final class RockDashScene : Scene
         }
 		foreach(y, e; g_messages)
 			graph.drawText(e,g_fontgame,Color(255,180,0),Vec(0, (g_screenCharH + 2) * g_stepSize + y * (g_stepSize / 2)));
+		g_scoreCards.doSort;
+		import std.range;
+		foreach(y, e; g_scoreCards.cards.take(10)) {
+			graph.drawText(e.to!string,g_fontgame,Color(255,180,0),
+				Vec(0, (g_screenCharH + 3) * g_stepSize + 3 * (g_stepSize / 2) + y * (g_stepSize / 2)));
+		}
+		foreach(y, e; g_aswitch.popUps)
+			graph.drawText(text("[", e.pos.x / g_stepSize + 1, ",", e.pos.y / g_stepSize + 1, "]-", e.chr != 'g' ? g_names[e.chr] : "gap"),
+				g_fontgame,Color(255,180,0),
+					Vec(g_screenCharW * g_stepSize, y * 14));
 	}
 } // final class RockDashScene : Scene
 
@@ -502,25 +525,30 @@ version(unittest) {
 			"level",  &
 		);
 		+/
-
+		if (args.length < 3) {
+			if (args[0] == "dub")
+				writeln("Invalid args\ndub -- 1 Joel Christensen");
+			else
+				writeln(args[0]," 1 Joel Christensen");
+			return 1;
+		}
 		g_args = args;
 		import std.file : exists;
-		g_fileNameBase = "test";
-		if (args.length > 1) {
-			g_fileNameBase = args[1];
-			import std.ascii : isDigit;
-			if (g_fileNameBase[0].isDigit) {
-				try
-					g_level = g_fileNameBase.to!int;
-				catch(Exception e)
-					writeln("Invalid number");
-				g_fileNameBase = text("level", g_level);
-				g_startLevel = g_level;
-			}
-			auto fileNameTest = getFillName(g_fileNameBase);
-			if (! fileNameTest.exists)
-				writeln(fileNameTest, " not found, using ", g_fileNameBase);
+//		g_fileNameBase = "test";
+		g_fileNameBase = args[1];
+		import std.ascii : isDigit;
+		if (g_fileNameBase[0].isDigit) {
+			try
+				g_level = g_fileNameBase.to!int;
+			catch(Exception e)
+				writeln("Invalid number");
+			g_fileNameBase = text("level", g_level);
+			g_startLevel = g_level;
 		}
+		auto fileNameTest = getFillName(g_fileNameBase);
+		if (! fileNameTest.exists)
+			writeln(fileNameTest, " not found, using ", g_fileNameBase);
+		g_scoresDetails.name = args[2..$].join(" ");
 
 		// game setup
 		Game game = new Game(640, 480, "* Rock Dash *");
