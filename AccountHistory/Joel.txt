@@ -1,0 +1,144 @@
+Monday 28 September 2020 [ 3:27:52pm] level1 Complete! - Diamonds: 13, Score: 2121
+Monday 28 September 2020 [ 3:30:27pm] level2 Complete! - Diamonds: 15, Score: 2519
+Monday 28 September 2020 [ 3:30:55pm] Game Over
+Monday 28 September 2020 [ 3:30:55pm] Name: Joel, Score: 4643, Diamonds: 28, Lives: 0, Date: 28.Sep.2020, Time: [ 3:30:55pm]
+Monday 28 September 2020 [ 3:35:24pm] Welcome to Rock Dash
+Monday 28 September 2020 [ 3:38:41pm] level2 Complete! - Diamonds: 10, Score: 1964
+Monday 28 September 2020 [ 3:39:11pm] Game Over
+Monday 28 September 2020 [ 3:39:11pm] Name: Joel, Score: 1968, Diamonds: 10, Lives: 0, Date: 28.Sep.2020, Time: [ 3:39:11pm]
+Monday 28 September 2020 [ 3:45:40pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [ 3:48:04pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [ 3:49:19pm] Reset level
+Monday 28 September 2020 [ 3:53:52pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [ 3:53:52pm] New Game. level2 - start level
+Monday 28 September 2020 [ 3:54:07pm] Reset level
+Monday 28 September 2020 [ 3:54:41pm] Reset level
+Monday 28 September 2020 [ 3:56:11pm] Reset level
+Monday 28 September 2020 [ 3:56:31pm] Reset level
+Monday 28 September 2020 [ 3:56:52pm] Name: Joel, Score: 216, Diamonds: 0, Lives: 0, Date: 28.Sep.2020, Time: [ 3:56:52pm]
+Monday 28 September 2020 [ 3:56:52pm] Game Over
+Monday 28 September 2020 [ 4:04:46pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [ 4:04:47pm] New Game. level2 - start level
+Monday 28 September 2020 [ 4:05:01pm] Reset level
+Monday 28 September 2020 [ 4:06:54pm] Reset level
+Monday 28 September 2020 [ 4:07:35pm] Reset level
+Monday 28 September 2020 [ 4:08:09pm] Reset level
+Monday 28 September 2020 [ 4:08:26pm] Reset level
+Monday 28 September 2020 [ 4:08:32pm] Reset level
+Monday 28 September 2020 [ 4:08:37pm] Reset level
+Monday 28 September 2020 [ 4:09:46pm] level2 Complete! - Diamonds: 10, Score: 2145
+Monday 28 September 2020 [ 4:10:27pm] Name: Joel, Score: 2715, Diamonds: 13, Lives: 0, Date: 28.Sep.2020, Time: [ 4:10:27pm]
+Monday 28 September 2020 [ 4:10:27pm] Game Over
+Monday 28 September 2020 [11:30:17pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:30:17pm] New Game. level3 - start level
+Monday 28 September 2020 [11:30:17pm] level3 - started
+Monday 28 September 2020 [11:30:55pm] level3 - started
+Monday 28 September 2020 [11:30:55pm] Reset level
+Monday 28 September 2020 [11:32:36pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:32:37pm] New Game. level3 - start level
+Monday 28 September 2020 [11:32:37pm] level3 loaded
+Monday 28 September 2020 [11:34:54pm] level3 Complete! - Diamonds: 11, Score: 2580
+Monday 28 September 2020 [11:35:02pm] level4 loaded
+Monday 28 September 2020 [11:36:42pm] level4 loaded
+Monday 28 September 2020 [11:36:42pm] Reset level
+Monday 28 September 2020 [11:38:33pm] level4 loaded
+Monday 28 September 2020 [11:38:33pm] Reset level
+Monday 28 September 2020 [11:42:23pm] level4 Complete! - Diamonds: 11, Score: 2344
+Monday 28 September 2020 [11:42:28pm] level5 loaded
+Monday 28 September 2020 [11:42:52pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:42:53pm] New Game. level4 - start level
+Monday 28 September 2020 [11:42:53pm] level4 loaded
+Monday 28 September 2020 [11:43:23pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:43:23pm] New Game. level5 - start level
+Monday 28 September 2020 [11:43:23pm] level5 loaded
+Monday 28 September 2020 [11:45:09pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:45:10pm] New Game. level5 - start level
+Monday 28 September 2020 [11:45:10pm] level5 loaded
+Monday 28 September 2020 [11:52:55pm] Joel - Welcome to Rock Dash
+Monday 28 September 2020 [11:52:56pm] Operating system: macOS
+Monday 28 September 2020 [11:52:56pm] New Game. level4 - start level
+Monday 28 September 2020 [11:52:56pm] level4 loaded
+Monday 28 September 2020 [11:53:30pm] level4 loaded
+Monday 28 September 2020 [11:53:30pm] Reset level
+Monday 28 September 2020 [11:57:06pm] level4 Complete! - Diamonds: 11, Score: 2440
+Monday 28 September 2020 [11:57:09pm] level5 loaded
+Tuesday 29 September 2020 [12:00:00am] level5 Complete! - Diamonds: 12, Score: 2296
+Tuesday 29 September 2020 [12:00:03am] level6 loaded
+Tuesday 29 September 2020 [12:02:02am] Joel - Welcome to Rock Dash
+Tuesday 29 September 2020 [12:02:03am] Operating system: macOS
+Tuesday 29 September 2020 [12:02:03am] New Game. level4 - start level
+Tuesday 29 September 2020 [12:02:03am] level4 loaded
+Tuesday 29 September 2020 [12:11:30am] Joel - Welcome to Rock Dash
+Tuesday 29 September 2020 [12:11:31am] Operating system: macOS
+Tuesday 29 September 2020 [12:11:31am] New Game. level4 - start level
+Tuesday 29 September 2020 [12:11:31am] level4 loaded
+Saturday 3 October 2020 [12:50:01pm] Joel - Welcome to Rock Dash - RockDash5
+Saturday 3 October 2020 [12:50:02pm] Operating system: macOS
+Saturday 3 October 2020 [12:50:02pm] New RockDash5 Game. level1 - start level
+Saturday 3 October 2020 [12:50:02pm] level1 loaded
+Saturday 3 October 2020 [12:52:46pm] level1 Complete! - Diamonds: 15, Score: 2241
+Saturday 3 October 2020 [12:53:59pm] level2 loaded
+Saturday 3 October 2020 [12:54:22pm] level2 loaded
+Saturday 3 October 2020 [12:54:22pm] Reset level
+Saturday 3 October 2020 [12:55:39pm] level2 loaded
+Saturday 3 October 2020 [12:55:39pm] Reset level
+Saturday 3 October 2020 [12:55:40pm] level2 loaded
+Saturday 3 October 2020 [12:55:40pm] Reset level
+Saturday 3 October 2020 [12:56:14pm] level2 loaded
+Saturday 3 October 2020 [12:56:14pm] Reset level
+Saturday 3 October 2020 [12:59:54pm] level2 Complete! - Diamonds: 13, Score: 2376
+Saturday 3 October 2020 [12:59:55pm] level3 loaded
+Saturday 3 October 2020 [ 2:08:09pm] Joel - Welcome to Rock Dash - MiscGame
+Saturday 3 October 2020 [ 2:08:10pm] Operating system: macOS
+Saturday 3 October 2020 [ 2:08:10pm] New MiscGame Game. level1 - start level
+Saturday 3 October 2020 [ 2:08:10pm] level1 loaded
+Saturday 3 October 2020 [ 2:09:50pm] level1 Complete! - Diamonds: 12, Score: 1907
+Saturday 3 October 2020 [ 2:09:51pm] Score: 3707, Total Diamonds Collected: 12, Lives: 7
+Saturday 3 October 2020 [ 2:09:51pm] Well done, you have completed the MiscGame game!
+Saturday 3 October 2020 [ 2:09:58pm] Joel - Welcome to Rock Dash - MiscGame
+Saturday 3 October 2020 [ 2:09:59pm] Operating system: macOS
+Saturday 3 October 2020 [ 2:09:59pm] New MiscGame Game. level1 - start level
+Saturday 3 October 2020 [ 2:09:59pm] level1 loaded
+Saturday 3 October 2020 [ 2:12:43pm] level1 Complete! - Diamonds: 16, Score: 2966
+Saturday 3 October 2020 [ 2:13:02pm] Score: 4766, Total Diamonds Collected: 16, Lives: 7
+Saturday 3 October 2020 [ 2:13:02pm] Well done, you have completed the MiscGame game!
+Friday 9 October 2020 [ 7:18:51pm] Joel - Welcome to Rock Dash - RockDash3
+Friday 9 October 2020 [ 7:18:52pm] Operating system: macOS
+Friday 9 October 2020 [ 7:18:52pm] New RockDash3 Game. level1 - start level
+Friday 9 October 2020 [ 7:18:52pm] level1 loaded
+Friday 9 October 2020 [ 7:19:00pm] level1 loaded
+Friday 9 October 2020 [ 7:19:00pm] Reset level
+Friday 9 October 2020 [ 7:19:43pm] level1 loaded
+Friday 9 October 2020 [ 7:19:43pm] Reset level
+Friday 9 October 2020 [ 7:19:46pm] level1 loaded
+Friday 9 October 2020 [ 7:19:46pm] Reset level
+Friday 9 October 2020 [ 7:21:17pm] level1 Complete! - Diamonds: 10, Score: 2162
+Friday 9 October 2020 [ 7:21:18pm] level2 loaded
+Friday 9 October 2020 [ 7:21:28pm] level2 loaded
+Friday 9 October 2020 [ 7:21:28pm] Reset level
+Friday 9 October 2020 [ 7:21:43pm] level2 loaded
+Friday 9 October 2020 [ 7:21:43pm] Reset level
+Friday 9 October 2020 [ 7:22:58pm] level2 loaded
+Friday 9 October 2020 [ 7:22:58pm] Reset level
+Friday 9 October 2020 [ 7:24:30pm] level2 Complete! - Diamonds: 10, Score: 2049
+Friday 9 October 2020 [ 7:24:31pm] level3 loaded
+Friday 9 October 2020 [ 7:24:43pm] level3 loaded
+Friday 9 October 2020 [ 7:24:43pm] Reset level
+Friday 9 October 2020 [ 7:24:49pm] level3 loaded
+Friday 9 October 2020 [ 7:24:49pm] Reset level
+Friday 9 October 2020 [ 7:25:07pm] level3 loaded
+Friday 9 October 2020 [ 7:25:07pm] Reset level
+Friday 9 October 2020 [ 7:25:19pm] level3 loaded
+Friday 9 October 2020 [ 7:25:19pm] Reset level
+Friday 9 October 2020 [ 7:25:24pm] level3 loaded
+Friday 9 October 2020 [ 7:25:24pm] Reset level
+Friday 9 October 2020 [ 7:28:18pm] level3 Complete! - Diamonds: 10, Score: 2369
+Friday 9 October 2020 [ 7:28:20pm] level4 loaded
+Friday 9 October 2020 [ 9:05:54pm] Joel - Welcome to Rock Dash - RockDash3
+Friday 9 October 2020 [ 9:05:54pm] Operating system: macOS
+Friday 9 October 2020 [ 9:05:54pm] New RockDash3 Game. level1 - start level
+Friday 9 October 2020 [ 9:05:54pm] level1 loaded
+Friday 9 October 2020 [ 9:07:46pm] level1 Complete! - Diamonds: 10, Score: 2361
+Friday 9 October 2020 [ 9:07:47pm] level2 loaded
+Friday 9 October 2020 [ 9:08:05pm] New RockDash3 Game. level2 - start level
+Friday 9 October 2020 [ 9:08:05pm] level2 loaded

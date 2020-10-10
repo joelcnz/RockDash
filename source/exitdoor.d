@@ -19,7 +19,7 @@ final class ExitDoor : Instance {
         name = "Door";
         position = pos;
 
-        with(SpriteGraph)
+        with(SpriteIndex)
             images = [g_spriteList[shut_door],
                 g_spriteList[door_open], //#need a new sprite
                 g_spriteList[door_open]];

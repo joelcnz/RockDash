@@ -8,14 +8,14 @@ Construction editor for making levels
 +/
 final class Editor : Instance {
     Image payload; /// 
-    SpriteGraph sprGraph;
+    SpriteIndex sprIndex;
     Instance marked;
     Vec currentItemPos;
 
     this() @safe {
         name = "editor";
 
-        payload = g_spriteList[sprGraph = SpriteGraph.brick];
+        payload = g_spriteList[sprIndex = SpriteIndex.brick];
         depth = 99;
 
         currentItemPos = Vec(0, g_stepSize * 13);
@@ -24,28 +24,31 @@ final class Editor : Instance {
     
     override void event(Event event) @safe {
         position = event.getMousePosition();
-
+        if (! g_editMode)
+            return;
         auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,g_shapeRect);
         if (event.getKeyDown == 'b') {
             if (obj !is null) {
                 foreach(i, n; SpriteNames)
                     if (n == obj.name) {
-                        sprGraph = cast(SpriteGraph)i;
-                        payload = g_spriteList[sprGraph];
+                        sprIndex = cast(SpriteIndex)i;
+                        payload = g_spriteList[sprIndex];
                     }
             } else {
                 payload = null;
-                sprGraph = SpriteGraph.gap;
+                sprIndex = SpriteIndex.gap;
             }
         }
         if (event.getKeyDown == 'q') {
             g_aswitchEditing = ! g_aswitchEditing;
-            mixin(trace("g_aswitchEditing"));
+            mixin(tce("g_aswitchEditing"));
         }
     }
 
     /// Handle placing items on map and items for switch
     override void step() @trusted {
+        if (! g_editMode)
+            return;
         // clear space
         if (marked !is null && marked.name != "dasher") {
             import std.algorithm : canFind;
@@ -59,7 +62,7 @@ final class Editor : Instance {
             if (inBounds(position)) {
                 auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,g_shapeRect);
                 //g_editMode = true;
-                putObj(g_chars[sprGraph], position.snapToGrid);
+                putObj(g_chars[sprIndex], position.snapToGrid);
                 if (! g_aswitchEditing && obj !is null)
                     marked = obj;
             }
@@ -79,6 +82,6 @@ final class Editor : Instance {
             return;
         auto pos = snapToGrid(position);
         graph.drawRect(pos, pos + Vec(g_stepSize, g_stepSize), Color(0,180,255), false);
-        graph.draw(g_spriteList[SpriteGraph.start],g_startPos);
+        graph.draw(g_spriteList[SpriteIndex.start],g_startPos);
     }
 }

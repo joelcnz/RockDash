@@ -16,8 +16,8 @@ final class Bady : Instance {
 
         position = pos;
 
-        vert = g_spriteList[SpriteGraph.bady_vert];
-        horr = g_spriteList[SpriteGraph.bady_hor];
+        vert = g_spriteList[SpriteIndex.bady_vert];
+        horr = g_spriteList[SpriteIndex.bady_hor];
 
         ofsprite.image = horr;
 
@@ -64,13 +64,15 @@ final class Bady : Instance {
                             ", Total Diamonds Collected: ", totalDiamonds,
                             ", Lives: ", g_lives);
             			g_messages[MessageType.stats] = stats;
-                        //name,",",score,",",diamonds,",",date,",",time,",",comment
+                        //name,",",score,",",diamonds,",",lives,",",date,",",time,",",comment
                         import std.datetime : DateTime, Clock;
                         auto dt = cast(DateTime)Clock.currTime();
                         import std.ascii;
                         g_scoresDetails = ScoresDetails(g_scoresDetails.name,g_score,totalDiamonds,g_lives,
                             text(dt.day, ".", dt.month.to!string.capitalize, ".", dt.year),timeString,g_scoresDetails.comment);
                         g_scoreCards.add(g_scoresDetails);
+                        upDate(g_scoresDetails);
+                        upDate("Game Over");
                         g_scoreCards.save;
                     } else
                         g_messageUpdate("Life lost");

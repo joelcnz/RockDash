@@ -1,0 +1,32 @@
+Saturday 3 October 2020 [12:42:13pm] Morris - Welcome to Rock Dash - GameLearn
+Saturday 3 October 2020 [12:42:14pm] Operating system: macOS
+Saturday 3 October 2020 [12:42:14pm] New GameLearn Game. level1 - start level
+Saturday 3 October 2020 [12:42:14pm] level1 loaded
+Saturday 3 October 2020 [12:43:15pm] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 3 October 2020 [12:43:33pm] level2 loaded
+Saturday 3 October 2020 [12:45:48pm] level2 Complete! - Diamonds: 10, Score: 1353
+Saturday 3 October 2020 [12:45:54pm] level3 loaded
+Saturday 3 October 2020 [12:48:48pm] Name: Morris, Score: 2747, Diamonds: 20, Lives: 0, Date: 3.Oct.2020, Time: [12:48:48pm]
+Saturday 3 October 2020 [12:48:48pm] Game Over
+Saturday 3 October 2020 [ 1:28:09pm] Morris - Welcome to Rock Dash - MiscGame
+Saturday 3 October 2020 [ 1:28:09pm] Operating system: macOS
+Saturday 3 October 2020 [ 1:28:09pm] New MiscGame Game. level1 - start level
+Saturday 3 October 2020 [ 1:28:09pm] level1 loaded
+Saturday 3 October 2020 [ 1:58:18pm] New MiscGame Game. level1 - start level
+Saturday 3 October 2020 [ 1:58:18pm] level1 loaded
+Saturday 3 October 2020 [ 1:59:33pm] level1 loaded
+Saturday 3 October 2020 [ 1:59:33pm] Reset level
+Saturday 3 October 2020 [ 2:05:58pm] level1 loaded
+Saturday 3 October 2020 [ 2:05:58pm] Reset level
+Saturday 3 October 2020 [ 2:07:22pm] level1 Complete! - Diamonds: 10, Score: 1747
+Saturday 3 October 2020 [ 2:07:23pm] Score: 3247, Total Diamonds Collected: 10, Lives: 6
+Saturday 3 October 2020 [ 2:07:23pm] Well done, you have completed the MiscGame game!
+Saturday 3 October 2020 [ 2:16:00pm] Morris - Welcome to Rock Dash - MiscGame
+Saturday 3 October 2020 [ 2:16:01pm] Operating system: macOS
+Saturday 3 October 2020 [ 2:16:01pm] New MiscGame Game. level1 - start level
+Saturday 3 October 2020 [ 2:16:01pm] level1 loaded
+Saturday 3 October 2020 [ 2:17:29pm] level1 loaded
+Saturday 3 October 2020 [ 2:17:29pm] Reset level
+Saturday 3 October 2020 [ 2:26:07pm] level1 Complete! - Diamonds: 11, Score: 2037
+Saturday 3 October 2020 [ 2:26:47pm] Score: 3237, Total Diamonds Collected: 11, Lives: 5
+Saturday 3 October 2020 [ 2:26:47pm] Well done, you have completed the MiscGame game!

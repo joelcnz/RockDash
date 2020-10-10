@@ -1,5 +1,8 @@
 Rock Dash
 
+Copyright:
+Yoctoville - assets/aswitch.wav
+
 ToDo:
 1. When level is complete, don't show diamonds in stats message
 2. Maybe have the bady do a big blow up is a switch pop up pops up on it
@@ -25,16 +28,26 @@ E - to toggle from edit mode to game mode
 Edit mode only:
 B - change brush to what's in the cursor space
 V - use brush (see green box bottom left)
-S - Save level
-L - Load level
+Control+S - Save level
+Control+L - Load level
+Control+R - Rename level
 
 Play mode only:
-A - reload level (score gets reset for that level)
+A - reload level (score and diamonds collected, get reset for that level)
 Cursor keys - move Dasher
 Return/Enter - In level completion, move onto next level (loops if you were on last level)
 
+How to play:
+Collect 10 diamonds to open the exit door.
+The bady has to go directy at you to destroy you. So if you position yourself in the right places you can guide the bady to take different roots.
+There is diamond makers, when you drop rocks into, but there has to be a gap underneath.
+You clear away the mud to get to places, as well as guide the bady.
+You can push rocks up, and push rocks diagonal left or right and down.
+There can be a switch to trigger. The pop ups can blow up the bady, if it pops up on it. What the switch is done is worked out with the plot and what pops up, up to the right of the game screen.
+You drop rocks onto the bady to blow holes in walls to get to diamonds and stuff.
+
 Trouble shooting:
-To start game: Enter in eg. 'dub -- Joel 1' - name and start level. It loops around, so you can still complete all the levels - even if you don't start on level 1.
+To start game: Enter in eg. 'dub -- GameLearn 1 Joel' - name and start level. It loops around, so you can still complete all the levels, in one game, even if you don't start on level 1.
 When placing the start position (S), only have one, and save and load when you put it down.
 When restarting a level, if there's something wrong, restart it again.
 To add a comment to your score, edit halloffame.txt

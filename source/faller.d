@@ -7,15 +7,13 @@ import source.app,
     source.bady;
 
 final class Faller : Instance {
-    Image fallImg;
-
     Sound fall;
     bool falling;
 
     this(Vec pos, string name) @safe {
         this.name = name;
         position = pos;
-        ofsprite.image = (name == "rock" ? g_spriteList[SpriteGraph.rock] : g_spriteList[SpriteGraph.diamond]);
+        ofsprite.image = (name == "rock" ? g_spriteList[SpriteIndex.rock] : g_spriteList[SpriteIndex.diamond]);
         shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
     }
 
@@ -35,7 +33,7 @@ final class Faller : Instance {
                     falling = true;
                 }
             } else {
-                if (falling) {                    
+                if (falling) {                   
                     falling = false;
                     if (name == "rock")
                         g_rockFall.play(false);
@@ -43,6 +41,10 @@ final class Faller : Instance {
                         g_diamondStop.play(false);
                 }
                 if (obj !is null) {
+                    if (g_hackLevelJustLoaded) {
+                        g_hackLevelJustLoaded = false;
+                        return;
+                    }
                     switch(obj.name) {
                         default:
                         break;
@@ -54,14 +56,16 @@ final class Faller : Instance {
                             }
                             this.destroy;
                             g_hackForDiamondMakerBool = true;
-                            g_score += 30;
-                            extraLifeScoreUpdate(30);
-                            g_messageUpdate(text("Diamond maker used - ", 30, " points"));
+                            immutable points = 30;
+                            g_score += points;
+                            extraLifeScoreUpdate(points);
+                            g_messageUpdate(text("Diamond maker used - ", points, " points"));
                         break;
                         case "bady":
-                            g_score += 100;
-                            extraLifeScoreUpdate(100);
-                            g_messageUpdate(text("Bady blown - ", 100, " points"));
+                            immutable points = 100;
+                            g_score += points;
+                            extraLifeScoreUpdate(points);
+                            g_messageUpdate(text("Bady blown - ", points, " points"));
                             this.destroy;
                             g_explodePoint = obj.position;
                             import std.range : iota;
@@ -71,9 +75,10 @@ final class Faller : Instance {
                                     auto tst = sceneManager.current.getInstanceByMask(Vec(x,y),g_shapeRect);
                                     if (tst !is null && tst.inBounds && (tst.name == "bady_maker_left" || tst.name == "bady_maker_right")) {
                                         isBadyMakerSafe = false;
-                                        g_score += 400;
-                                        extraLifeScoreUpdate(400);
-                                        g_messageUpdate(text("Bady maker blown - ", 400, " points"));
+                                        immutable blowBadyPoints = 400;
+                                        g_score += blowBadyPoints;
+                                        extraLifeScoreUpdate(blowBadyPoints);
+                                        g_messageUpdate(text("Bady maker blown - ", blowBadyPoints, " points"));
                                         break;
                                     }
                                 }
@@ -87,7 +92,15 @@ final class Faller : Instance {
                             }
                         break;
                     }
-                }
+                } // if obj !is null
+            }
+        } else {
+            if (falling) {                   
+                falling = false;
+                if (name == "rock")
+                    g_rockFall.play(false);
+                else
+                    g_diamondStop.play(false);
             }
         }
     }

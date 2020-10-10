@@ -25,13 +25,15 @@
 	},
 	"description": "Testing",
 	"importPaths": [
-		"../JMiscLib/source"
+		"../JMiscLib/source",
+		"../IniLib/source"
 	],
 	"license": "proprietary",
 	"name": "rockdash",
 	"sourcePaths": [
 		"source",
-		"../JMiscLib/source"
+		"../JMiscLib/source",
+		"../IniLib/source"
 	],
 	"targetPath": "bin",
 	"targetType": "executable"

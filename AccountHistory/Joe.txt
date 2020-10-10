@@ -1,0 +1,4 @@
+Friday 9 October 2020 [ 7:18:47pm] Joe - Welcome to Rock Dash - RockDash3
+Friday 9 October 2020 [ 7:18:47pm] Operating system: macOS
+Friday 9 October 2020 [ 7:18:47pm] New RockDash3 Game. level1 - start level
+Friday 9 October 2020 [ 7:18:47pm] level1 loaded

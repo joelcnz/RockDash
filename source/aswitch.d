@@ -36,9 +36,10 @@ struct ASwitch {
             if (obj !is null) {
                 if (obj.name == "bady" && pu.chr != 'g') {
                     sceneManager.current.add(new Explosion(obj.position));
-                    g_messageUpdate("Switch destroyed bady - 700 points");
-                    g_score += 700;
-                    extraLifeScoreUpdate(700);
+                    immutable switchPopUpPoints = 700;
+                    g_messageUpdate("Switch destroyed bady - "~switchPopUpPoints.to!string~" points");
+                    g_score += switchPopUpPoints;
+                    extraLifeScoreUpdate(switchPopUpPoints);
                     auto objMkr = sceneManager.current.getInstanceByMask(g_badyMakerPos,g_shapeRect);
                     if (objMkr.name == "bady_maker_left" || objMkr.name == "bady_maker_right") {
                         auto badyMaker = (objMkr.name == "bady_maker_left" ? "bmleft" : "bmright");
@@ -52,7 +53,7 @@ struct ASwitch {
                 sceneManager.current.add(new Faller(pu.pos, pu.chr == 'r' ? "rock" : "diamond"));
             else
                 putObj(pu.chr, pu.pos);
-            import std.string; mixin(trace("pu.chr pu.pos".split));
+            import std.string; mixin(tce("pu.chr pu.pos".split));
         }
         popUps.length = 0;
         g_editMode = false;

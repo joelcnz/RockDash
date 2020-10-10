@@ -31,10 +31,16 @@ final class Dasher : Instance {
     this(Vec pos) @trusted {
         name = "dasher";
 
-        dasherUp = g_spriteList[SpriteGraph.up];
-        dasherDown = g_spriteList[SpriteGraph.down];
-        dasherLeft = g_spriteList[SpriteGraph.left];
-        dasherRight = g_spriteList[SpriteGraph.right];
+        auto testList = sceneManager.current.getInstanceArrayByMask(g_startPos,g_shapeRect);
+        foreach(t; testList)
+            if (t.name == "start") {
+                t.destroy;
+            }
+
+        dasherUp = g_spriteList[SpriteIndex.up];
+        dasherDown = g_spriteList[SpriteIndex.down];
+        dasherLeft = g_spriteList[SpriteIndex.left];
+        dasherRight = g_spriteList[SpriteIndex.right];
 
         ofsprite.image = dasherUp;
 
@@ -70,11 +76,14 @@ final class Dasher : Instance {
         visible = true;
         //#boppo! gets rid of the rocks that shouldn't be there - not sure if it does anything
         auto testList = sceneManager.current.getInstanceArrayByMask(position,g_shapeRect);
-        foreach(t; testList)
+        foreach(t; testList) {
             if (t.name == "rock") {
                 //t.destroy;                
                 "Would've destroyed rock".gh;
             }
+            if (t.name == "start")
+                t.destroy;
+        }
 
         if (g_levelComplete)
             visible = false;
@@ -129,9 +138,13 @@ final class Dasher : Instance {
                         case "diamond":
                             diamonds += 1;
                             if (diamonds == 10) {
+                                if (g_exitDoorPos == Vec(-1,-1)) {
+                                    g_messageUpdate("Exit not found, see your vendor");
+                                    break;
+                                }
                                 auto objOld = sceneManager.current.getInstanceByMask(g_exitDoorPos,g_shapeRect);
-                                objOld.destroy;
-                                putObj('o',g_exitDoorPos);
+                                    objOld.destroy;
+                                putObj('o', g_exitDoorPos);
                                 auto exitPoints = 700;
                                 g_score += exitPoints;
                                 extraLifeScoreUpdate(exitPoints);
@@ -147,9 +160,10 @@ final class Dasher : Instance {
                             collectDiamond.play(false);
                         break;
                         case "aswitch":
+                            g_aswitchSnd.play(false);
                             auto aswitchPoints = 200;
                             g_score += aswitchPoints;
-                            extraLifeScoreUpdate(200);
+                            extraLifeScoreUpdate(aswitchPoints);
                             g_messageUpdate(text("Switch flicked - ", aswitchPoints, " points"));
                             g_aswitch.activate;
                         break;

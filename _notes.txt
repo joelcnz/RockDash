@@ -1,5 +1,9 @@
 RockDash/_notes.txt
 
+3 10 2020:
+Morris level 1 in MiscGame
+dub -- MiscGame 1 Morris
+
 10 9 2020 Highest score for level 1: 260 (14 diamonds)
 
 Prompt:

@@ -11,7 +11,7 @@ final class Explosion : Instance {
     this(Vec pos) {
         position = pos;
 
-        with(SpriteGraph)
+        with(SpriteIndex)
             images = [g_spriteList[blow0],
                 g_spriteList[blow1],
                 g_spriteList[blow2],

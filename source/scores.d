@@ -1,3 +1,4 @@
+//#not used
 module source.scores;
 
 import source.app;
@@ -16,6 +17,7 @@ struct ScoresDetails {
         return text(name,"|",score,"|",diamonds,"|",lives,"|",date,"|",time,"|",comment);
     }
 
+    //#not used
     string toString() const {
         return text("Name: ", name, ", Score: ", score, ", Diamonds: ", diamonds, ", Lives: ", lives,
                     ", Date: ", date, ", Time: ", time); //, ", Comment: ", comment);
@@ -28,7 +30,8 @@ struct ScoresMan {
     void load(in string scoresFile = "halloffame.txt") {
         cards.length = 0;
         import std.file, std.string;
-        auto wholeData = readText(scoresFile).stripRight;
+        import std.path : buildPath;
+        auto wholeData = readText(buildPath(g_gameFolder, scoresFile)).stripRight;
         //Joel|4308|23|0|26.sep.2020|[ 1:07:10pm]|(no comment)
         foreach(line; wholeData.split("\n")) {
             auto data = line.split("|");
@@ -45,7 +48,8 @@ struct ScoresMan {
     void save(in string scoresFile = "halloffame.txt") {
         doSort;
         import std.file;
-        auto f = File(scoresFile, "w");
+        import std.path : buildPath;
+        auto f = File(buildPath(g_gameFolder, scoresFile), "w");
         foreach(card; cards)
             f.writeln(card.toData);
     }
