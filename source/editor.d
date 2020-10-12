@@ -57,7 +57,6 @@ final class Editor : Instance {
                 marked.destroy;
             marked = null;
         }
-        //SDL_Event ev = event._sdl_handle();
         //if (ev.type == SDL_MOUSEBUTTONDOWN
         if ((! g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyPressed) ||
             (g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyTrigger))

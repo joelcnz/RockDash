@@ -1746,3 +1746,7 @@ Monday 12 October 2020 [ 1:47:26pm] level7 Complete! - Diamonds: 10, Score: 1865
 Monday 12 October 2020 [ 1:47:44pm] level1 loaded
 Monday 12 October 2020 [ 1:47:57pm] level1 loaded
 Monday 12 October 2020 [ 1:47:57pm] Reset level
+Monday 12 October 2020 [ 2:26:32pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 2:26:33pm] Operating system: macOS
+Monday 12 October 2020 [ 2:26:33pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 2:26:33pm] level7 loaded
