@@ -14,6 +14,7 @@ void save(string fileNameBase) {
             e.destroy;
     //editMode = ;
     putObj('S', g_startPos);
+    mixin(tce("g_startPos"));
     
     auto fileName = getFillName(fileNameBase);
     jm_backUp(fileName);

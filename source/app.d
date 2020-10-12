@@ -603,7 +603,10 @@ void putObj(char c, Vec p) @trusted {
 			foreach(ref e; sceneManager.current.getList())
 				if (e.name == "dasher")
 					e.destroy;
-			sceneManager.current.add(new Dasher(p));
+			if (g_editMode == false)
+				sceneManager.current.add(new Dasher(p));
+			else
+				sceneManager.current.add(new Piece(p, c));
 			g_startPos = p;
 		} else {
 			sceneManager.current.add(new Piece(p, c));

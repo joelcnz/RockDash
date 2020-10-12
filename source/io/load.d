@@ -65,7 +65,7 @@ void load(string fileNameBase) {
     immutable levelLoadedMessage = text(fileNameBase, " loaded");
     g_messageUpdate(levelLoadedMessage);
     upDate(levelLoadedMessage);
-    if (g_startPos.inBounds)
-        putObj('S', g_startPos);
+    //if (g_startPos.inBounds)
+    //    putObj('S', g_startPos);
     g_hackLevelJustLoaded = true; //#hack not work!
 } // load

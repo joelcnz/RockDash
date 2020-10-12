@@ -1534,3 +1534,215 @@ Saturday 10 October 2020 [ 5:07:29pm] Testing - Welcome to Rock Dash - RockDash3
 Saturday 10 October 2020 [ 5:07:29pm] Operating system: macOS
 Saturday 10 October 2020 [ 5:07:29pm] New RockDash3 Game. level6 - start level
 Saturday 10 October 2020 [ 5:07:29pm] level6 loaded
+Sunday 11 October 2020 [ 8:58:22pm] Testing - Welcome to Rock Dash - RockDash3
+Sunday 11 October 2020 [ 8:58:23pm] Operating system: macOS
+Sunday 11 October 2020 [ 8:58:23pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 8:58:23pm] level7 loaded
+Sunday 11 October 2020 [ 9:15:01pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 9:15:01pm] level7 loaded
+Sunday 11 October 2020 [ 9:15:44pm] level7 loaded
+Sunday 11 October 2020 [ 9:15:44pm] Reset level
+Sunday 11 October 2020 [ 9:16:17pm] level7 loaded
+Sunday 11 October 2020 [ 9:16:17pm] Reset level
+Sunday 11 October 2020 [ 9:16:33pm] level7 loaded
+Sunday 11 October 2020 [ 9:16:33pm] Reset level
+Sunday 11 October 2020 [ 9:16:57pm] level7 loaded
+Sunday 11 October 2020 [ 9:16:57pm] Reset level
+Sunday 11 October 2020 [ 9:17:17pm] level7 loaded
+Sunday 11 October 2020 [ 9:17:17pm] Reset level
+Sunday 11 October 2020 [ 9:17:18pm] Name: Testing, Score: 0, Diamonds: 0, Lives: 0, Date: 11.Oct.2020, Time: [ 9:17:18pm]
+Sunday 11 October 2020 [ 9:17:18pm] Game Over
+Sunday 11 October 2020 [ 9:17:25pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 9:17:25pm] level7 loaded
+Sunday 11 October 2020 [ 9:17:31pm] Testing - Welcome to Rock Dash - RockDash3
+Sunday 11 October 2020 [ 9:17:32pm] Operating system: macOS
+Sunday 11 October 2020 [ 9:17:32pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 9:17:32pm] level7 loaded
+Sunday 11 October 2020 [ 9:17:48pm] level7 loaded
+Sunday 11 October 2020 [ 9:17:48pm] Reset level
+Sunday 11 October 2020 [ 9:17:52pm] level7 loaded
+Sunday 11 October 2020 [ 9:17:52pm] Reset level
+Sunday 11 October 2020 [ 9:18:15pm] level7 loaded
+Sunday 11 October 2020 [ 9:18:15pm] Reset level
+Sunday 11 October 2020 [ 9:19:06pm] level7 loaded
+Sunday 11 October 2020 [ 9:19:06pm] Reset level
+Sunday 11 October 2020 [ 9:19:40pm] level7 loaded
+Sunday 11 October 2020 [ 9:19:40pm] Reset level
+Sunday 11 October 2020 [ 9:19:43pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 9:19:43pm] level7 loaded
+Sunday 11 October 2020 [ 9:20:20pm] level7 loaded
+Sunday 11 October 2020 [ 9:20:20pm] Reset level
+Sunday 11 October 2020 [ 9:21:32pm] New RockDash3 Game. level7 - start level
+Sunday 11 October 2020 [ 9:21:32pm] level7 loaded
+Monday 12 October 2020 [11:23:43am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:23:44am] Operating system: macOS
+Monday 12 October 2020 [11:23:44am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:23:44am] level7 loaded
+Monday 12 October 2020 [11:31:13am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:31:14am] Operating system: macOS
+Monday 12 October 2020 [11:31:14am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:31:14am] level7 loaded
+Monday 12 October 2020 [11:37:29am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:37:30am] Operating system: macOS
+Monday 12 October 2020 [11:37:30am] New RockDash3 Game. level1 - start level
+Monday 12 October 2020 [11:37:30am] level1 loaded
+Monday 12 October 2020 [11:37:54am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:37:55am] Operating system: macOS
+Monday 12 October 2020 [11:37:55am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:37:55am] level7 loaded
+Monday 12 October 2020 [11:38:04am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:38:04am] level7 loaded
+Monday 12 October 2020 [11:43:39am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:43:40am] Operating system: macOS
+Monday 12 October 2020 [11:43:40am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:43:40am] level7 loaded
+Monday 12 October 2020 [11:46:05am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:48:10am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:48:11am] Operating system: macOS
+Monday 12 October 2020 [11:48:11am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:48:11am] level7 loaded
+Monday 12 October 2020 [11:49:06am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:49:07am] Operating system: macOS
+Monday 12 October 2020 [11:49:07am] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [11:49:07am] level7 loaded
+Monday 12 October 2020 [11:50:56am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:50:57am] Operating system: macOS
+Monday 12 October 2020 [11:50:57am] New RockDash3 Game. level6 - start level
+Monday 12 October 2020 [11:50:57am] level6 loaded
+Monday 12 October 2020 [11:51:02am] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [11:51:03am] Operating system: macOS
+Monday 12 October 2020 [11:51:03am] New RockDash3 Game. level5 - start level
+Monday 12 October 2020 [11:51:03am] level5 loaded
+Monday 12 October 2020 [11:52:50am] level5 Complete! - Diamonds: 15, Score: 3131
+Monday 12 October 2020 [11:52:51am] level6 loaded
+Monday 12 October 2020 [11:54:03am] Testing - Welcome to Rock Dash - RockDash7
+Monday 12 October 2020 [11:54:04am] Operating system: macOS
+Monday 12 October 2020 [11:54:04am] New RockDash7 Game. level1 - start level
+Monday 12 October 2020 [11:54:04am] level1 loaded
+Monday 12 October 2020 [11:54:50am] Testing - Welcome to Rock Dash - MiscGame
+Monday 12 October 2020 [11:54:51am] Operating system: macOS
+Monday 12 October 2020 [11:54:51am] New MiscGame Game. level1 - start level
+Monday 12 October 2020 [11:54:51am] level1 loaded
+Monday 12 October 2020 [11:54:59am] level1 loaded
+Monday 12 October 2020 [11:54:59am] Reset level
+Monday 12 October 2020 [11:56:56am] level1 Complete! - Diamonds: 14, Score: 2230
+Monday 12 October 2020 [11:56:57am] Score: 4030, Total Diamonds Collected: 14, Lives: 7
+Monday 12 October 2020 [11:56:57am] Well done, you have completed the MiscGame game!
+Monday 12 October 2020 [12:56:21pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [12:56:21pm] Operating system: macOS
+Monday 12 October 2020 [12:56:21pm] New RockDash3 Game. level6 - start level
+Monday 12 October 2020 [12:56:39pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [12:56:40pm] Operating system: macOS
+Monday 12 October 2020 [12:56:40pm] New RockDash3 Game. level6q - start level
+Monday 12 October 2020 [12:56:40pm] level6q loaded
+Monday 12 October 2020 [ 1:07:10pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:07:11pm] Operating system: macOS
+Monday 12 October 2020 [ 1:07:11pm] New RockDash3 Game. level6q - start level
+Monday 12 October 2020 [ 1:07:11pm] level6q loaded
+Monday 12 October 2020 [ 1:07:25pm] New RockDash3 Game. level6q - start level
+Monday 12 October 2020 [ 1:07:25pm] level6q loaded
+Monday 12 October 2020 [ 1:15:52pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:15:53pm] Operating system: macOS
+Monday 12 October 2020 [ 1:15:53pm] New RockDash3 Game. level5q - start level
+Monday 12 October 2020 [ 1:16:00pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:16:01pm] Operating system: macOS
+Monday 12 October 2020 [ 1:16:01pm] New RockDash3 Game. level6q - start level
+Monday 12 October 2020 [ 1:16:01pm] level6q loaded
+Monday 12 October 2020 [ 1:16:05pm] New RockDash3 Game. level6q - start level
+Monday 12 October 2020 [ 1:16:05pm] level6q loaded
+Monday 12 October 2020 [ 1:16:15pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:16:16pm] Operating system: macOS
+Monday 12 October 2020 [ 1:16:16pm] New RockDash3 Game. level7q - start level
+Monday 12 October 2020 [ 1:16:16pm] level7q loaded
+Monday 12 October 2020 [ 1:16:24pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:16:24pm] Operating system: macOS
+Monday 12 October 2020 [ 1:16:24pm] New RockDash3 Game. level8q - start level
+Monday 12 October 2020 [ 1:16:33pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:16:33pm] Operating system: macOS
+Monday 12 October 2020 [ 1:16:33pm] New RockDash3 Game. level7q - start level
+Monday 12 October 2020 [ 1:16:33pm] level7q loaded
+Monday 12 October 2020 [ 1:16:38pm] Reset level
+Monday 12 October 2020 [ 1:16:42pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:16:43pm] Operating system: macOS
+Monday 12 October 2020 [ 1:16:43pm] New RockDash3 Game. level7q - start level
+Monday 12 October 2020 [ 1:16:43pm] level7q loaded
+Monday 12 October 2020 [ 1:17:31pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:17:32pm] Operating system: macOS
+Monday 12 October 2020 [ 1:17:32pm] New RockDash3 Game. level6 - start level
+Monday 12 October 2020 [ 1:17:32pm] level6 loaded
+Monday 12 October 2020 [ 1:18:26pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:18:27pm] Operating system: macOS
+Monday 12 October 2020 [ 1:18:27pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:18:27pm] level7 loaded
+Monday 12 October 2020 [ 1:19:37pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:19:37pm] level7 loaded
+Monday 12 October 2020 [ 1:20:01pm] level7 loaded
+Monday 12 October 2020 [ 1:20:01pm] Reset level
+Monday 12 October 2020 [ 1:20:03pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:20:03pm] level7 loaded
+Monday 12 October 2020 [ 1:21:32pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:21:32pm] level7 loaded
+Monday 12 October 2020 [ 1:29:38pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:29:39pm] Operating system: macOS
+Monday 12 October 2020 [ 1:29:39pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:29:39pm] level7 loaded
+Monday 12 October 2020 [ 1:29:50pm] level7 loaded
+Monday 12 October 2020 [ 1:29:50pm] Reset level
+Monday 12 October 2020 [ 1:30:35pm] level7 loaded
+Monday 12 October 2020 [ 1:30:35pm] Reset level
+Monday 12 October 2020 [ 1:30:40pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:30:40pm] level7 loaded
+Monday 12 October 2020 [ 1:30:44pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:30:44pm] level7 loaded
+Monday 12 October 2020 [ 1:31:00pm] level7 loaded
+Monday 12 October 2020 [ 1:31:00pm] Reset level
+Monday 12 October 2020 [ 1:31:16pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:31:16pm] level7 loaded
+Monday 12 October 2020 [ 1:31:28pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:31:28pm] level7 loaded
+Monday 12 October 2020 [ 1:31:34pm] level7 loaded
+Monday 12 October 2020 [ 1:31:34pm] Reset level
+Monday 12 October 2020 [ 1:31:35pm] level7 loaded
+Monday 12 October 2020 [ 1:31:35pm] Reset level
+Monday 12 October 2020 [ 1:31:46pm] level7 loaded
+Monday 12 October 2020 [ 1:31:46pm] Reset level
+Monday 12 October 2020 [ 1:31:56pm] level7 loaded
+Monday 12 October 2020 [ 1:31:56pm] Reset level
+Monday 12 October 2020 [ 1:32:04pm] level7 loaded
+Monday 12 October 2020 [ 1:32:04pm] Reset level
+Monday 12 October 2020 [ 1:32:27pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:32:27pm] level7 loaded
+Monday 12 October 2020 [ 1:42:51pm] Testing - Welcome to Rock Dash - RockDash3
+Monday 12 October 2020 [ 1:42:51pm] Operating system: macOS
+Monday 12 October 2020 [ 1:42:51pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:42:51pm] level7 loaded
+Monday 12 October 2020 [ 1:42:58pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:42:58pm] level7 loaded
+Monday 12 October 2020 [ 1:43:00pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:00pm] level7 loaded
+Monday 12 October 2020 [ 1:43:00pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:00pm] level7 loaded
+Monday 12 October 2020 [ 1:43:01pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:01pm] level7 loaded
+Monday 12 October 2020 [ 1:43:01pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:01pm] level7 loaded
+Monday 12 October 2020 [ 1:43:05pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:05pm] level7 loaded
+Monday 12 October 2020 [ 1:43:05pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:05pm] level7 loaded
+Monday 12 October 2020 [ 1:43:07pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:07pm] level7 loaded
+Monday 12 October 2020 [ 1:43:07pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:07pm] level7 loaded
+Monday 12 October 2020 [ 1:43:07pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:43:08pm] level7 loaded
+Monday 12 October 2020 [ 1:44:33pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:44:34pm] level7 loaded
+Monday 12 October 2020 [ 1:44:37pm] New RockDash3 Game. level7 - start level
+Monday 12 October 2020 [ 1:44:37pm] level7 loaded
+Monday 12 October 2020 [ 1:44:58pm] level7 loaded
+Monday 12 October 2020 [ 1:44:58pm] Reset level
+Monday 12 October 2020 [ 1:47:26pm] level7 Complete! - Diamonds: 10, Score: 1865
+Monday 12 October 2020 [ 1:47:44pm] level1 loaded
+Monday 12 October 2020 [ 1:47:57pm] level1 loaded
+Monday 12 October 2020 [ 1:47:57pm] Reset level

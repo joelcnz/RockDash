@@ -41,7 +41,8 @@ final class Editor : Instance {
         }
         if (event.getKeyDown == 'q') {
             g_aswitchEditing = ! g_aswitchEditing;
-            mixin(tce("g_aswitchEditing"));
+            trace!g_aswitchEditing;
+            //mixin(tce("g_aswitchEditing"));
         }
     }
 
@@ -58,7 +59,8 @@ final class Editor : Instance {
         }
         //SDL_Event ev = event._sdl_handle();
         //if (ev.type == SDL_MOUSEBUTTONDOWN
-        if ((g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyTrigger) || (! g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyPressed))
+        if ((! g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyPressed) ||
+            (g_aswitchEditing && g_keys[SDL_SCANCODE_V].keyTrigger))
             if (inBounds(position)) {
                 auto obj = sceneManager.current.getInstanceByMask(position.snapToGrid,g_shapeRect);
                 //g_editMode = true;

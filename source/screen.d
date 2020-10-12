@@ -32,7 +32,7 @@ final class Piece : Instance {
         if (name != "gap") {
             position = pos;
             ofsprite.image = g_sprites[c];
-            if (name != "start")
+            //if (name != "start")
                 shape = ShapeRectangle(Vec(0,0), Vec(g_stepSize, g_stepSize));
         }
     }
