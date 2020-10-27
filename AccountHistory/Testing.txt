@@ -1750,3 +1750,11 @@ Monday 12 October 2020 [ 2:26:32pm] Testing - Welcome to Rock Dash - RockDash3
 Monday 12 October 2020 [ 2:26:33pm] Operating system: macOS
 Monday 12 October 2020 [ 2:26:33pm] New RockDash3 Game. level7 - start level
 Monday 12 October 2020 [ 2:26:33pm] level7 loaded
+Sunday 18 October 2020 [ 9:42:23pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 18 October 2020 [ 9:42:24pm] Operating system: macOS
+Sunday 18 October 2020 [ 9:42:24pm] New GameLearn Game. level4 - start level
+Sunday 18 October 2020 [ 9:42:24pm] level4 loaded
+Sunday 18 October 2020 [ 9:43:01pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 18 October 2020 [ 9:43:02pm] Operating system: macOS
+Sunday 18 October 2020 [ 9:43:02pm] New GameLearn Game. level4 - start level
+Sunday 18 October 2020 [ 9:43:02pm] level4 loaded

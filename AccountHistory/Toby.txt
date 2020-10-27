@@ -1,0 +1,92 @@
+Thursday 15 October 2020 [ 5:43:02pm] Toby - Welcome to Rock Dash - GameLearn
+Thursday 15 October 2020 [ 5:43:03pm] Operating system: macOS
+Thursday 15 October 2020 [ 5:43:03pm] New GameLearn Game. level1 - start level
+Thursday 15 October 2020 [ 5:43:03pm] level1 loaded
+Thursday 15 October 2020 [ 5:43:30pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 15 October 2020 [ 5:43:42pm] level2 loaded
+Thursday 15 October 2020 [ 5:48:15pm] level2 Complete! - Diamonds: 10, Score: 1440
+Thursday 15 October 2020 [ 5:48:23pm] level3 loaded
+Thursday 15 October 2020 [ 5:48:43pm] New GameLearn Game. level3 - start level
+Thursday 15 October 2020 [ 5:48:43pm] level3 loaded
+Thursday 15 October 2020 [ 5:51:14pm] Name: Toby, Score: 1, Diamonds: 20, Lives: 0, Date: 15.Oct.2020, Time: [ 5:51:14pm]
+Thursday 15 October 2020 [ 5:51:14pm] Game Over
+Thursday 15 October 2020 [ 5:51:37pm] Toby - Welcome to Rock Dash - GameLearn
+Thursday 15 October 2020 [ 5:51:37pm] Operating system: macOS
+Thursday 15 October 2020 [ 5:51:37pm] New GameLearn Game. level3 - start level
+Thursday 15 October 2020 [ 5:51:37pm] level3 loaded
+Thursday 15 October 2020 [ 5:54:34pm] level3 Complete! - Diamonds: 10, Score: 1416
+Thursday 15 October 2020 [ 5:54:36pm] level4 loaded
+Thursday 15 October 2020 [ 5:57:03pm] level4 Complete! - Diamonds: 10, Score: 1592
+Thursday 15 October 2020 [ 5:57:05pm] level1 loaded
+Thursday 15 October 2020 [ 5:57:15pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 15 October 2020 [ 5:57:20pm] level2 loaded
+Thursday 15 October 2020 [ 5:57:44pm] level2 Complete! - Diamonds: 10, Score: 1360
+Thursday 15 October 2020 [ 5:57:45pm] Score: 7172, Total Diamonds Collected: 40, Lives: 6
+Thursday 15 October 2020 [ 5:57:45pm] Well done, you have completed the GameLearn game!
+Thursday 15 October 2020 [ 6:31:30pm] Toby - Welcome to Rock Dash - MiscGame
+Thursday 15 October 2020 [ 6:31:30pm] Operating system: macOS
+Thursday 15 October 2020 [ 6:31:30pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:31:30pm] level2 loaded
+Thursday 15 October 2020 [ 6:39:28pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:39:28pm] level2 loaded
+Thursday 15 October 2020 [ 6:39:43pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:39:43pm] level2 loaded
+Thursday 15 October 2020 [ 6:39:59pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:39:59pm] level2 loaded
+Thursday 15 October 2020 [ 6:40:41pm] level2 Complete! - Diamonds: 13, Score: 1670
+Thursday 15 October 2020 [ 6:40:55pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:40:55pm] level2 loaded
+Thursday 15 October 2020 [ 6:42:16pm] New MiscGame Game. level2 - start level
+Thursday 15 October 2020 [ 6:42:16pm] level2 loaded
+Thursday 15 October 2020 [ 6:42:53pm] level2 Complete! - Diamonds: 13, Score: 1665
+Thursday 15 October 2020 [ 6:43:02pm] level1 loaded
+Thursday 15 October 2020 [ 6:43:21pm] level1 loaded
+Thursday 15 October 2020 [ 6:43:21pm] Reset level
+Thursday 15 October 2020 [ 6:47:18pm] level1 loaded
+Thursday 15 October 2020 [ 6:47:18pm] Reset level
+Thursday 15 October 2020 [ 6:49:35pm] level1 loaded
+Thursday 15 October 2020 [ 6:49:35pm] Reset level
+Thursday 15 October 2020 [ 6:53:54pm] level1 Complete! - Diamonds: 10, Score: 1927
+Thursday 15 October 2020 [ 6:53:57pm] Score: 5392, Total Diamonds Collected: 36, Lives: 7
+Thursday 15 October 2020 [ 6:53:57pm] Well done, you have completed the MiscGame game!
+Thursday 15 October 2020 [ 7:07:12pm] Toby - Welcome to Rock Dash - RockDash5
+Thursday 15 October 2020 [ 7:07:12pm] Operating system: macOS
+Thursday 15 October 2020 [ 7:07:12pm] New RockDash5 Game. level2 - start level
+Thursday 15 October 2020 [ 7:07:12pm] level2 loaded
+Thursday 15 October 2020 [ 7:13:32pm] level2 loaded
+Thursday 15 October 2020 [ 7:13:32pm] Reset level
+Thursday 15 October 2020 [ 7:34:56pm] level2 loaded
+Thursday 15 October 2020 [ 7:34:56pm] Reset level
+Thursday 15 October 2020 [ 7:41:48pm] level2 loaded
+Thursday 15 October 2020 [ 7:41:48pm] Reset level
+Thursday 15 October 2020 [ 7:41:56pm] Name: Toby, Score: 3, Diamonds: 0, Lives: 0, Date: 15.Oct.2020, Time: [ 7:41:56pm]
+Thursday 15 October 2020 [ 7:41:56pm] Game Over
+Thursday 15 October 2020 [ 7:43:11pm] Toby - Welcome to Rock Dash - MiscGame
+Thursday 15 October 2020 [ 7:43:11pm] Operating system: macOS
+Thursday 15 October 2020 [ 7:43:11pm] New MiscGame Game. level3 - start level
+Thursday 15 October 2020 [ 7:43:11pm] level3 loaded
+Thursday 15 October 2020 [ 7:55:08pm] New MiscGame Game. level3 - start level
+Thursday 15 October 2020 [ 7:55:08pm] level3 loaded
+Thursday 15 October 2020 [ 7:55:56pm] New MiscGame Game. level3 - start level
+Thursday 15 October 2020 [ 7:55:57pm] level3 loaded
+Thursday 15 October 2020 [ 7:56:53pm] New MiscGame Game. level3 - start level
+Thursday 15 October 2020 [ 7:56:54pm] level3 loaded
+Thursday 15 October 2020 [ 7:57:21pm] level3 Complete! - Diamonds: 10, Score: 1430
+Thursday 15 October 2020 [ 7:59:26pm] Toby - Welcome to Rock Dash - Toby
+Thursday 15 October 2020 [ 7:59:27pm] Operating system: macOS
+Thursday 15 October 2020 [ 7:59:27pm] New Toby Game. level3 - start level
+Thursday 15 October 2020 [ 7:59:27pm] level3 loaded
+Thursday 15 October 2020 [ 8:03:48pm] Toby - Welcome to Rock Dash - Toby
+Thursday 15 October 2020 [ 8:03:49pm] Operating system: macOS
+Thursday 15 October 2020 [ 8:03:49pm] New Toby Game. level2 - start level
+Thursday 15 October 2020 [ 8:03:49pm] level2 loaded
+Thursday 15 October 2020 [ 8:04:32pm] level2 Complete! - Diamonds: 10, Score: 1431
+Thursday 15 October 2020 [ 8:04:34pm] level3 loaded
+Thursday 15 October 2020 [ 8:32:30pm] level3 loaded
+Thursday 15 October 2020 [ 8:32:30pm] Reset level
+Thursday 15 October 2020 [ 8:33:24pm] Toby - Welcome to Rock Dash - RockDash5
+Thursday 15 October 2020 [ 8:33:24pm] Operating system: macOS
+Thursday 15 October 2020 [ 8:33:24pm] New RockDash5 Game. level2 - start level
+Thursday 15 October 2020 [ 8:33:24pm] level2 loaded
+Thursday 15 October 2020 [ 8:33:55pm] New RockDash5 Game. level2 - start level
+Thursday 15 October 2020 [ 8:33:55pm] level2 loaded

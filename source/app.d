@@ -126,11 +126,11 @@ final class RockDashScene : Scene
 		version(odotthreedoto)
 			g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").imageHandle.strip(Vec(0,0), 24, 24);
 		else
-			g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").image.strip(Vec(0,0), 24, 24); //#0.2.0
-		//g_spriteList = loader.load!ImageSurface("assets/RockDashColoured-big.png").image.strip(Vec(0,0), g_stepSize, g_stepSize);
+			g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").imageHandle.strip(Vec(0,0), 24, 24); //#0.2.0
+		//g_spriteList = loader.load!ImageSurface("assets/RockDashColoured-big.png").imageHandle.strip(Vec(0,0), g_stepSize, g_stepSize);
 
         foreach(ref e; g_spriteList) {
-            e.make();
+            e.fromTexture();
         }
 
 		g_chars = "BmSDl....sMdrR......o...g";
@@ -472,8 +472,8 @@ version(unittest) {
 		
 		void usage() {
 			writeln("Invalid args - try the following:");
-			writeln("'dub -- RockDash5 1 Joel' or ");
-			writeln("'", args[0]," RockDash5 1 Joel'");
+			writeln("'dub -- GameLearn 1 Joel' or ");
+			writeln("'", args[0]," GameLearn 1 Joel'");
 		}
 		if (args.length < 4) {
 			usage;
@@ -513,6 +513,7 @@ version(unittest) {
 
 		import std.string;
  		mixin(tce("FOXID_VERSION FOXID_VERSION_STABLE".split));
+		mixin(tce("FoxidVersion"));
 		/+
 			Add to the scene in the manager.
 		+/

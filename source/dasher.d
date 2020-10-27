@@ -179,6 +179,7 @@ final class Dasher : Instance {
                             auto newPos = objPos + dirs[moveDir];
                             if (beyond is null && newPos.inBounds) {
                                 sceneManager.current.add(new Faller(newPos, "rock"));
+                                g_rockFall.play(false);
                             } else  {
                                 sceneManager.current.add(new Faller(position, "rock"));
                                 position -= dirs[moveDir];
