@@ -1,0 +1,13 @@
+Tuesday 27 October 2020 [ 2:16:00pm] Name - Welcome to Rock Dash - GameLearn
+Tuesday 27 October 2020 [ 2:16:01pm] Operating system: macOS
+Tuesday 27 October 2020 [ 2:16:01pm] New GameLearn Game. level1 - start level
+Tuesday 27 October 2020 [ 2:16:01pm] level1 loaded
+Tuesday 27 October 2020 [ 2:16:08pm] level1 Complete! - Diamonds: 10, Score: 1304
+Tuesday 27 October 2020 [ 2:16:08pm] level2 loaded
+Tuesday 27 October 2020 [ 2:16:21pm] level2 Complete! - Diamonds: 10, Score: 1348
+Tuesday 27 October 2020 [ 2:16:23pm] level3 loaded
+Tuesday 27 October 2020 [ 2:16:36pm] level3 Complete! - Diamonds: 10, Score: 1402
+Tuesday 27 October 2020 [ 2:16:37pm] level4 loaded
+Tuesday 27 October 2020 [ 2:16:52pm] level4 Complete! - Diamonds: 10, Score: 1542
+Tuesday 27 October 2020 [ 2:16:53pm] Score: 7696, Total Diamonds Collected: 40, Lives: 8
+Tuesday 27 October 2020 [ 2:16:53pm] Well done, you have completed the GameLearn game!

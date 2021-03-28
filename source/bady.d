@@ -68,7 +68,9 @@ final class Bady : Instance {
                         import std.datetime : DateTime, Clock;
                         auto dt = cast(DateTime)Clock.currTime();
                         import std.ascii;
-                        g_scoresDetails = ScoresDetails(g_scoresDetails.name,g_score,totalDiamonds,g_lives,
+                        g_scoresDetails = ScoresDetails(g_scoresDetails.name,
+                            getLevelsPlayed,
+                            g_score,totalDiamonds,g_lives,
                             text(dt.day, ".", dt.month.to!string.capitalize, ".", dt.year),timeString,g_scoresDetails.comment);
                         g_scoreCards.add(g_scoresDetails);
                         upDate(g_scoresDetails);

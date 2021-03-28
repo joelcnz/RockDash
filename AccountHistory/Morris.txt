@@ -30,3 +30,51 @@ Saturday 3 October 2020 [ 2:17:29pm] Reset level
 Saturday 3 October 2020 [ 2:26:07pm] level1 Complete! - Diamonds: 11, Score: 2037
 Saturday 3 October 2020 [ 2:26:47pm] Score: 3237, Total Diamonds Collected: 11, Lives: 5
 Saturday 3 October 2020 [ 2:26:47pm] Well done, you have completed the MiscGame game!
+Saturday 21 November 2020 [ 3:21:05pm] Morris - Welcome to Rock Dash - GameLearn
+Saturday 21 November 2020 [ 3:21:06pm] Operating system: macOS
+Saturday 21 November 2020 [ 3:21:06pm] New GameLearn Game. level1 - start level
+Saturday 21 November 2020 [ 3:21:06pm] level1 loaded
+Saturday 21 November 2020 [ 3:22:13pm] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 21 November 2020 [ 3:22:17pm] level2 loaded
+Saturday 21 November 2020 [ 3:24:00pm] level2 Complete! - Diamonds: 10, Score: 1359
+Saturday 21 November 2020 [ 3:24:04pm] level3 loaded
+Saturday 21 November 2020 [ 3:25:52pm] level3 loaded
+Saturday 21 November 2020 [ 3:25:52pm] Reset level
+Saturday 21 November 2020 [ 3:26:51pm] level3 Complete! - Diamonds: 10, Score: 1403
+Saturday 21 November 2020 [ 3:26:59pm] level4 loaded
+Saturday 21 November 2020 [ 3:29:06pm] level4 loaded
+Saturday 21 November 2020 [ 3:29:06pm] Reset level
+Saturday 21 November 2020 [ 3:31:19pm] level4 Complete! - Diamonds: 10, Score: 1566
+Saturday 21 November 2020 [ 3:31:31pm] Score: 7732, Total Diamonds Collected: 40, Lives: 8
+Saturday 21 November 2020 [ 3:31:31pm] Well done, you have completed the GameLearn game!
+Saturday 21 November 2020 [ 3:33:57pm] Morris - Welcome to Rock Dash - MiscGame
+Saturday 21 November 2020 [ 3:33:57pm] Operating system: macOS
+Saturday 21 November 2020 [ 3:33:57pm] New MiscGame Game. level1 - start level
+Saturday 21 November 2020 [ 3:33:57pm] level1 loaded
+Saturday 21 November 2020 [ 3:43:48pm] level1 loaded
+Saturday 21 November 2020 [ 3:43:48pm] Reset level
+Saturday 21 November 2020 [ 3:49:27pm] level1 Complete! - Diamonds: 10, Score: 1917
+Saturday 21 November 2020 [ 3:49:53pm] Score: 1500, Total Diamonds Collected: 0, Lives: 6
+Saturday 21 November 2020 [ 3:49:53pm] Well done, you have completed the MiscGame game!
+Saturday 21 November 2020 [ 3:49:53pm] Reset level
+Saturday 21 November 2020 [ 3:50:29pm] Morris - Welcome to Rock Dash - MiscGame
+Saturday 21 November 2020 [ 3:50:30pm] Operating system: macOS
+Saturday 21 November 2020 [ 3:50:30pm] New MiscGame Game. level1 - start level
+Saturday 21 November 2020 [ 3:50:30pm] level1 loaded
+Saturday 21 November 2020 [ 3:51:24pm] level1 loaded
+Saturday 21 November 2020 [ 3:51:24pm] Reset level
+Saturday 21 November 2020 [ 4:03:04pm] level1 loaded
+Saturday 21 November 2020 [ 4:03:04pm] Reset level
+Saturday 21 November 2020 [ 4:04:07pm] level1 loaded
+Saturday 21 November 2020 [ 4:04:07pm] Reset level
+Saturday 21 November 2020 [ 4:11:49pm] level1 loaded
+Saturday 21 November 2020 [ 4:11:49pm] Reset level
+Saturday 21 November 2020 [ 4:24:26pm] Name: MorrisLevels: 1-0(0), Score: 408, Diamonds: 8, Lives: 0, Date: 21.Nov.2020, Time: [ 4:24:26pm]
+Saturday 21 November 2020 [ 4:24:26pm] Game Over
+Saturday 21 November 2020 [ 4:28:03pm] Morris - Welcome to Rock Dash - MiscGame
+Saturday 21 November 2020 [ 4:28:03pm] Operating system: macOS
+Saturday 21 November 2020 [ 4:28:03pm] New MiscGame Game. level1 - start level
+Saturday 21 November 2020 [ 4:28:03pm] level1 loaded
+Saturday 21 November 2020 [ 4:36:14pm] level1 Complete! - Diamonds: 12, Score: 2064
+Saturday 21 November 2020 [ 4:36:28pm] Score: 3864, Total Diamonds Collected: 12, Lives: 7
+Saturday 21 November 2020 [ 4:36:28pm] Well done, you have completed the MiscGame game!

@@ -226,3 +226,240 @@ Sunday 25 October 2020 [ 5:10:06pm] level1 loaded
 Sunday 25 October 2020 [ 5:13:01pm] level1 Complete! - Diamonds: 14, Score: 2283
 Sunday 25 October 2020 [ 5:13:40pm] Score: 4083, Total Diamonds Collected: 14, Lives: 7
 Sunday 25 October 2020 [ 5:13:40pm] Well done, you have completed the MiscGame game!
+Thursday 29 October 2020 [ 5:06:38pm] Joel - Welcome to Rock Dash - RockDash5
+Thursday 29 October 2020 [ 5:06:39pm] Operating system: macOS
+Thursday 29 October 2020 [ 5:06:39pm] New RockDash5 Game. level1 - start level
+Thursday 29 October 2020 [ 5:06:39pm] level1 loaded
+Thursday 29 October 2020 [ 5:08:20pm] level1 Complete! - Diamonds: 11, Score: 1941
+Thursday 29 October 2020 [ 5:08:25pm] level2 loaded
+Thursday 29 October 2020 [ 5:09:57pm] level2 loaded
+Thursday 29 October 2020 [ 5:09:57pm] Reset level
+Thursday 29 October 2020 [ 5:12:46pm] level2 Complete! - Diamonds: 10, Score: 2057
+Thursday 29 October 2020 [ 5:12:47pm] level3 loaded
+Thursday 29 October 2020 [ 5:13:45pm] level3 loaded
+Thursday 29 October 2020 [ 5:13:45pm] Reset level
+Thursday 29 October 2020 [ 5:14:28pm] level3 loaded
+Thursday 29 October 2020 [ 5:14:28pm] Reset level
+Thursday 29 October 2020 [ 5:15:24pm] level3 loaded
+Thursday 29 October 2020 [ 5:15:24pm] Reset level
+Thursday 29 October 2020 [ 5:15:28pm] level3 loaded
+Thursday 29 October 2020 [ 5:15:28pm] Reset level
+Thursday 29 October 2020 [ 5:16:37pm] level3 loaded
+Thursday 29 October 2020 [ 5:16:37pm] Reset level
+Thursday 29 October 2020 [ 5:18:11pm] level3 loaded
+Thursday 29 October 2020 [ 5:18:11pm] Reset level
+Thursday 29 October 2020 [ 5:20:29pm] level3 Complete! - Diamonds: 11, Score: 2360
+Thursday 29 October 2020 [ 5:21:02pm] level4 loaded
+Sunday 8 November 2020 [ 3:45:25pm] Joel - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:45:26pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:45:26pm] New GameLearn Game. level3 - start level
+Sunday 8 November 2020 [ 3:45:26pm] level3 loaded
+Sunday 8 November 2020 [ 3:46:58pm] level3 Complete! - Diamonds: 10, Score: 1611
+Sunday 8 November 2020 [ 3:47:00pm] level4 loaded
+Sunday 8 November 2020 [ 6:09:05pm] Joel - Welcome to Rock Dash - RockDash5
+Sunday 8 November 2020 [ 6:09:06pm] Operating system: macOS
+Sunday 8 November 2020 [ 6:09:06pm] New RockDash5 Game. level1 - start level
+Sunday 8 November 2020 [ 6:09:06pm] level1 loaded
+Sunday 8 November 2020 [ 6:09:15pm] level1 loaded
+Sunday 8 November 2020 [ 6:09:15pm] Reset level
+Sunday 8 November 2020 [ 6:09:27pm] level1 loaded
+Sunday 8 November 2020 [ 6:09:27pm] Reset level
+Sunday 8 November 2020 [ 6:09:36pm] level1 loaded
+Sunday 8 November 2020 [ 6:09:36pm] Reset level
+Sunday 8 November 2020 [ 6:09:54pm] level1 loaded
+Sunday 8 November 2020 [ 6:09:54pm] Reset level
+Sunday 8 November 2020 [ 6:10:04pm] level1 loaded
+Sunday 8 November 2020 [ 6:10:04pm] Reset level
+Sunday 8 November 2020 [ 6:11:19pm] level1 loaded
+Sunday 8 November 2020 [ 6:11:19pm] Reset level
+Sunday 8 November 2020 [ 6:12:49pm] level1 Complete! - Diamonds: 12, Score: 2013
+Sunday 8 November 2020 [ 6:12:53pm] level2 loaded
+Sunday 8 November 2020 [ 6:18:52pm] level2 loaded
+Sunday 8 November 2020 [ 6:18:52pm] Reset level
+Sunday 8 November 2020 [ 6:21:47pm] level2 Complete! - Diamonds: 10, Score: 2183
+Sunday 8 November 2020 [ 6:21:49pm] level3 loaded
+Sunday 8 November 2020 [ 6:21:57pm] level3 loaded
+Sunday 8 November 2020 [ 6:21:57pm] Reset level
+Sunday 8 November 2020 [ 6:24:38pm] level3 Complete! - Diamonds: 10, Score: 2317
+Sunday 8 November 2020 [ 6:24:41pm] level4 loaded
+Sunday 8 November 2020 [ 7:56:21pm] level4 loaded
+Sunday 8 November 2020 [ 7:56:21pm] Reset level
+Sunday 8 November 2020 [ 7:56:23pm] level4 loaded
+Sunday 8 November 2020 [ 7:56:23pm] Reset level
+Sunday 8 November 2020 [ 7:56:25pm] level4 loaded
+Sunday 8 November 2020 [ 7:56:25pm] Reset level
+Sunday 8 November 2020 [ 7:58:00pm] level4 loaded
+Sunday 8 November 2020 [ 7:58:00pm] Reset level
+Monday 16 November 2020 [ 7:37:30pm] Joel - Welcome to Rock Dash - RockDash3
+Monday 16 November 2020 [ 7:37:31pm] Operating system: macOS
+Monday 16 November 2020 [ 7:37:31pm] New RockDash3 Game. level1 - start level
+Monday 16 November 2020 [ 7:37:31pm] level1 loaded
+Monday 16 November 2020 [ 7:39:26pm] level1 Complete! - Diamonds: 10, Score: 2156
+Monday 16 November 2020 [ 7:39:26pm] level2 loaded
+Monday 16 November 2020 [ 7:40:39pm] level2 Complete! - Diamonds: 10, Score: 2049
+Monday 16 November 2020 [ 7:40:42pm] level3 loaded
+Monday 16 November 2020 [ 7:43:08pm] level3 loaded
+Monday 16 November 2020 [ 7:43:08pm] Reset level
+Monday 16 November 2020 [ 7:44:13pm] level3 loaded
+Monday 16 November 2020 [ 7:44:13pm] Reset level
+Monday 16 November 2020 [ 7:45:41pm] level3 Complete! - Diamonds: 10, Score: 2958
+Monday 16 November 2020 [ 7:45:42pm] level4 loaded
+Monday 16 November 2020 [ 7:47:05pm] level4 loaded
+Monday 16 November 2020 [ 7:47:05pm] Reset level
+Monday 16 November 2020 [ 7:48:22pm] level4 loaded
+Monday 16 November 2020 [ 7:48:22pm] Reset level
+Monday 16 November 2020 [ 7:50:47pm] level4 Complete! - Diamonds: 10, Score: 2356
+Monday 16 November 2020 [ 7:50:48pm] level5 loaded
+Monday 16 November 2020 [ 7:54:11pm] level5 Complete! - Diamonds: 14, Score: 2385
+Monday 16 November 2020 [ 7:54:18pm] Score: 14004, Total Diamonds Collected: 54, Lives: 8
+Monday 16 November 2020 [ 7:54:18pm] Well done, you have completed the RockDash3 game!
+Monday 16 November 2020 [ 7:55:02pm] Joel - Welcome to Rock Dash - RockDash3
+Monday 16 November 2020 [ 7:55:02pm] Operating system: macOS
+Monday 16 November 2020 [ 7:55:02pm] New RockDash3 Game. level1 - start level
+Monday 16 November 2020 [ 7:55:03pm] level1 loaded
+Monday 16 November 2020 [ 7:56:07pm] Joel - Welcome to Rock Dash - RockDash3
+Monday 16 November 2020 [ 7:56:07pm] Operating system: macOS
+Monday 16 November 2020 [ 7:56:07pm] New RockDash3 Game. level1 - start level
+Monday 16 November 2020 [ 7:56:07pm] level1 loaded
+Tuesday 17 November 2020 [ 6:22:53pm] Joel - Welcome to Rock Dash - RockDash3
+Tuesday 17 November 2020 [ 6:22:54pm] Operating system: macOS
+Tuesday 17 November 2020 [ 6:22:54pm] New RockDash3 Game. level1 - start level
+Tuesday 17 November 2020 [ 6:22:54pm] level1 loaded
+Tuesday 17 November 2020 [ 6:24:20pm] level1 Complete! - Diamonds: 10, Score: 2159
+Tuesday 17 November 2020 [ 6:24:22pm] level2 loaded
+Tuesday 17 November 2020 [ 6:25:51pm] level2 Complete! - Diamonds: 10, Score: 2052
+Tuesday 17 November 2020 [ 6:25:53pm] level3 loaded
+Tuesday 17 November 2020 [ 6:28:11pm] level3 Complete! - Diamonds: 10, Score: 2260
+Tuesday 17 November 2020 [ 6:28:11pm] level4 loaded
+Tuesday 17 November 2020 [ 6:29:22pm] level4 loaded
+Tuesday 17 November 2020 [ 6:29:22pm] Reset level
+Tuesday 17 November 2020 [ 6:30:58pm] level4 loaded
+Tuesday 17 November 2020 [ 6:30:58pm] Reset level
+Tuesday 17 November 2020 [ 6:31:24pm] level4 loaded
+Tuesday 17 November 2020 [ 6:31:24pm] Reset level
+Tuesday 17 November 2020 [ 6:32:39pm] level4 loaded
+Tuesday 17 November 2020 [ 6:32:39pm] Reset level
+Tuesday 17 November 2020 [ 6:32:48pm] level4 loaded
+Tuesday 17 November 2020 [ 6:32:48pm] Reset level
+Tuesday 17 November 2020 [ 6:34:22pm] level4 loaded
+Tuesday 17 November 2020 [ 6:34:22pm] Reset level
+Tuesday 17 November 2020 [ 6:34:59pm] level4 loaded
+Tuesday 17 November 2020 [ 6:34:59pm] Reset level
+Tuesday 17 November 2020 [ 6:35:12pm] level4 loaded
+Tuesday 17 November 2020 [ 6:35:12pm] Reset level
+Tuesday 17 November 2020 [ 6:37:00pm] level4 loaded
+Tuesday 17 November 2020 [ 6:37:00pm] Reset level
+Tuesday 17 November 2020 [ 6:38:30pm] level4 loaded
+Tuesday 17 November 2020 [ 6:38:30pm] Reset level
+Tuesday 17 November 2020 [ 6:41:10pm] level4 loaded
+Tuesday 17 November 2020 [ 6:41:10pm] Reset level
+Tuesday 17 November 2020 [ 6:41:42pm] level4 loaded
+Tuesday 17 November 2020 [ 6:41:42pm] Reset level
+Tuesday 17 November 2020 [ 6:42:17pm] level4 loaded
+Tuesday 17 November 2020 [ 6:42:17pm] Reset level
+Tuesday 17 November 2020 [ 6:44:16pm] level4 loaded
+Tuesday 17 November 2020 [ 6:44:16pm] Reset level
+Tuesday 17 November 2020 [ 6:46:40pm] level4 Complete! - Diamonds: 10, Score: 2353
+Tuesday 17 November 2020 [ 6:46:41pm] level5 loaded
+Tuesday 17 November 2020 [ 6:48:53pm] level5 loaded
+Tuesday 17 November 2020 [ 6:48:53pm] Reset level
+Tuesday 17 November 2020 [ 6:50:15pm] level5 Complete! - Diamonds: 15, Score: 2427
+Tuesday 17 November 2020 [ 6:50:24pm] Score: 11851, Total Diamonds Collected: 55, Lives: 3
+Tuesday 17 November 2020 [ 6:50:24pm] Well done, you have completed the RockDash3 game!
+Thursday 19 November 2020 [ 9:32:27am] Joel - Welcome to Rock Dash - RockDash7
+Thursday 19 November 2020 [ 9:32:27am] Operating system: macOS
+Thursday 19 November 2020 [ 9:32:27am] New RockDash7 Game. level1 - start level
+Saturday 21 November 2020 [ 4:37:38pm] Joel - Welcome to Rock Dash - MiscGame
+Saturday 21 November 2020 [ 4:37:38pm] Operating system: macOS
+Saturday 21 November 2020 [ 4:37:38pm] New MiscGame Game. level1 - start level
+Saturday 21 November 2020 [ 4:37:38pm] level1 loaded
+Saturday 21 November 2020 [ 4:40:04pm] level1 Complete! - Diamonds: 13, Score: 2186
+Saturday 21 November 2020 [ 4:40:11pm] Score: 3986, Total Diamonds Collected: 13, Lives: 7
+Saturday 21 November 2020 [ 4:40:11pm] Well done, you have completed the MiscGame game!
+Saturday 21 November 2020 [ 4:40:55pm] Joel - Welcome to Rock Dash - Rockdash5
+Saturday 21 November 2020 [ 4:40:56pm] Operating system: macOS
+Saturday 21 November 2020 [ 4:40:56pm] New Rockdash5 Game. level1 - start level
+Saturday 21 November 2020 [ 4:40:56pm] level1 loaded
+Saturday 21 November 2020 [ 4:41:20pm] level1 loaded
+Saturday 21 November 2020 [ 4:41:20pm] Reset level
+Saturday 21 November 2020 [ 4:43:27pm] level1 Complete! - Diamonds: 15, Score: 2241
+Saturday 21 November 2020 [ 4:43:35pm] level2 loaded
+Tuesday 1 December 2020 [ 7:02:31pm] Joel - Welcome to Rock Dash - Rockdash5
+Tuesday 1 December 2020 [ 7:02:32pm] Operating system: macOS
+Tuesday 1 December 2020 [ 7:02:32pm] New Rockdash5 Game. level1 - start level
+Tuesday 1 December 2020 [ 7:02:32pm] level1 loaded
+Tuesday 1 December 2020 [ 7:02:38pm] level1 loaded
+Tuesday 1 December 2020 [ 7:02:38pm] Reset level
+Tuesday 1 December 2020 [ 7:04:21pm] level1 Complete! - Diamonds: 15, Score: 2225
+Tuesday 1 December 2020 [ 7:04:22pm] level2 loaded
+Tuesday 1 December 2020 [ 7:04:51pm] level2 loaded
+Tuesday 1 December 2020 [ 7:04:51pm] Reset level
+Tuesday 1 December 2020 [ 7:05:22pm] level2 loaded
+Tuesday 1 December 2020 [ 7:05:22pm] Reset level
+Tuesday 1 December 2020 [ 7:05:29pm] level2 loaded
+Tuesday 1 December 2020 [ 7:05:29pm] Reset level
+Tuesday 1 December 2020 [ 7:11:18pm] level2 Complete! - Diamonds: 14, Score: 2152
+Tuesday 1 December 2020 [ 7:11:19pm] level3 loaded
+Tuesday 1 December 2020 [ 7:12:16pm] level3 loaded
+Tuesday 1 December 2020 [ 7:12:16pm] Reset level
+Tuesday 1 December 2020 [ 7:13:49pm] level3 loaded
+Tuesday 1 December 2020 [ 7:13:49pm] Reset level
+Tuesday 1 December 2020 [ 7:15:38pm] level3 Complete! - Diamonds: 11, Score: 2580
+Tuesday 1 December 2020 [ 7:15:41pm] level4 loaded
+Tuesday 1 December 2020 [ 7:25:23pm] level4 Complete! - Diamonds: 12, Score: 2314
+Tuesday 1 December 2020 [ 7:25:28pm] level5 loaded
+Tuesday 1 December 2020 [ 7:30:21pm] level5 loaded
+Tuesday 1 December 2020 [ 7:30:21pm] Reset level
+Tuesday 1 December 2020 [ 7:36:55pm] level5 Complete! - Diamonds: 12, Score: 2360
+Tuesday 1 December 2020 [ 7:37:13pm] level6 loaded
+Tuesday 1 December 2020 [ 7:40:03pm] level6 Complete! - Diamonds: 11, Score: 2172
+Tuesday 1 December 2020 [ 7:40:03pm] level7 loaded
+Tuesday 1 December 2020 [ 7:40:15pm] level7 loaded
+Tuesday 1 December 2020 [ 7:40:15pm] Reset level
+Tuesday 1 December 2020 [ 7:40:24pm] level7 loaded
+Tuesday 1 December 2020 [ 7:40:24pm] Reset level
+Tuesday 1 December 2020 [ 7:41:25pm] level7 loaded
+Tuesday 1 December 2020 [ 7:41:25pm] Reset level
+Tuesday 1 December 2020 [ 7:44:37pm] level7 Complete! - Diamonds: 14, Score: 2884
+Tuesday 1 December 2020 [ 7:44:38pm] level8 loaded
+Tuesday 1 December 2020 [ 7:46:31pm] level8 Complete! - Diamonds: 14, Score: 2698
+Tuesday 1 December 2020 [ 7:46:41pm] level9 loaded
+Tuesday 1 December 2020 [ 7:48:04pm] level9 loaded
+Tuesday 1 December 2020 [ 7:48:04pm] Reset level
+Tuesday 1 December 2020 [ 7:48:13pm] level9 loaded
+Tuesday 1 December 2020 [ 7:48:13pm] Reset level
+Tuesday 1 December 2020 [ 7:50:34pm] level9 loaded
+Tuesday 1 December 2020 [ 7:50:34pm] Reset level
+Tuesday 1 December 2020 [ 7:50:40pm] level9 loaded
+Tuesday 1 December 2020 [ 7:50:40pm] Reset level
+Tuesday 1 December 2020 [ 7:52:07pm] level9 loaded
+Tuesday 1 December 2020 [ 7:52:07pm] Reset level
+Tuesday 1 December 2020 [ 7:53:14pm] level9 loaded
+Tuesday 1 December 2020 [ 7:53:14pm] Reset level
+Tuesday 1 December 2020 [ 7:54:15pm] level9 loaded
+Tuesday 1 December 2020 [ 7:54:15pm] Reset level
+Tuesday 1 December 2020 [ 7:57:15pm] level9 Complete! - Diamonds: 15, Score: 2331
+Tuesday 1 December 2020 [ 7:57:21pm] level10 loaded
+Tuesday 1 December 2020 [ 7:57:40pm] level10 loaded
+Tuesday 1 December 2020 [ 7:57:40pm] Reset level
+Tuesday 1 December 2020 [ 8:15:13pm] level10 loaded
+Tuesday 1 December 2020 [ 8:15:13pm] Reset level
+Tuesday 1 December 2020 [ 8:17:11pm] level10 loaded
+Tuesday 1 December 2020 [ 8:17:11pm] Reset level
+Tuesday 1 December 2020 [ 8:17:55pm] level10 loaded
+Tuesday 1 December 2020 [ 8:17:55pm] Reset level
+Tuesday 1 December 2020 [ 8:19:22pm] Name: JoelLevels: 1-0(0), Score: 23189, Diamonds: 129, Lives: 0, Date: 1.Dec.2020, Time: [ 8:19:22pm]
+Tuesday 1 December 2020 [ 8:19:22pm] Game Over
+Thursday 31 December 2020 [ 5:24:10pm] Joel - Welcome to Rock Dash - GameLearn
+Thursday 31 December 2020 [ 5:24:11pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:24:11pm] New GameLearn Game. level1 - start level
+Thursday 31 December 2020 [ 5:24:11pm] level1 loaded
+Thursday 31 December 2020 [ 5:24:14pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 31 December 2020 [ 5:24:14pm] level2 loaded
+Thursday 31 December 2020 [ 5:24:24pm] level2 Complete! - Diamonds: 10, Score: 1352
+Thursday 31 December 2020 [ 5:24:25pm] level3 loaded
+Thursday 31 December 2020 [ 5:24:33pm] level3 Complete! - Diamonds: 10, Score: 1403
+Thursday 31 December 2020 [ 5:24:34pm] level4 loaded
+Thursday 31 December 2020 [ 5:24:44pm] level4 Complete! - Diamonds: 10, Score: 1540
+Thursday 31 December 2020 [ 5:24:47pm] Score: 7699, Total Diamonds Collected: 40, Lives: 8
+Thursday 31 December 2020 [ 5:24:47pm] Well done, you have completed the GameLearn game!

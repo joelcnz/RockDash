@@ -1,7 +1,4 @@
-Toby|5392|36|7|15.Oct.2020|[ 6:53:57pm]|(no comment)
-Joel|4766|16|7|3.Oct.2020|[ 2:13:02pm]|Beat Morris to complete his own level
-Joel|4083|14|7|25.Oct.2020|[ 5:13:40pm]|(no comment)
-Testing|4030|14|7|12.Oct.2020|[11:56:57am]|(no comment)
-Joel|3707|12|7|3.Oct.2020|[ 2:09:51pm]|(no comment)
-Morris|3247|10|6|3.Oct.2020|[ 2:07:23pm]|(no comment)
-Morris|3237|11|5|3.Oct.2020|[ 2:26:47pm]|Joel helped
+Joel|1-1(1)|3986|13|7|21.Nov.2020|[ 4:40:11pm]|(no comment)
+Morris|1-1(1)|3864|12|7|21.Nov.2020|[ 4:36:28pm]|(no comment)
+Morris|1-0(0)|1500|0|6|21.Nov.2020|[ 3:49:53pm]|(no comment)
+Morris|1-0(0)|408|8|0|21.Nov.2020|[ 4:24:26pm]|(no comment)

@@ -4,7 +4,8 @@
 module source.app;
 
 //0.3.0
-//version = odotthreedoto;
+version = odotthreedoto;
+//version = milestones;
 
 public import foxid,
 				foxid.sdl;
@@ -63,7 +64,8 @@ bool g_levelComplete;
 bool g_gameComplete;
 bool g_gameOver;
 bool g_gameInit = true;
-int g_startLevel;
+int g_startLevel,
+	g_lastLevel;
 int g_diamonds;
 int g_score,
 	g_levelStartScore,
@@ -122,12 +124,12 @@ final class RockDashScene : Scene
 	this() @trusted {
 		name = "RockDashScene";
 		
-        //g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").image.strip(Vec(0,0), 24, 24);
+        // g_spriteList = loader.load!ImageSurface("assets/rockdash5.png").imageHandle.strip(Vec(0,0), 24, 24);
 		version(odotthreedoto)
 			g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").imageHandle.strip(Vec(0,0), 24, 24);
 		else
 			g_spriteList = loader.load!ImageSurface("assets/RockDashColoured.png").imageHandle.strip(Vec(0,0), 24, 24); //#0.2.0
-		//g_spriteList = loader.load!ImageSurface("assets/RockDashColoured-big.png").imageHandle.strip(Vec(0,0), g_stepSize, g_stepSize);
+		// g_spriteList = loader.load!ImageSurface("assets/RockDashColoured-big.png").imageHandle.strip(Vec(0,0), g_stepSize, g_stepSize);
 
         foreach(ref e; g_spriteList) {
             e.fromTexture();
@@ -305,20 +307,22 @@ final class RockDashScene : Scene
 		}
 
 		Instance dasherIns = getInstanceByName("dasher");
-		iDestroy_noGC(dasherIns);
+		if (dasherIns)
+			iDestroy_noGC(dasherIns);
 		Instance badyIns = getInstanceByName("bady");
-		iDestroy_noGC(badyIns);
+		if (badyIns)
+			iDestroy_noGC(badyIns);
 		auto list = getList().dup;
 		ssort!(Instance)(list, (a, b) => a.position.y < b.position.y);
-version(odotthreedoto) 1.gh;
 		list.each!((ref e) {
-			iDestroy_noGC(e);
+			if (e)
+				iDestroy_noGC(e);
 		});
-version(odotthreedoto) 2.gh;
+version(milestones) 2.gh;
 		add(list);
 		add(dasherIns);
 		add(badyIns);
-version(odotthreedoto) 3.gh;
+version(milestones) 3.gh;
 	}
 
 	void explodeStuff() {
@@ -376,12 +380,14 @@ version(odotthreedoto) 3.gh;
 	void setNextLevel(in string messageUpdate = "") {
 		if (g_gameComplete)
 			return;
+		super.gameStart();
 		g_level += 1;
 		auto baseName = text("level", g_level);
 		auto fileNameTest = getFillName(baseName);
 		import std.file;
 		if (! fileNameTest.exists) {
 			if (g_level > 1) {
+				g_lastLevel = g_level - 1;
 				g_level = 1;
 				baseName = text("level", g_level);
 			}
@@ -401,7 +407,8 @@ version(odotthreedoto) 3.gh;
 			g_messageUpdate(completedGame);
 			import std.datetime : DateTime, Clock;
 			auto dt = cast(DateTime)Clock.currTime();
-			g_scoresDetails = ScoresDetails(g_scoresDetails.name,g_score,g_diamonds,g_lives,
+			g_scoresDetails = ScoresDetails(g_scoresDetails.name,getLevelsPlayed,
+				g_score,g_diamonds,g_lives,
 				dt.day.to!string~"."~dt.month.to!string.capitalize~"."~dt.year.to!string,timeString,g_scoresDetails.comment);
 			g_scoreCards.add(g_scoresDetails);
 			g_scoreCards.save;
@@ -426,7 +433,7 @@ version(odotthreedoto) 3.gh;
 			int x;
 		}
 		int x;
-		Tab[] tabs = [{"Name", x + 0}, {"Score", x += 8*10}, {"Diamonds", x += 8*6}, {"Lives", x += 8*10},
+		Tab[] tabs = [{"Name", x + 0}, {"Levs", x += 7*10}, {"Score", x += 5*10}, {"Diamonds", x += 8*6}, {"Lives", x += 8*10},
 			{"Date", x += 8*5}, {"Time", x += 8*11}, {"Comment", x += 8*12}];
 		foreach(tab; tabs) {
 			graph.drawText(tab.label~":",g_fontgame,Color(255,180,0),
@@ -437,7 +444,7 @@ version(odotthreedoto) 3.gh;
 		graph.drawLine(Vec(0,(g_screenCharH + 3) * g_stepSize + 4 * (g_stepSize / 2)),
 			Vec(640,(g_screenCharH + 3) * g_stepSize + 4 * (g_stepSize / 2)), Color(255,180,0));
 		import std.range;
-		enum eTab {name,score,diamonds,lives,date,time,comment}
+		enum eTab {name,levs,score,diamonds,lives,date,time,comment}
 		foreach(i2, t; g_scoreCards.cards.take(10)) with(eTab) {
 			Color colour = Color(255,180,0);
 			immutable y = (g_screenCharH + 3) * g_stepSize + 4 * (g_stepSize / 2) + i2 * (g_stepSize / 2);
@@ -452,6 +459,7 @@ version(odotthreedoto) 3.gh;
 			}
 
 			draw(t.name, name);
+			draw(t.levelsPlayed, levs);
 			draw(t.score, score);
 			draw(t.diamonds, diamonds);
 			draw(t.lives, lives);
@@ -510,6 +518,8 @@ version(unittest) {
 		window.background = Color(0,0,0);
 
 		assert(initKeys, "keys setup failer..");
+		//Event.initJoysticks();
+		//writeln("Joysticks: ", Event.lenJoysticks());
 
 		import std.string;
  		mixin(tce("FOXID_VERSION FOXID_VERSION_STABLE".split));
@@ -639,6 +649,18 @@ void putObj(char c, Vec p) @trusted {
 			break;
 		}
 	}
+}
+
+string getLevelsPlayed() {
+	int start, end;
+	start = g_startLevel;
+	if (g_level == g_startLevel)
+		end = g_level - 1;
+	else
+		end = g_level;
+	if (g_startLevel == 1)
+		end = g_lastLevel;
+	return text(start,"-",end, "(", g_lastLevel, ")");
 }
 
 Uint8* g_keystate;

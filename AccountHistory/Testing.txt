@@ -1758,3 +1758,445 @@ Sunday 18 October 2020 [ 9:43:01pm] Testing - Welcome to Rock Dash - GameLearn
 Sunday 18 October 2020 [ 9:43:02pm] Operating system: macOS
 Sunday 18 October 2020 [ 9:43:02pm] New GameLearn Game. level4 - start level
 Sunday 18 October 2020 [ 9:43:02pm] level4 loaded
+Wednesday 28 October 2020 [ 3:55:44pm] Testing - Welcome to Rock Dash - RockDash5
+Wednesday 28 October 2020 [ 3:55:45pm] Operating system: macOS
+Wednesday 28 October 2020 [ 3:55:45pm] New RockDash5 Game. level1 - start level
+Wednesday 28 October 2020 [ 3:55:45pm] level1 loaded
+Wednesday 28 October 2020 [ 3:56:04pm] level1 loaded
+Wednesday 28 October 2020 [ 3:56:04pm] Reset level
+Wednesday 28 October 2020 [ 3:57:12pm] level1 Complete! - Diamonds: 10, Score: 1868
+Wednesday 28 October 2020 [ 3:57:14pm] level2 loaded
+Wednesday 28 October 2020 [ 3:57:16pm] level2 loaded
+Wednesday 28 October 2020 [ 3:57:16pm] Reset level
+Wednesday 28 October 2020 [ 3:57:18pm] level2 loaded
+Wednesday 28 October 2020 [ 3:57:18pm] Reset level
+Wednesday 28 October 2020 [ 3:57:20pm] level2 loaded
+Wednesday 28 October 2020 [ 3:57:20pm] Reset level
+Wednesday 28 October 2020 [ 4:00:12pm] level2 Complete! - Diamonds: 15, Score: 2519
+Wednesday 28 October 2020 [ 4:00:15pm] level3 loaded
+Wednesday 28 October 2020 [ 4:00:21pm] level3 loaded
+Wednesday 28 October 2020 [ 4:00:21pm] Reset level
+Wednesday 28 October 2020 [ 4:00:24pm] level3 loaded
+Wednesday 28 October 2020 [ 4:00:24pm] Reset level
+Wednesday 28 October 2020 [ 4:00:29pm] level3 loaded
+Wednesday 28 October 2020 [ 4:00:29pm] Reset level
+Wednesday 28 October 2020 [ 4:00:33pm] level3 loaded
+Wednesday 28 October 2020 [ 4:00:33pm] Reset level
+Wednesday 28 October 2020 [ 9:11:01pm] Testing - Welcome to Rock Dash - GameLearn
+Wednesday 28 October 2020 [ 9:11:02pm] Operating system: macOS
+Wednesday 28 October 2020 [ 9:11:02pm] New GameLearn Game. level1 - start level
+Wednesday 28 October 2020 [ 9:11:02pm] level1 loaded
+Wednesday 28 October 2020 [ 9:11:06pm] level1 Complete! - Diamonds: 10, Score: 1304
+Wednesday 28 October 2020 [ 9:11:06pm] level2 loaded
+Wednesday 28 October 2020 [ 9:11:11pm] level2 loaded
+Wednesday 28 October 2020 [ 9:11:11pm] Reset level
+Wednesday 28 October 2020 [ 9:11:23pm] level2 Complete! - Diamonds: 10, Score: 1352
+Wednesday 28 October 2020 [ 9:11:24pm] level3 loaded
+Wednesday 28 October 2020 [ 9:11:44pm] level3 loaded
+Wednesday 28 October 2020 [ 9:11:44pm] Reset level
+Wednesday 28 October 2020 [ 9:12:02pm] level3 Complete! - Diamonds: 10, Score: 1402
+Wednesday 28 October 2020 [ 9:12:03pm] level4 loaded
+Wednesday 28 October 2020 [ 9:12:19pm] level4 loaded
+Wednesday 28 October 2020 [ 9:12:19pm] Reset level
+Wednesday 28 October 2020 [ 9:12:24pm] level4 loaded
+Wednesday 28 October 2020 [ 9:12:24pm] Reset level
+Wednesday 28 October 2020 [ 9:12:44pm] level4 loaded
+Wednesday 28 October 2020 [ 9:12:44pm] Reset level
+Friday 30 October 2020 [ 1:38:00pm] Testing - Welcome to Rock Dash - GameLearn
+Friday 30 October 2020 [ 1:38:01pm] Operating system: macOS
+Friday 30 October 2020 [ 1:38:01pm] New GameLearn Game. level1 - start level
+Friday 30 October 2020 [ 1:38:01pm] level1 loaded
+Friday 30 October 2020 [ 1:38:05pm] level1 Complete! - Diamonds: 10, Score: 1304
+Friday 30 October 2020 [ 1:38:07pm] level2 loaded
+Friday 30 October 2020 [ 1:38:24pm] level2 Complete! - Diamonds: 10, Score: 1359
+Friday 30 October 2020 [ 1:38:26pm] level3 loaded
+Friday 30 October 2020 [ 1:38:37pm] level3 Complete! - Diamonds: 10, Score: 1402
+Friday 30 October 2020 [ 1:38:38pm] level4 loaded
+Friday 30 October 2020 [ 1:38:54pm] level4 Complete! - Diamonds: 10, Score: 1550
+Friday 30 October 2020 [ 1:38:57pm] Score: 7415, Total Diamonds Collected: 40, Lives: 7
+Friday 30 October 2020 [ 1:38:57pm] Well done, you have completed the GameLearn game!
+Friday 30 October 2020 [ 2:16:27pm] Testing - Welcome to Rock Dash - GameLearn
+Friday 30 October 2020 [ 2:16:27pm] Operating system: macOS
+Friday 30 October 2020 [ 2:16:27pm] New GameLearn Game. level1 - start level
+Friday 30 October 2020 [ 2:16:27pm] level1 loaded
+Friday 30 October 2020 [ 2:16:33pm] level1 Complete! - Diamonds: 10, Score: 1304
+Friday 30 October 2020 [ 2:16:34pm] level2 loaded
+Friday 30 October 2020 [ 2:16:49pm] level2 Complete! - Diamonds: 10, Score: 1351
+Friday 30 October 2020 [ 2:16:52pm] level3 loaded
+Friday 30 October 2020 [ 2:17:04pm] level3 Complete! - Diamonds: 10, Score: 1403
+Friday 30 October 2020 [ 2:17:08pm] level4 loaded
+Friday 30 October 2020 [ 2:17:23pm] level4 Complete! - Diamonds: 10, Score: 1544
+Friday 30 October 2020 [ 2:17:23pm] Score: 7702, Total Diamonds Collected: 40, Lives: 8
+Friday 30 October 2020 [ 2:17:23pm] Well done, you have completed the GameLearn game!
+Friday 30 October 2020 [ 2:18:27pm] Testing - Welcome to Rock Dash - GameLearn
+Friday 30 October 2020 [ 2:18:28pm] Operating system: macOS
+Friday 30 October 2020 [ 2:18:28pm] New GameLearn Game. level4 - start level
+Friday 30 October 2020 [ 2:18:28pm] level4 loaded
+Friday 30 October 2020 [ 2:18:43pm] level4 Complete! - Diamonds: 10, Score: 1552
+Friday 30 October 2020 [ 2:18:43pm] level1 loaded
+Friday 30 October 2020 [ 2:18:47pm] level1 Complete! - Diamonds: 10, Score: 1304
+Friday 30 October 2020 [ 2:18:47pm] level2 loaded
+Friday 30 October 2020 [ 2:18:59pm] level2 Complete! - Diamonds: 10, Score: 1350
+Friday 30 October 2020 [ 2:18:59pm] level3 loaded
+Friday 30 October 2020 [ 2:19:07pm] level3 Complete! - Diamonds: 10, Score: 1402
+Friday 30 October 2020 [ 2:19:07pm] Score: 7708, Total Diamonds Collected: 40, Lives: 8
+Friday 30 October 2020 [ 2:19:07pm] Well done, you have completed the GameLearn game!
+Friday 30 October 2020 [ 2:30:05pm] Testing - Welcome to Rock Dash - GameLearn
+Friday 30 October 2020 [ 2:30:06pm] Operating system: macOS
+Friday 30 October 2020 [ 2:30:06pm] New GameLearn Game. level4 - start level
+Friday 30 October 2020 [ 2:30:06pm] level4 loaded
+Friday 30 October 2020 [ 2:30:20pm] level4 Complete! - Diamonds: 10, Score: 1548
+Friday 30 October 2020 [ 2:30:21pm] level1 loaded
+Friday 30 October 2020 [ 2:30:24pm] level1 Complete! - Diamonds: 10, Score: 1304
+Friday 30 October 2020 [ 2:30:25pm] level2 loaded
+Friday 30 October 2020 [ 2:30:38pm] level2 Complete! - Diamonds: 10, Score: 1355
+Friday 30 October 2020 [ 2:30:38pm] level3 loaded
+Friday 30 October 2020 [ 2:30:48pm] level3 Complete! - Diamonds: 10, Score: 1403
+Friday 30 October 2020 [ 2:30:48pm] Score: 7710, Total Diamonds Collected: 40, Lives: 8
+Friday 30 October 2020 [ 2:30:48pm] Well done, you have completed the GameLearn game!
+Friday 30 October 2020 [ 2:31:22pm] Testing - Welcome to Rock Dash - GameLearn
+Friday 30 October 2020 [ 2:31:23pm] Operating system: macOS
+Friday 30 October 2020 [ 2:31:23pm] New GameLearn Game. level4 - start level
+Friday 30 October 2020 [ 2:31:23pm] level4 loaded
+Friday 30 October 2020 [ 2:39:49pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:39:50pm] Operating system: macOS
+Friday 30 October 2020 [ 2:39:50pm] New GameTesting Game. level2 - start level
+Friday 30 October 2020 [ 2:39:50pm] level2 loaded
+Friday 30 October 2020 [ 2:39:53pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:39:53pm] level1 loaded
+Friday 30 October 2020 [ 2:39:56pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:39:56pm] Score: 4400, Total Diamonds Collected: 20, Lives: 7
+Friday 30 October 2020 [ 2:39:56pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:40:23pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:40:24pm] Operating system: macOS
+Friday 30 October 2020 [ 2:40:24pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:40:24pm] level1 loaded
+Friday 30 October 2020 [ 2:40:27pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:40:27pm] level2 loaded
+Friday 30 October 2020 [ 2:40:29pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:40:30pm] Score: 4400, Total Diamonds Collected: 20, Lives: 7
+Friday 30 October 2020 [ 2:40:30pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:43:06pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:43:07pm] Operating system: macOS
+Friday 30 October 2020 [ 2:43:07pm] New GameTesting Game. level3 - start level
+Friday 30 October 2020 [ 2:43:07pm] level3 loaded
+Friday 30 October 2020 [ 2:43:42pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:43:42pm] Operating system: macOS
+Friday 30 October 2020 [ 2:43:42pm] New GameTesting Game. level2 - start level
+Friday 30 October 2020 [ 2:43:42pm] level2 loaded
+Friday 30 October 2020 [ 2:43:45pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:43:45pm] level3 loaded
+Friday 30 October 2020 [ 2:43:48pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:43:48pm] level1 loaded
+Friday 30 October 2020 [ 2:43:50pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:43:51pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:43:51pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:44:44pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:44:45pm] Operating system: macOS
+Friday 30 October 2020 [ 2:44:45pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:44:45pm] level1 loaded
+Friday 30 October 2020 [ 2:44:48pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:44:48pm] level2 loaded
+Friday 30 October 2020 [ 2:44:50pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:44:51pm] level3 loaded
+Friday 30 October 2020 [ 2:44:53pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:44:53pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:44:53pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:46:21pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:46:22pm] Operating system: macOS
+Friday 30 October 2020 [ 2:46:22pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:46:22pm] level1 loaded
+Friday 30 October 2020 [ 2:46:24pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:46:25pm] level2 loaded
+Friday 30 October 2020 [ 2:46:27pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:46:28pm] level3 loaded
+Friday 30 October 2020 [ 2:46:30pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:46:30pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:46:30pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:46:43pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:46:43pm] Operating system: macOS
+Friday 30 October 2020 [ 2:46:43pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:46:43pm] level1 loaded
+Friday 30 October 2020 [ 2:46:46pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:46:46pm] level2 loaded
+Friday 30 October 2020 [ 2:46:48pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:46:56pm] level3 loaded
+Friday 30 October 2020 [ 2:46:58pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:47:01pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:47:01pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:51:54pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:51:55pm] Operating system: macOS
+Friday 30 October 2020 [ 2:51:55pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:51:55pm] level1 loaded
+Friday 30 October 2020 [ 2:52:28pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:52:28pm] Operating system: macOS
+Friday 30 October 2020 [ 2:52:28pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:52:28pm] level1 loaded
+Friday 30 October 2020 [ 2:52:54pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:52:54pm] Operating system: macOS
+Friday 30 October 2020 [ 2:52:54pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:52:54pm] level1 loaded
+Friday 30 October 2020 [ 2:53:16pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:53:17pm] Operating system: macOS
+Friday 30 October 2020 [ 2:53:17pm] New GameTesting Game. level1 - start level
+Friday 30 October 2020 [ 2:53:17pm] level1 loaded
+Friday 30 October 2020 [ 2:53:35pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:53:42pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:53:43pm] Operating system: macOS
+Friday 30 October 2020 [ 2:53:43pm] New GameTesting Game. level3 - start level
+Friday 30 October 2020 [ 2:53:43pm] level3 loaded
+Friday 30 October 2020 [ 2:53:45pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:53:46pm] level1 loaded
+Friday 30 October 2020 [ 2:53:48pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:53:49pm] level2 loaded
+Friday 30 October 2020 [ 2:53:51pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:53:51pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:53:51pm] Well done, you have completed the GameTesting game!
+Friday 30 October 2020 [ 2:54:02pm] Testing - Welcome to Rock Dash - GameTesting
+Friday 30 October 2020 [ 2:54:03pm] Operating system: macOS
+Friday 30 October 2020 [ 2:54:03pm] New GameTesting Game. level2 - start level
+Friday 30 October 2020 [ 2:54:03pm] level2 loaded
+Friday 30 October 2020 [ 2:54:06pm] level2 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:54:08pm] level3 loaded
+Friday 30 October 2020 [ 2:54:11pm] level3 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:54:11pm] level1 loaded
+Friday 30 October 2020 [ 2:54:13pm] level1 Complete! - Diamonds: 10, Score: 1300
+Friday 30 October 2020 [ 2:54:14pm] Score: 6000, Total Diamonds Collected: 30, Lives: 8
+Friday 30 October 2020 [ 2:54:14pm] Well done, you have completed the GameTesting game!
+Saturday 31 October 2020 [ 9:42:42am] Testing - Welcome to Rock Dash - GameLearn
+Saturday 31 October 2020 [ 9:42:43am] Operating system: macOS
+Saturday 31 October 2020 [ 9:42:43am] New GameLearn Game. level3 - start level
+Saturday 31 October 2020 [ 9:42:43am] level3 loaded
+Saturday 31 October 2020 [ 9:42:51am] level3 Complete! - Diamonds: 10, Score: 1402
+Saturday 31 October 2020 [ 9:42:53am] level4 loaded
+Saturday 31 October 2020 [ 9:43:06am] level4 Complete! - Diamonds: 10, Score: 1543
+Saturday 31 October 2020 [ 9:43:06am] level1 loaded
+Saturday 31 October 2020 [ 9:43:10am] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 31 October 2020 [ 9:43:10am] level2 loaded
+Saturday 31 October 2020 [ 9:43:21am] level2 Complete! - Diamonds: 10, Score: 1346
+Saturday 31 October 2020 [ 9:43:21am] Score: 7695, Total Diamonds Collected: 40, Lives: 8
+Saturday 31 October 2020 [ 9:43:21am] Well done, you have completed the GameLearn game!
+Saturday 31 October 2020 [ 9:59:05am] Testing - Welcome to Rock Dash - GameTesting
+Saturday 31 October 2020 [ 9:59:06am] Operating system: macOS
+Saturday 31 October 2020 [ 9:59:06am] New GameTesting Game. level2 - start level
+Saturday 31 October 2020 [ 9:59:06am] level2 loaded
+Saturday 31 October 2020 [ 9:59:09am] level2 Complete! - Diamonds: 10, Score: 1300
+Saturday 31 October 2020 [ 9:59:11am] level3 loaded
+Saturday 31 October 2020 [ 9:59:14am] level3 Complete! - Diamonds: 10, Score: 1300
+Saturday 31 October 2020 [ 9:59:14am] level1 loaded
+Saturday 31 October 2020 [ 9:59:18am] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 31 October 2020 [ 9:59:19am] Score: 6004, Total Diamonds Collected: 30, Lives: 8
+Saturday 31 October 2020 [ 9:59:19am] Well done, you have completed the GameTesting game!
+Saturday 31 October 2020 [10:01:15am] Testing - Welcome to Rock Dash - GameTesting
+Saturday 31 October 2020 [10:01:16am] Operating system: macOS
+Saturday 31 October 2020 [10:01:16am] New GameTesting Game. level2 - start level
+Saturday 31 October 2020 [10:01:16am] level2 loaded
+Saturday 31 October 2020 [10:01:34am] Testing - Welcome to Rock Dash - GameTesting
+Saturday 31 October 2020 [10:01:35am] Operating system: macOS
+Saturday 31 October 2020 [10:01:35am] New GameTesting Game. level2 - start level
+Saturday 31 October 2020 [10:01:35am] level2 loaded
+Sunday 8 November 2020 [12:59:43pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [12:59:44pm] Operating system: macOS
+Sunday 8 November 2020 [12:59:44pm] New GameLearn Game. level1 - start level
+Sunday 8 November 2020 [12:59:44pm] level1 loaded
+Sunday 8 November 2020 [ 1:01:53pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:01:54pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:01:54pm] New GameLearn Game. level1 - start level
+Sunday 8 November 2020 [ 1:01:54pm] level1 loaded
+Sunday 8 November 2020 [ 1:02:53pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:02:54pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:02:54pm] New GameLearn Game. level1 - start level
+Sunday 8 November 2020 [ 1:02:54pm] level1 loaded
+Sunday 8 November 2020 [ 1:04:33pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:04:33pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:04:33pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:04:33pm] level2 loaded
+Sunday 8 November 2020 [ 1:06:17pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:06:18pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:06:18pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:06:18pm] level2 loaded
+Sunday 8 November 2020 [ 1:06:52pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:06:53pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:06:53pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:06:53pm] level2 loaded
+Sunday 8 November 2020 [ 1:28:00pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:28:00pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:28:00pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:28:00pm] level2 loaded
+Sunday 8 November 2020 [ 1:30:21pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:30:21pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:30:21pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:30:21pm] level2 loaded
+Sunday 8 November 2020 [ 1:31:17pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:31:18pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:31:18pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:31:18pm] level2 loaded
+Sunday 8 November 2020 [ 1:36:37pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:36:37pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:36:37pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:36:37pm] level2 loaded
+Sunday 8 November 2020 [ 1:40:33pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:40:34pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:40:34pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:40:34pm] level2 loaded
+Sunday 8 November 2020 [ 1:41:35pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:41:36pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:41:36pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:41:36pm] level2 loaded
+Sunday 8 November 2020 [ 1:42:15pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:42:15pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:42:15pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:42:15pm] level2 loaded
+Sunday 8 November 2020 [ 1:42:34pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:42:34pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:42:34pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:42:34pm] level2 loaded
+Sunday 8 November 2020 [ 1:43:09pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 1:43:10pm] Operating system: macOS
+Sunday 8 November 2020 [ 1:43:10pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 1:43:10pm] level2 loaded
+Sunday 8 November 2020 [ 3:37:33pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:37:34pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:37:34pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:37:34pm] level2 loaded
+Sunday 8 November 2020 [ 3:38:10pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:38:11pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:38:11pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:38:11pm] level2 loaded
+Sunday 8 November 2020 [ 3:38:42pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:38:43pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:38:43pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:38:43pm] level2 loaded
+Sunday 8 November 2020 [ 3:39:19pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:39:20pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:39:20pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:39:20pm] level2 loaded
+Sunday 8 November 2020 [ 3:39:54pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:39:55pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:39:55pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:39:55pm] level2 loaded
+Sunday 8 November 2020 [ 3:40:18pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:40:19pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:40:19pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:40:19pm] level2 loaded
+Sunday 8 November 2020 [ 3:44:23pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:44:24pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:44:24pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:44:24pm] level2 loaded
+Sunday 8 November 2020 [ 5:39:43pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:39:43pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:39:43pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:39:43pm] level2 loaded
+Sunday 8 November 2020 [ 5:40:37pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:40:38pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:40:38pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:40:38pm] level2 loaded
+Sunday 8 November 2020 [ 5:44:09pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:44:10pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:44:10pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:44:10pm] level2 loaded
+Sunday 8 November 2020 [ 5:45:46pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:45:47pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:45:47pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:45:47pm] level2 loaded
+Sunday 8 November 2020 [ 5:45:59pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:45:59pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:45:59pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:45:59pm] level2 loaded
+Sunday 8 November 2020 [ 5:46:28pm] Testing - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:46:29pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:46:29pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 5:46:29pm] level2 loaded
+Sunday 8 November 2020 [ 5:46:49pm] level2 Complete! - Diamonds: 10, Score: 1347
+Saturday 14 November 2020 [ 6:38:41pm] Testing - Welcome to Rock Dash - RockDash3
+Saturday 14 November 2020 [ 6:38:42pm] Operating system: macOS
+Saturday 14 November 2020 [ 6:38:42pm] New RockDash3 Game. level3 - start level
+Saturday 14 November 2020 [ 6:38:42pm] level3 loaded
+Saturday 14 November 2020 [ 6:39:02pm] level3 loaded
+Saturday 14 November 2020 [ 6:39:02pm] Reset level
+Saturday 14 November 2020 [ 6:39:10pm] level3 loaded
+Saturday 14 November 2020 [ 6:39:10pm] Reset level
+Tuesday 17 November 2020 [ 7:17:05pm] Testing - Welcome to Rock Dash - GameTesting
+Tuesday 17 November 2020 [ 7:17:05pm] Operating system: macOS
+Tuesday 17 November 2020 [ 7:17:05pm] New GameTesting Game. level1 - start level
+Tuesday 17 November 2020 [ 7:17:05pm] level1 loaded
+Tuesday 17 November 2020 [ 7:29:56pm] Testing - Welcome to Rock Dash - GameTesting2
+Tuesday 17 November 2020 [ 7:29:56pm] Operating system: macOS
+Tuesday 17 November 2020 [ 7:29:56pm] New GameTesting2 Game. level1 - start level
+Tuesday 17 November 2020 [ 7:29:56pm] level1 loaded
+Tuesday 17 November 2020 [ 7:33:59pm] Testing - Welcome to Rock Dash - GameTesting2
+Tuesday 17 November 2020 [ 7:33:59pm] Operating system: macOS
+Tuesday 17 November 2020 [ 7:33:59pm] New GameTesting2 Game. level1 - start level
+Tuesday 17 November 2020 [ 7:33:59pm] level1 loaded
+Tuesday 17 November 2020 [ 7:37:08pm] New GameTesting2 Game. level1 - start level
+Tuesday 17 November 2020 [ 7:37:08pm] level1 loaded
+Saturday 21 November 2020 [ 6:12:33pm] Testing - Welcome to Rock Dash - GameLearn
+Saturday 21 November 2020 [ 6:12:33pm] Operating system: macOS
+Saturday 21 November 2020 [ 6:12:33pm] New GameLearn Game. level1 - start level
+Saturday 21 November 2020 [ 6:12:33pm] level1 loaded
+Saturday 21 November 2020 [ 6:12:57pm] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 21 November 2020 [ 6:13:00pm] level2 loaded
+Saturday 21 November 2020 [ 6:13:45pm] level2 Complete! - Diamonds: 10, Score: 1355
+Saturday 21 November 2020 [ 6:13:46pm] level3 loaded
+Saturday 21 November 2020 [ 6:14:25pm] level3 loaded
+Saturday 21 November 2020 [ 6:14:25pm] Reset level
+Saturday 21 November 2020 [ 6:14:46pm] level3 Complete! - Diamonds: 10, Score: 1402
+Saturday 21 November 2020 [ 6:14:47pm] level4 loaded
+Saturday 21 November 2020 [ 6:15:44pm] level4 Complete! - Diamonds: 10, Score: 1549
+Saturday 21 November 2020 [ 6:15:50pm] Score: 7710, Total Diamonds Collected: 40, Lives: 8
+Saturday 21 November 2020 [ 6:15:50pm] Well done, you have completed the GameLearn game!
+Saturday 21 November 2020 [ 6:17:19pm] Testing - Welcome to Rock Dash - RockDash5
+Saturday 21 November 2020 [ 6:17:20pm] Operating system: macOS
+Saturday 21 November 2020 [ 6:17:20pm] New RockDash5 Game. level1 - start level
+Saturday 21 November 2020 [ 6:17:20pm] level1 loaded
+Saturday 21 November 2020 [ 6:17:49pm] level1 loaded
+Saturday 21 November 2020 [ 6:17:49pm] Reset level
+Saturday 21 November 2020 [ 6:21:13pm] level1 Complete! - Diamonds: 15, Score: 2240
+Saturday 21 November 2020 [ 6:21:13pm] level2 loaded
+Saturday 21 November 2020 [ 6:22:14pm] level2 loaded
+Saturday 21 November 2020 [ 6:22:14pm] Reset level
+Saturday 21 November 2020 [ 6:23:51pm] Testing - Welcome to Rock Dash - RockDash5
+Saturday 21 November 2020 [ 6:23:52pm] Operating system: macOS
+Saturday 21 November 2020 [ 6:23:52pm] New RockDash5 Game. level1 - start level
+Saturday 21 November 2020 [ 6:23:52pm] level1 loaded
+Saturday 21 November 2020 [ 6:25:40pm] Testing - Welcome to Rock Dash - RockDash5
+Saturday 21 November 2020 [ 6:26:10pm] Testing - Welcome to Rock Dash - RockDash5
+Saturday 21 November 2020 [ 6:26:11pm] Operating system: macOS
+Saturday 21 November 2020 [ 6:26:11pm] New RockDash5 Game. level3 - start level
+Saturday 21 November 2020 [ 6:26:11pm] level3 loaded
+Saturday 21 November 2020 [ 6:26:15pm] level3 loaded
+Saturday 21 November 2020 [ 6:26:15pm] Reset level
+Saturday 21 November 2020 [ 6:27:14pm] level3 loaded
+Saturday 21 November 2020 [ 6:27:14pm] Reset level
+Saturday 21 November 2020 [ 6:29:02pm] level3 Complete! - Diamonds: 11, Score: 2379
+Saturday 21 November 2020 [ 6:31:18pm] Testing - Welcome to Rock Dash - GameLearn
+Saturday 21 November 2020 [ 6:31:19pm] Operating system: macOS
+Saturday 21 November 2020 [ 6:31:19pm] New GameLearn Game. level1 - start level
+Saturday 21 November 2020 [ 6:31:19pm] level1 loaded
+Saturday 21 November 2020 [ 6:31:34pm] level1 Complete! - Diamonds: 10, Score: 1304
+Saturday 21 November 2020 [ 6:31:35pm] level2 loaded
+Saturday 21 November 2020 [ 6:31:54pm] level2 Complete! - Diamonds: 10, Score: 1343
+Saturday 21 November 2020 [ 6:31:57pm] level3 loaded
+Saturday 21 November 2020 [ 6:32:35pm] level3 Complete! - Diamonds: 10, Score: 1402
+Saturday 21 November 2020 [ 6:32:35pm] level4 loaded
+Saturday 21 November 2020 [ 6:33:15pm] level4 Complete! - Diamonds: 10, Score: 1552
+Saturday 21 November 2020 [ 6:33:16pm] Score: 7701, Total Diamonds Collected: 40, Lives: 8
+Saturday 21 November 2020 [ 6:33:16pm] Well done, you have completed the GameLearn game!
+Saturday 19 December 2020 [ 8:39:03pm] Testing - Welcome to Rock Dash - RockDash7
+Saturday 19 December 2020 [ 8:39:04pm] Operating system: macOS
+Saturday 19 December 2020 [ 8:39:04pm] New RockDash7 Game. level1 - start level
+Saturday 19 December 2020 [ 8:39:04pm] level1 loaded
+Thursday 31 December 2020 [ 5:19:48pm] Testing - Welcome to Rock Dash - GameLearn
+Thursday 31 December 2020 [ 5:19:48pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:19:48pm] New GameLearn Game. level1 - start level
+Thursday 31 December 2020 [ 5:19:48pm] level1 loaded
+Thursday 31 December 2020 [ 5:19:53pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 31 December 2020 [ 5:19:59pm] Score: 1800, Total Diamonds Collected: 0, Lives: 7
+Thursday 31 December 2020 [ 5:19:59pm] Well done, you have completed the GameLearn game!
+Thursday 31 December 2020 [ 5:19:59pm] Reset level
+Wednesday 6 January 2021 [12:43:59pm] Testing - Welcome to Rock Dash - RockDash5
+Wednesday 6 January 2021 [12:44:00pm] Operating system: macOS
+Wednesday 6 January 2021 [12:44:00pm] New RockDash5 Game. level1 - start level
+Wednesday 6 January 2021 [12:44:00pm] level1 loaded
+Wednesday 6 January 2021 [12:46:59pm] level1 loaded
+Wednesday 6 January 2021 [12:46:59pm] Reset level

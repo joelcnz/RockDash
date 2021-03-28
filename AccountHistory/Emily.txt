@@ -1,0 +1,38 @@
+Sunday 8 November 2020 [12:14:12pm] Emily - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [12:14:13pm] Operating system: macOS
+Sunday 8 November 2020 [12:14:13pm] New GameLearn Game. level1 - start level
+Sunday 8 November 2020 [12:14:13pm] level1 loaded
+Sunday 8 November 2020 [12:15:36pm] level1 Complete! - Diamonds: 10, Score: 1304
+Sunday 8 November 2020 [12:15:57pm] level2 loaded
+Sunday 8 November 2020 [12:18:05pm] level2 Complete! - Diamonds: 10, Score: 1362
+Sunday 8 November 2020 [ 3:40:48pm] Emily - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:40:48pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:40:48pm] New GameLearn Game. level2 - start level
+Sunday 8 November 2020 [ 3:40:48pm] level2 loaded
+Sunday 8 November 2020 [ 3:43:29pm] level2 Complete! - Diamonds: 10, Score: 1366
+Sunday 8 November 2020 [ 3:43:32pm] level3 loaded
+Sunday 8 November 2020 [ 3:45:15pm] Emily - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 3:45:15pm] Operating system: macOS
+Sunday 8 November 2020 [ 3:45:15pm] New GameLearn Game. level3 - start level
+Sunday 8 November 2020 [ 3:45:15pm] level3 loaded
+Sunday 8 November 2020 [ 5:48:03pm] Emily - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 5:48:04pm] Operating system: macOS
+Sunday 8 November 2020 [ 5:48:04pm] New GameLearn Game. level3 - start level
+Sunday 8 November 2020 [ 5:48:04pm] level3 loaded
+Sunday 8 November 2020 [ 5:50:56pm] level3 Complete! - Diamonds: 10, Score: 1403
+Sunday 8 November 2020 [ 5:51:05pm] level4 loaded
+Sunday 8 November 2020 [ 5:55:15pm] level4 Complete! - Diamonds: 10, Score: 1541
+Sunday 8 November 2020 [ 5:55:21pm] level1 loaded
+Sunday 8 November 2020 [ 5:55:50pm] level1 Complete! - Diamonds: 10, Score: 1304
+Sunday 8 November 2020 [ 5:55:57pm] level2 loaded
+Sunday 8 November 2020 [ 5:59:57pm] level2 Complete! - Diamonds: 10, Score: 1362
+Sunday 8 November 2020 [ 6:00:00pm] Score: 7410, Total Diamonds Collected: 40, Lives: 7
+Sunday 8 November 2020 [ 6:00:00pm] Well done, you have completed the GameLearn game!
+Sunday 8 November 2020 [ 6:02:22pm] Emily - Welcome to Rock Dash - GameLearn
+Sunday 8 November 2020 [ 6:02:22pm] Operating system: macOS
+Sunday 8 November 2020 [ 6:02:22pm] New GameLearn Game. level1 - start level
+Sunday 8 November 2020 [ 6:02:22pm] level1 loaded
+Sunday 8 November 2020 [ 6:02:51pm] level1 Complete! - Diamonds: 10, Score: 1304
+Sunday 8 November 2020 [ 6:03:56pm] level2 loaded
+Sunday 8 November 2020 [ 6:06:22pm] level2 Complete! - Diamonds: 10, Score: 1364
+Sunday 8 November 2020 [ 6:06:49pm] level3 loaded

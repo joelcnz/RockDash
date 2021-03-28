@@ -1,0 +1,6 @@
+Thursday 29 October 2020 [11:50:49am] nicola - Welcome to Rock Dash - GameLearn
+Thursday 29 October 2020 [11:50:50am] Operating system: macOS
+Thursday 29 October 2020 [11:50:50am] New GameLearn Game. level1 - start level
+Thursday 29 October 2020 [11:50:50am] level1 loaded
+Thursday 29 October 2020 [11:51:12am] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 29 October 2020 [11:51:19am] level2 loaded

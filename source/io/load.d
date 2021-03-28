@@ -68,4 +68,5 @@ void load(string fileNameBase) {
     //if (g_startPos.inBounds)
     //    putObj('S', g_startPos);
     g_hackLevelJustLoaded = true; //#hack not work!
+    0.gh;
 } // load

@@ -73,7 +73,7 @@ final class Faller : Instance {
                             foreach(y; iota(g_explodePoint.y - g_stepSize, g_explodePoint.y + g_stepSize + 1, g_stepSize))
                                 foreach(x; iota(g_explodePoint.x - g_stepSize, g_explodePoint.x + g_stepSize + 1, g_stepSize)) {
                                     auto tst = sceneManager.current.getInstanceByMask(Vec(x,y),g_shapeRect);
-                                    if (tst !is null && tst.inBounds && (tst.name == "bady_maker_left" || tst.name == "bady_maker_right")) {
+                                    if (tst !is null && Vec(x,y).inBounds && (tst.name == "bady_maker_left" || tst.name == "bady_maker_right")) {
                                         isBadyMakerSafe = false;
                                         immutable blowBadyPoints = 400;
                                         g_score += blowBadyPoints;

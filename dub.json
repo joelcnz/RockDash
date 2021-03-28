@@ -20,7 +20,7 @@
 		}
 	],
 	"dependencies": {
-		"foxid": "~master",
+		"foxid": "~>0.3.0",
 		"unit-threaded": "~>1.0.2"
 	},
 	"description": "Testing",

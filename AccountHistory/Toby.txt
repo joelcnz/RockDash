@@ -90,3 +90,232 @@ Thursday 15 October 2020 [ 8:33:24pm] New RockDash5 Game. level2 - start level
 Thursday 15 October 2020 [ 8:33:24pm] level2 loaded
 Thursday 15 October 2020 [ 8:33:55pm] New RockDash5 Game. level2 - start level
 Thursday 15 October 2020 [ 8:33:55pm] level2 loaded
+Friday 25 December 2020 [ 2:41:33pm] Toby - Welcome to Rock Dash - Toby
+Friday 25 December 2020 [ 2:41:33pm] Operating system: macOS
+Friday 25 December 2020 [ 2:41:33pm] New Toby Game. level1 - start level
+Friday 25 December 2020 [ 2:41:33pm] level1 loaded
+Friday 25 December 2020 [ 2:41:47pm] Toby - Welcome to Rock Dash - Toby
+Friday 25 December 2020 [ 2:41:48pm] Operating system: macOS
+Friday 25 December 2020 [ 2:41:48pm] New Toby Game. level2 - start level
+Friday 25 December 2020 [ 2:41:48pm] level2 loaded
+Friday 25 December 2020 [ 2:42:09pm] Toby - Welcome to Rock Dash - Toby
+Friday 25 December 2020 [ 2:42:10pm] Operating system: macOS
+Friday 25 December 2020 [ 2:42:10pm] New Toby Game. level3 - start level
+Friday 25 December 2020 [ 2:42:10pm] level3 loaded
+Friday 25 December 2020 [ 2:42:13pm] Toby - Welcome to Rock Dash - Toby
+Friday 25 December 2020 [ 2:42:14pm] Operating system: macOS
+Friday 25 December 2020 [ 2:42:14pm] New Toby Game. level3 - start level
+Friday 25 December 2020 [ 2:42:14pm] level3 loaded
+Friday 25 December 2020 [ 2:44:54pm] level3 loaded
+Friday 25 December 2020 [ 2:44:54pm] Reset level
+Friday 25 December 2020 [ 2:57:42pm] Toby - Welcome to Rock Dash - RockDash5
+Friday 25 December 2020 [ 2:57:42pm] Operating system: macOS
+Friday 25 December 2020 [ 2:57:42pm] New RockDash5 Game. level2 - start level
+Friday 25 December 2020 [ 2:57:42pm] level2 loaded
+Friday 25 December 2020 [ 3:05:22pm] level2 loaded
+Friday 25 December 2020 [ 3:05:22pm] Reset level
+Friday 25 December 2020 [ 3:05:23pm] level2 loaded
+Friday 25 December 2020 [ 3:05:23pm] Reset level
+Friday 25 December 2020 [ 3:05:31pm] Name: TobyLevels: 2-1(0), Score: 3, Diamonds: 0, Lives: 0, Date: 25.Dec.2020, Time: [ 3:05:31pm]
+Friday 25 December 2020 [ 3:05:31pm] Game Over
+Friday 25 December 2020 [ 3:06:05pm] Toby - Welcome to Rock Dash - RockDash5
+Friday 25 December 2020 [ 3:06:05pm] Operating system: macOS
+Friday 25 December 2020 [ 3:06:05pm] New RockDash5 Game. level2 - start level
+Friday 25 December 2020 [ 3:06:05pm] level2 loaded
+Friday 25 December 2020 [ 3:08:30pm] level2 loaded
+Friday 25 December 2020 [ 3:08:30pm] Reset level
+Friday 25 December 2020 [ 3:08:39pm] level2 loaded
+Friday 25 December 2020 [ 3:08:39pm] Reset level
+Friday 25 December 2020 [ 3:11:54pm] level2 loaded
+Friday 25 December 2020 [ 3:11:54pm] Reset level
+Friday 25 December 2020 [ 3:12:15pm] level2 loaded
+Friday 25 December 2020 [ 3:12:15pm] Reset level
+Friday 25 December 2020 [ 3:14:30pm] level2 Complete! - Diamonds: 10, Score: 1952
+Friday 25 December 2020 [ 3:14:42pm] level3 loaded
+Friday 25 December 2020 [ 3:14:58pm] level3 loaded
+Friday 25 December 2020 [ 3:14:58pm] Reset level
+Friday 25 December 2020 [ 3:16:54pm] Name: TobyLevels: 2-3(0), Score: 2008, Diamonds: 10, Lives: 0, Date: 25.Dec.2020, Time: [ 3:16:54pm]
+Friday 25 December 2020 [ 3:16:54pm] Game Over
+Monday 28 December 2020 [ 5:37:32pm] Toby - Welcome to Rock Dash - Toby
+Monday 28 December 2020 [ 5:37:33pm] Operating system: macOS
+Monday 28 December 2020 [ 5:37:33pm] New Toby Game. level3 - start level
+Monday 28 December 2020 [ 5:37:33pm] level3 loaded
+Monday 28 December 2020 [ 5:42:50pm] Name: TobyLevels: 3-2(0), Score: 500, Diamonds: 0, Lives: 0, Date: 28.Dec.2020, Time: [ 5:42:50pm]
+Monday 28 December 2020 [ 5:42:50pm] Game Over
+Monday 28 December 2020 [ 5:44:04pm] New Toby Game. level3 - start level
+Monday 28 December 2020 [ 5:44:06pm] level3 loaded
+Monday 28 December 2020 [ 5:46:00pm] level3 loaded
+Monday 28 December 2020 [ 5:46:00pm] Reset level
+Monday 28 December 2020 [ 5:46:10pm] Toby - Welcome to Rock Dash - Toby
+Monday 28 December 2020 [ 5:46:11pm] Operating system: macOS
+Monday 28 December 2020 [ 5:46:11pm] New Toby Game. level3 - start level
+Monday 28 December 2020 [ 5:46:11pm] level3 loaded
+Monday 28 December 2020 [ 5:48:09pm] level3 Complete! - Diamonds: 10, Score: 1843
+Monday 28 December 2020 [ 5:48:15pm] level1 loaded
+Monday 28 December 2020 [ 5:49:42pm] level1 Complete! - Diamonds: 13, Score: 1685
+Monday 28 December 2020 [ 5:50:00pm] level2 loaded
+Monday 28 December 2020 [ 5:50:47pm] level2 loaded
+Monday 28 December 2020 [ 5:50:47pm] Reset level
+Monday 28 December 2020 [ 5:53:26pm] Name: TobyLevels: 3-2(3), Score: 3657, Diamonds: 29, Lives: 0, Date: 28.Dec.2020, Time: [ 5:53:26pm]
+Monday 28 December 2020 [ 5:53:26pm] Game Over
+Monday 28 December 2020 [ 5:53:53pm] Toby - Welcome to Rock Dash - Toby
+Monday 28 December 2020 [ 5:53:54pm] Operating system: macOS
+Monday 28 December 2020 [ 5:53:54pm] New Toby Game. level3 - start level
+Monday 28 December 2020 [ 5:53:54pm] level3 loaded
+Monday 28 December 2020 [ 5:54:06pm] Toby - Welcome to Rock Dash - Toby
+Monday 28 December 2020 [ 5:54:06pm] Operating system: macOS
+Monday 28 December 2020 [ 5:54:06pm] New Toby Game. level2 - start level
+Monday 28 December 2020 [ 5:54:06pm] level2 loaded
+Monday 28 December 2020 [ 5:54:26pm] level2 loaded
+Monday 28 December 2020 [ 5:54:26pm] Reset level
+Monday 28 December 2020 [ 5:55:06pm] level2 Complete! - Diamonds: 10, Score: 1438
+Monday 28 December 2020 [ 5:55:09pm] level3 loaded
+Monday 28 December 2020 [ 5:56:57pm] level3 loaded
+Monday 28 December 2020 [ 5:56:57pm] Reset level
+Monday 28 December 2020 [ 5:57:08pm] level3 loaded
+Monday 28 December 2020 [ 5:57:08pm] Reset level
+Monday 28 December 2020 [ 6:02:44pm] level3 Complete! - Diamonds: 10, Score: 2054
+Monday 28 December 2020 [ 6:03:06pm] level1 loaded
+Monday 28 December 2020 [ 6:04:39pm] level1 Complete! - Diamonds: 13, Score: 1686
+Monday 28 December 2020 [ 6:04:49pm] Score: 5778, Total Diamonds Collected: 33, Lives: 3
+Monday 28 December 2020 [ 6:04:49pm] Well done, you have completed the Toby game!
+Monday 28 December 2020 [ 6:06:47pm] Toby - Welcome to Rock Dash - Toby
+Monday 28 December 2020 [ 6:06:48pm] Operating system: macOS
+Monday 28 December 2020 [ 6:06:48pm] New Toby Game. level4 - start level
+Monday 28 December 2020 [ 6:06:48pm] level4 loaded
+Monday 28 December 2020 [ 6:14:42pm] level4 loaded
+Monday 28 December 2020 [ 6:14:42pm] Reset level
+Monday 28 December 2020 [ 6:16:22pm] level4 loaded
+Monday 28 December 2020 [ 6:16:22pm] Reset level
+Monday 28 December 2020 [ 6:17:04pm] level4 loaded
+Monday 28 December 2020 [ 6:17:04pm] Reset level
+Monday 28 December 2020 [ 6:19:04pm] New Toby Game. level4 - start level
+Monday 28 December 2020 [ 6:19:05pm] level4 loaded
+Monday 28 December 2020 [ 6:19:53pm] level4 loaded
+Monday 28 December 2020 [ 6:19:53pm] Reset level
+Monday 28 December 2020 [ 6:21:35pm] level4 Complete! - Diamonds: 10, Score: 1790
+Monday 28 December 2020 [ 6:22:39pm] Toby - Welcome to Rock Dash - RockDash5
+Monday 28 December 2020 [ 6:22:39pm] Operating system: macOS
+Monday 28 December 2020 [ 6:22:39pm] New RockDash5 Game. level2 - start level
+Monday 28 December 2020 [ 6:22:39pm] level2 loaded
+Monday 28 December 2020 [ 6:23:02pm] level2 loaded
+Monday 28 December 2020 [ 6:23:02pm] Reset level
+Monday 28 December 2020 [ 6:23:03pm] level2 loaded
+Monday 28 December 2020 [ 6:23:03pm] Reset level
+Monday 28 December 2020 [ 6:24:18pm] level2 loaded
+Monday 28 December 2020 [ 6:24:18pm] Reset level
+Monday 28 December 2020 [ 6:24:52pm] level2 loaded
+Monday 28 December 2020 [ 6:24:52pm] Reset level
+Monday 28 December 2020 [ 6:25:10pm] level2 loaded
+Monday 28 December 2020 [ 6:25:10pm] Reset level
+Monday 28 December 2020 [ 6:25:44pm] level2 loaded
+Monday 28 December 2020 [ 6:25:44pm] Reset level
+Monday 28 December 2020 [ 6:27:53pm] level2 loaded
+Monday 28 December 2020 [ 6:27:53pm] Reset level
+Monday 28 December 2020 [ 6:28:31pm] level2 loaded
+Monday 28 December 2020 [ 6:28:31pm] Reset level
+Monday 28 December 2020 [ 6:29:55pm] level2 loaded
+Monday 28 December 2020 [ 6:29:55pm] Reset level
+Monday 28 December 2020 [ 6:30:31pm] Name: TobyLevels: 2-1(0), Score: 14, Diamonds: 0, Lives: 0, Date: 28.Dec.2020, Time: [ 6:30:31pm]
+Monday 28 December 2020 [ 6:30:31pm] Game Over
+Monday 28 December 2020 [ 6:31:20pm] Toby - Welcome to Rock Dash - RockDash5
+Monday 28 December 2020 [ 6:31:21pm] Operating system: macOS
+Monday 28 December 2020 [ 6:31:21pm] New RockDash5 Game. level2 - start level
+Monday 28 December 2020 [ 6:31:21pm] level2 loaded
+Monday 28 December 2020 [ 6:32:30pm] level2 loaded
+Monday 28 December 2020 [ 6:32:30pm] Reset level
+Monday 28 December 2020 [ 6:33:28pm] level2 loaded
+Monday 28 December 2020 [ 6:33:28pm] Reset level
+Monday 28 December 2020 [ 6:35:39pm] level2 loaded
+Monday 28 December 2020 [ 6:35:39pm] Reset level
+Monday 28 December 2020 [ 6:36:39pm] level2 loaded
+Monday 28 December 2020 [ 6:36:39pm] Reset level
+Monday 28 December 2020 [ 6:39:14pm] level2 Complete! - Diamonds: 12, Score: 2410
+Monday 28 December 2020 [ 6:39:16pm] level3 loaded
+Monday 28 December 2020 [ 7:45:59pm] Toby - Welcome to Rock Dash - RockDash5
+Monday 28 December 2020 [ 7:46:00pm] Operating system: macOS
+Monday 28 December 2020 [ 7:46:00pm] New RockDash5 Game. level2 - start level
+Monday 28 December 2020 [ 7:46:00pm] level2 loaded
+Monday 28 December 2020 [ 7:54:55pm] level2 Complete! - Diamonds: 11, Score: 2435
+Monday 28 December 2020 [ 7:54:57pm] level3 loaded
+Thursday 31 December 2020 [ 4:59:28pm] Toby - Welcome to Rock Dash - RockDash5
+Thursday 31 December 2020 [ 4:59:29pm] Operating system: macOS
+Thursday 31 December 2020 [ 4:59:29pm] New RockDash5 Game. level3 - start level
+Thursday 31 December 2020 [ 4:59:29pm] level3 loaded
+Thursday 31 December 2020 [ 5:00:46pm] level3 loaded
+Thursday 31 December 2020 [ 5:00:46pm] Reset level
+Thursday 31 December 2020 [ 5:01:19pm] level3 loaded
+Thursday 31 December 2020 [ 5:01:19pm] Reset level
+Thursday 31 December 2020 [ 5:04:04pm] Toby - Welcome to Rock Dash - RockDash5
+Thursday 31 December 2020 [ 5:04:04pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:04:04pm] New RockDash5 Game. level3 - start level
+Thursday 31 December 2020 [ 5:04:04pm] level3 loaded
+Thursday 31 December 2020 [ 5:04:27pm] level3 loaded
+Thursday 31 December 2020 [ 5:04:27pm] Reset level
+Thursday 31 December 2020 [ 5:04:37pm] level3 loaded
+Thursday 31 December 2020 [ 5:04:37pm] Reset level
+Thursday 31 December 2020 [ 5:05:37pm] level3 loaded
+Thursday 31 December 2020 [ 5:05:37pm] Reset level
+Thursday 31 December 2020 [ 5:05:57pm] level3 loaded
+Thursday 31 December 2020 [ 5:05:57pm] Reset level
+Thursday 31 December 2020 [ 5:08:57pm] level3 loaded
+Thursday 31 December 2020 [ 5:08:57pm] Reset level
+Thursday 31 December 2020 [ 5:10:45pm] level3 Complete! - Diamonds: 10, Score: 2407
+Thursday 31 December 2020 [ 5:10:50pm] level4 loaded
+Thursday 31 December 2020 [ 5:12:47pm] Name: TobyLevels: 3-4(0), Score: 2554, Diamonds: 11, Lives: 0, Date: 31.Dec.2020, Time: [ 5:12:47pm]
+Thursday 31 December 2020 [ 5:12:47pm] Game Over
+Thursday 31 December 2020 [ 5:13:39pm] Toby - Welcome to Rock Dash - RockDash5
+Thursday 31 December 2020 [ 5:13:40pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:13:40pm] New RockDash5 Game. level3 - start level
+Thursday 31 December 2020 [ 5:13:40pm] level3 loaded
+Thursday 31 December 2020 [ 5:16:58pm] Name: TobyLevels: 3-2(0), Score: 181, Diamonds: 1, Lives: 0, Date: 31.Dec.2020, Time: [ 5:16:58pm]
+Thursday 31 December 2020 [ 5:16:58pm] Game Over
+Thursday 31 December 2020 [ 5:17:22pm] Toby - Welcome to Rock Dash - GameLearn
+Thursday 31 December 2020 [ 5:17:23pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:17:23pm] New GameLearn Game. level1 - start level
+Thursday 31 December 2020 [ 5:17:23pm] level1 loaded
+Thursday 31 December 2020 [ 5:17:36pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 31 December 2020 [ 5:17:47pm] Score: 1800, Total Diamonds Collected: 0, Lives: 7
+Thursday 31 December 2020 [ 5:17:47pm] Well done, you have completed the GameLearn game!
+Thursday 31 December 2020 [ 5:17:47pm] Reset level
+Thursday 31 December 2020 [ 5:20:29pm] Toby - Welcome to Rock Dash - GameLearn
+Thursday 31 December 2020 [ 5:20:29pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:20:29pm] New GameLearn Game. level1 - start level
+Thursday 31 December 2020 [ 5:20:29pm] level1 loaded
+Thursday 31 December 2020 [ 5:20:34pm] level1 Complete! - Diamonds: 10, Score: 1304
+Thursday 31 December 2020 [ 5:20:36pm] level2 loaded
+Thursday 31 December 2020 [ 5:21:06pm] level2 Complete! - Diamonds: 10, Score: 1358
+Thursday 31 December 2020 [ 5:21:12pm] level3 loaded
+Thursday 31 December 2020 [ 5:21:47pm] level3 loaded
+Thursday 31 December 2020 [ 5:21:47pm] Reset level
+Thursday 31 December 2020 [ 5:22:19pm] level3 Complete! - Diamonds: 10, Score: 1403
+Thursday 31 December 2020 [ 5:22:21pm] level4 loaded
+Thursday 31 December 2020 [ 5:23:07pm] level4 Complete! - Diamonds: 10, Score: 1554
+Thursday 31 December 2020 [ 5:23:12pm] Score: 7719, Total Diamonds Collected: 40, Lives: 8
+Thursday 31 December 2020 [ 5:23:12pm] Well done, you have completed the GameLearn game!
+Thursday 31 December 2020 [ 5:35:59pm] Toby - Welcome to Rock Dash - Toby
+Thursday 31 December 2020 [ 5:36:00pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:36:00pm] New Toby Game. level1 - start level
+Thursday 31 December 2020 [ 5:36:00pm] level1 loaded
+Thursday 31 December 2020 [ 5:37:14pm] level1 Complete! - Diamonds: 13, Score: 1681
+Thursday 31 December 2020 [ 5:37:18pm] level2 loaded
+Thursday 31 December 2020 [ 5:37:52pm] level2 loaded
+Thursday 31 December 2020 [ 5:37:52pm] Reset level
+Thursday 31 December 2020 [ 5:39:48pm] level2 Complete! - Diamonds: 10, Score: 1471
+Thursday 31 December 2020 [ 5:39:51pm] level3 loaded
+Thursday 31 December 2020 [ 5:43:10pm] level3 loaded
+Thursday 31 December 2020 [ 5:43:10pm] Reset level
+Thursday 31 December 2020 [ 5:43:44pm] Toby - Welcome to Rock Dash - Toby
+Thursday 31 December 2020 [ 5:43:45pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:43:45pm] New Toby Game. level3 - start level
+Thursday 31 December 2020 [ 5:43:45pm] level3 loaded
+Thursday 31 December 2020 [ 5:43:51pm] Toby - Welcome to Rock Dash - Toby
+Thursday 31 December 2020 [ 5:43:51pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:43:51pm] New Toby Game. level4 - start level
+Thursday 31 December 2020 [ 5:43:52pm] level4 loaded
+Thursday 31 December 2020 [ 5:46:55pm] Name: TobyLevels: 4-3(0), Score: 394, Diamonds: 7, Lives: 0, Date: 31.Dec.2020, Time: [ 5:46:55pm]
+Thursday 31 December 2020 [ 5:46:55pm] Game Over
+Thursday 31 December 2020 [ 5:47:22pm] Toby - Welcome to Rock Dash - Toby
+Thursday 31 December 2020 [ 5:47:22pm] Operating system: macOS
+Thursday 31 December 2020 [ 5:47:23pm] New Toby Game. level4 - start level
+Thursday 31 December 2020 [ 5:47:23pm] level4 loaded
